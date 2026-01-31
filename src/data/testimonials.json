@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Ms. Sohail",
+    "text": "The team at TheMuscularJunction is amazing! They helped me recover from my knee surgery much faster than I expected.",
+    "role": "Patient"
+  },
+  {
+    "id": 2,
+    "name": "Brig. Abdul Ghafoor",
+    "text": "Excellent service and professional doctors. The manual therapy sessions were a game changer for my back pain.",
+    "role": "Patient"
+  },
+  {
+    "id": 3,
+    "name": "Mr. Tariq Abrar",
+    "text": "Highly recommended for anyone looking for serious physiotherapy. The facilities are top-notch.",
+    "role": "Patient"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "TheMuscularJunction",
+  "tagline": "Physiotherapy & Rehabilitation Center",
+  "contact": {
+    "phone": "+91 98765 43210",
+    "email": "contact@themuscularjunction.com",
+    "address": "123 Wellness Avenue, Health City, 560001",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153167!3d-37.81720997975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d6a32f7f1f81!2sFederation%20Square!5e0!3m2!1sen!2sin!4v1630495941910!5m2!1sen!2sin"
+  },
+  "social": {
+    "instagram": "https://instagram.com",
+    "facebook": "https://facebook.com",
+    "whatsapp": "https://wa.me/919876543210",
+    "linkedin": "https://linkedin.com"
+  }
+}

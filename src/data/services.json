@@ -1,0 +1,50 @@
+[
+  {
+    "id": "manual-therapy",
+    "title": "Manual Therapy",
+    "shortDesc": "Hands-on techniques to mobilize joints and soft tissues.",
+    "fullDesc": "Manual therapy involves specialized hands-on techniques to diagnose and treat soft tissues and joint structures. It helps in reducing pain, increasing range of motion, and reducing inflammation.",
+    "icon": "FaHandsHelping",
+    "image": "/images/services/manual-therapy.jpg"
+  },
+  {
+    "id": "sports-rehab",
+    "title": "Sports Rehabilitation",
+    "shortDesc": "Specialized care for sports-related injuries and performance.",
+    "fullDesc": "Our sports rehabilitation program is designed to help athletes recover from injuries and return to their sport stronger. We focus on injury prevention, pain management, and functional training.",
+    "icon": "FaRunning",
+    "image": "/images/services/sports-rehab.jpg"
+  },
+  {
+    "id": "crypto-therapy",
+    "title": "Cryotherapy",
+    "shortDesc": "Cold therapy to reduce inflammation and pain.",
+    "fullDesc": "Cryotherapy uses extreme cold to freeze and destroy abnormal tissue. It is used to treat skin conditions, tumors, and muscle damage.",
+    "icon": "FaSnowflake",
+    "image": "/images/services/cryotherapy.jpg"
+  },
+  {
+    "id": "neuro-rehab",
+    "title": "Neuro Rehabilitation",
+    "shortDesc": "Rehabilitation for stroke, Parkinson's, and other conditions.",
+    "fullDesc": "Neurological rehabilitation involves a doctor-supervised program for people with diseases, injury, or disorders of the nervous system. It can often improve functionality, reduce symptoms, and improve the well-being of the patient.",
+    "icon": "FaBrain",
+    "image": "/images/services/neuro-rehab.jpg"
+  },
+  {
+    "id": "orthopedic",
+    "title": "Orthopedic Physiotherapy",
+    "shortDesc": "Recovery from fractures, surgeries, and skeletal issues.",
+    "fullDesc": "Orthopedic physiotherapy focuses on the treatment of the musculoskeletal system, including joints, muscles, tendons, ligaments, and bones.",
+    "icon": "FaBone",
+    "image": "/images/services/orthopedic.jpg"
+  },
+  {
+    "id": "pediatric",
+    "title": "Pediatric Physiotherapy",
+    "shortDesc": "Developmental support for children and infants.",
+    "fullDesc": "Pediatric physiotherapy assists in the early detection of health problems and uses a wide variety of modalities to treat disorders in the pediatric population.",
+    "icon": "FaChild",
+    "image": "/images/services/pediatric.jpg"
+  }
+]

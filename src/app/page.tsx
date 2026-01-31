@@ -1,65 +1,183 @@
-import Image from "next/image";
+import Link from "next/link";
+import siteData from '@/data/site.json';
+import servicesData from '@/data/services.json';
+import doctorsData from '@/data/doctors.json';
+import testimonialsData from '@/data/testimonials.json';
+import ServiceCard from "@/components/services/ServiceCard";
+import DoctorCard from "@/components/doctors/DoctorCard";
 
 export default function Home() {
+  const featuredServices = servicesData.slice(0, 3);
+  const featuredDoctors = doctorsData.slice(0, 2); 
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="font-sans overflow-hidden">
+      
+      {/* Hero Section - Visual Update */}
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white min-h-[90vh] flex items-center overflow-hidden">
+        
+        {/* Abstract Background Shapes */}
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-sky-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in-up">
+                <div className="inline-block bg-blue-800/50 backdrop-blur-sm border border-blue-500/30 px-4 py-2 rounded-full text-blue-300 text-sm font-semibold tracking-wide uppercase">
+                     ✨ Premier Physiotherapy Center
+                </div>
+                <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight">
+                    Recover <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Faster</span>. <br/>
+                    Move <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Better</span>.
+                </h1>
+                <p className="text-xl md:text-2xl text-slate-300 max-w-lg leading-relaxed">
+                    {siteData.tagline}. We combine advanced technology with personalized care to help you reclaim your life.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <Link href="/appointment" className="group bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white px-8 py-4 rounded-xl font-bold transition shadow-lg shadow-blue-900/50 text-lg flex items-center justify-center gap-2">
+                        Book Appointment
+                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                    </Link>
+                    <Link href="/services" className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-xl font-bold transition text-lg flex items-center justify-center">
+                        View Services
+                    </Link>
+                </div>
+                
+                <div className="flex items-center gap-8 pt-8 text-slate-400 text-sm font-medium">
+                    <div className="flex items-center gap-2">
+                        <span className="text-blue-400 text-xl">✓</span> Certified Experts
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-blue-400 text-xl">✓</span> Modern Clinic
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <span className="text-blue-400 text-xl">✓</span> 5k+ Patients
+                    </div>
+                </div>
+            </div>
+            
+            {/* Visual Right Side */}
+            <div className="relative hidden lg:block animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                 <div className="relative w-full h-[600px] bg-gradient-to-t from-blue-500/20 to-sky-500/20 rounded-[2rem] border border-white/10 backdrop-blur-md flex items-center justify-center overflow-hidden">
+                    {/* Placeholder for Hero Image - If no image, we use an abstract composition */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-30">
+                        <svg className="w-96 h-96 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={0.5}>
+                             <path strokeLinecap="round" strokeLinejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    
+                    {/* Floating Cards */}
+                     <div className="absolute top-10 right-10 bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-xl animate-bounce-slow" style={{ animationDuration: '6s' }}>
+                        <div className="flex items-center gap-3">
+                            <div className="bg-green-100 p-2 rounded-lg text-green-600">💪</div>
+                            <div>
+                                <p className="text-xs text-gray-500 font-bold uppercase">Success Rate</p>
+                                <p className="text-lg font-bold text-gray-900">98%</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="absolute bottom-20 left-10 bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-xl animate-bounce-slow" style={{ animationDuration: '7s', animationDelay: '1s' }}>
+                        <div className="flex items-center gap-3">
+                            <div className="bg-blue-100 p-2 rounded-lg text-blue-600">⭐</div>
+                            <div>
+                                <p className="text-xs text-gray-500 font-bold uppercase">Patient Rating</p>
+                                <p className="text-lg font-bold text-gray-900">4.9/5.0</p>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Services Section with improved visuals */}
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+                <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-2 block">Our Expertise</span>
+                <h2 className="text-4xl font-bold text-slate-900 mb-6">World-Class Physiotherapy Services</h2>
+                <p className="text-slate-600 text-lg">We offer a wide range of specialized treatments designed to help you recover from injury and improve your quality of life.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 px-2">
+                {featuredServices.map(service => (
+                    <ServiceCard key={service.id} {...service} />
+                ))}
+            </div>
+
+            <div className="text-center">
+                <Link href="/services" className="inline-block border-2 border-blue-600 text-blue-700 px-8 py-3 rounded-full font-bold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    Explore All Treatments
+                </Link>
+            </div>
         </div>
-      </main>
+      </section>
+
+      {/* Appointment CTA - Visually distinct */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-blue-900">
+            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to feel your best?</h2>
+            <p className="text-blue-100 text-xl mb-10 max-w-2xl mx-auto">
+                Schedule your consultation today. Our expert team is ready to guide you on your path to recovery.
+            </p>
+            <Link href="/appointment" className="inline-block bg-white text-blue-900 px-10 py-4 rounded-full font-bold hover:scale-105 transition-transform shadow-2xl text-lg">
+                Book Your Appointment Now
+            </Link>
+        </div>
+      </section>
+
+      {/* Doctors Preview */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                     <span className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-2 block">Our Team</span>
+                    <h2 className="text-4xl font-bold text-slate-900">Meet The Experts</h2>
+                </div>
+                <Link href="/doctors" className="hidden md:block text-blue-700 font-bold hover:text-blue-900 transition">
+                    View All Doctors &rarr;
+                </Link>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                {featuredDoctors.map(doc => (
+                    <DoctorCard key={doc.id} {...doc} />
+                ))}
+            </div>
+             <div className="mt-8 text-center md:hidden">
+                <Link href="/doctors" className="text-blue-700 font-bold hover:text-blue-900 transition">
+                    View All Doctors &rarr;
+                </Link>
+             </div>
+        </div>
+      </section>
+
+      {/* Testimonials - Grid Layout */}
+      <section className="py-24 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+            <h2 className="text-4xl font-bold text-center text-slate-900 mb-16">Patient Success Stories</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {testimonialsData.map((testimonial, i) => (
+                    <div key={testimonial.id} className={`bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative hover:shadow-xl transition-shadow duration-300 ${i === 1 ? 'md:-mt-8' : ''}`}>
+                        <div className="text-blue-200 text-6xl font-serif absolute top-4 left-6">&quot;</div>
+                        <p className="text-slate-600 mb-8 mt-6 relative z-10 leading-relaxed font-medium">
+                            {testimonial.text}
+                        </p>
+                        <div className="flex items-center gap-4 border-t border-slate-100 pt-6">
+                            <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-lg">👤</div>
+                            <div>
+                                <p className="font-bold text-slate-900">{testimonial.name}</p>
+                                <p className="text-xs text-blue-600 font-bold uppercase tracking-wider">{testimonial.role}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </section>
     </div>
   );
 }
