@@ -6,6 +6,8 @@ import testimonialsData from '@/data/testimonials.json';
 import ServiceCard from "@/components/services/ServiceCard";
 import DoctorCard from "@/components/doctors/DoctorCard";
 
+import { FaInstagram, FaFacebookF } from "react-icons/fa";
+
 export default function Home() {
   const featuredServices = servicesData.slice(0, 3);
   const featuredDoctors = doctorsData.slice(0, 2); 
@@ -156,26 +158,68 @@ export default function Home() {
       </section>
 
       {/* Testimonials - Grid Layout */}
-      <section className="py-24 bg-slate-50">
+      <section className="bg-gradient-to-b from-slate-50 to-white py-24">
         <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-4xl font-bold text-center text-slate-900 mb-16">Patient Success Stories</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {testimonialsData.map((testimonial, i) => (
-                    <div key={testimonial.id} className={`bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative hover:shadow-xl transition-shadow duration-300 ${i === 1 ? 'md:-mt-8' : ''}`}>
-                        <div className="text-blue-200 text-6xl font-serif absolute top-4 left-6">&quot;</div>
-                        <p className="text-slate-600 mb-8 mt-6 relative z-10 leading-relaxed font-medium">
-                            {testimonial.text}
-                        </p>
-                        <div className="flex items-center gap-4 border-t border-slate-100 pt-6">
-                            <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-lg">👤</div>
-                            <div>
-                                <p className="font-bold text-slate-900">{testimonial.name}</p>
-                                <p className="text-xs text-blue-600 font-bold uppercase tracking-wider">{testimonial.role}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+          <header className="mx-auto mb-16 max-w-3xl text-center">
+            <h2 className="mb-4 text-4xl font-bold text-slate-900">
+              Patient Success Stories
+            </h2>
+            <p className="text-lg text-slate-600">
+              Watch real patient reviews on social media.
+            </p>
+
+            <div className="mt-2 flex justify-center gap-4">
+              <a
+                href={siteData.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-white border text-black shadow-sm transition-all duration-300 hover:-translate-y-1 hover:text-white hover:shadow-lg overflow-hidden"
+              >
+                <span className="absolute inset-0 bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af] opacity-0 group-hover:opacity-100 transition" />
+                <FaInstagram className="relative text-lg transition-transform duration-300 group-hover:scale-110" />
+              </a>
+
+              <a
+                href={siteData.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-white border text-black shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-[#1877F2] hover:text-white hover:shadow-lg"
+              >
+                <FaFacebookF className="text-lg transition-transform duration-300 group-hover:scale-110" />
+              </a>
             </div>
+          </header>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            {testimonialsData.map((t, i) => (
+              <article
+                key={t.id}
+                className={`relative rounded-2xl border bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl ${
+                  i === 1 ? "md:-mt-8" : ""
+                }`}
+              >
+                <span className="absolute left-6 top-4 text-6xl text-blue-500">
+                  “
+                </span>
+                <p className="relative z-10 mb-8 mt-6 text-slate-600">
+                  {t.text}
+                </p>
+                <footer className="flex items-center gap-4 border-t pt-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 font-bold text-blue-700">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-slate-900">{t.name}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">
+                      {t.role}
+                    </p>
+                  </div>
+                </footer>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </div>

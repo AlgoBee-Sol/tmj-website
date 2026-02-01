@@ -40,7 +40,7 @@ export default function ContactPage() {
                                 <span className="text-xl">📞</span>
                             </div>
                             <div>
-                                <h4 className="font-bold text-gray-900">Phone</h4>
+    +                            <h4 className="font-bold text-gray-900">Phone</h4>
                                 <p className="text-gray-600">
                                     <a href={`tel:${siteData.contact.phone}`} className="hover:text-primary transition">{siteData.contact.phone}</a>
                                 </p>
