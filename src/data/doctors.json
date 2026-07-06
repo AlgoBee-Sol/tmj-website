@@ -3,35 +3,36 @@
     "id": "dr-mozaffar-rizvi",
     "name": "Dr. Mozaffar Rizvi",
     "designation": "Lead Physiotherapist",
-    "specializations": [
-      "Sports Injury",
-      "Manual Therapy"
-    ],
-    "experienceYears": 10,
+    "specializations": ["Sports Injury", "Manual Therapy"],
+    "experienceYears": 4,
     "bio": "Dr. Mozaffar Rizvi has over a decade of experience treating elite athletes and managing chronic pain conditions with advanced manual therapy techniques.",
     "image": "/images/doctors/doctor-1.jpg"
   },
   {
-    "id": "dr-m-abdullah",
-    "name": "Dr. M. Abdullah",
-    "designation": "Physiotherapist",
-    "specializations": [
-      "Neuro Rehabilitation"
-    ],
+    "id": "dr-niha-batool",
+    "name": "Dr. Niha Batool",
+    "designation": "Female Physiotherapist",
+    "specializations": ["Rehabilitation"],
     "experienceYears": 2,
-    "bio": "Dr. M. Abdullah specializes in neurological rehabilitation, helping patients regain mobility, balance, and independence after injury or illness.",
-    "image": "/images/doctors/doctor-2.jpg"
+    "bio": "Dr. Niha specializes in rehabilitation, helping patients regain mobility, balance, and independence after injury or illness.",
+    "image": "/images/doctors/doctor-2.png"
   },
   {
     "id": "dr-abdul-wahab",
     "name": "Dr. Abdul Wahab",
     "designation": "Pediatric Physiotherapist",
-    "specializations": [
-      "Child Development",
-      "Pediatric Rehabilitation"
-    ],
+    "specializations": ["Child Development", "Pediatric Rehabilitation"],
     "experienceYears": 1,
     "bio": "Dr. Abdul Wahab is dedicated to helping children achieve developmental milestones through engaging and child-friendly physiotherapy programs.",
     "image": "/images/doctors/doctor-3.jpg"
+  },
+  {
+    "id": "dr-m-abdullah",
+    "name": "Dr. M. Abdullah",
+    "designation": "Pediatric Physiotherapist",
+    "specializations": ["Child Development", "Pediatric Rehabilitation"],
+    "experienceYears": 1,
+    "bio": "Dr. M. Abdullah is dedicated to helping children achieve developmental milestones through engaging and child-friendly physiotherapy programs.",
+    "image": "/images/doctors/doctor-4.jpg"
   }
 ]

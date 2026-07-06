@@ -1,44 +1,162 @@
 @import "tailwindcss";
 
-/* =========================
-   Tailwind Theme Tokens
-   ========================= */
-@theme {
-  /* Background & foreground */
-  --color-background: #f8fafc; /* Slate 50 */
-  --color-foreground: #1e293b; /* Slate 800 */
+/* =========================================================
+   Dark mode: class-based (toggled on <html class="dark">)
+   ========================================================= */
+@custom-variant dark (&:where(.dark, .dark *));
 
-  /* Brand Colors */
-  --color-primary: #2563eb;       /* Blue 600 */
-  --color-primary-dark: #1d4ed8;  /* Blue 700 */
-  --color-primary-light: #dbeafe; /* Blue 100 */
+/* =========================================================
+   Semantic color tokens (swap between light & dark)
+   ========================================================= */
+:root {
+  color-scheme: light;
 
-  --color-secondary: #0ea5e9;      /* Sky 500 */
-  --color-secondary-dark: #0284c7; /* Sky 600 */
+  --background: #f8fafc;          /* page background        */
+  --foreground: #0f172a;          /* strong text / headings */
+  --card: #ffffff;                /* raised surfaces        */
+  --card-foreground: #0f172a;
+  --muted: #f1f5f9;               /* subtle section bg      */
+  --muted-foreground: #475569;    /* body / secondary text  */
+  --subtle-foreground: #64748b;   /* meta / captions        */
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #2563eb;
 
-  --color-accent: #eff6ff; /* Blue 50 */
+  --primary: #2563eb;             /* Blue 600 */
+  --primary-foreground: #ffffff;
+  --primary-dark: #1d4ed8;        /* Blue 700 */
+  --primary-light: #dbeafe;       /* Blue 100 */
 
-  /* Text colors */
-  --color-text-main: #0f172a;   /* Slate 900 */
-  --color-text-muted: #64748b;  /* Slate 500 */
+  --secondary: #0ea5e9;           /* Sky 500 */
+  --secondary-dark: #0284c7;
+
+  --accent: #eff6ff;              /* soft blue tint bg */
+  --accent-foreground: #1d4ed8;   /* text on accent    */
 }
 
-/* =========================
+.dark {
+  color-scheme: dark;
+
+  --background: #0b1120;
+  --foreground: #f1f5f9;
+  --card: #131c31;
+  --card-foreground: #f1f5f9;
+  --muted: #0f1728;
+  --muted-foreground: #94a3b8;
+  --subtle-foreground: #7c8aa5;
+  --border: #24304a;
+  --input: #2a3650;
+  --ring: #3b82f6;
+
+  --primary: #3b82f6;             /* Blue 500 — pops on dark */
+  --primary-foreground: #ffffff;
+  --primary-dark: #60a5fa;
+  --primary-light: #1e3a8a;
+
+  --secondary: #38bdf8;
+  --secondary-dark: #0ea5e9;
+
+  --accent: #172554;              /* Blue 950 */
+  --accent-foreground: #bfdbfe;
+}
+
+/* =========================================================
+   Expose tokens to Tailwind utilities
+   (bg-background, text-foreground, bg-card, border-border, …)
+   ========================================================= */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+}
+
+/* =========================================================
    Base styles
-   ========================= */
+   ========================================================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* clear the sticky header (h-20) */
+}
+
 body {
-  color: theme(colors.foreground);
-  background: theme(colors.background);
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* =========================
+/* Selection */
+::selection {
+  background-color: color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
+/* =========================================================
+   Keyframes
+   ========================================================= */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50%      { opacity: 0.3;  transform: scale(1.05); }
+}
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-14px); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* =========================================================
    Custom utilities
-   ========================= */
+   ========================================================= */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-balance { text-wrap: balance; }
+
+  .animate-fade-in-up {
+    opacity: 0;
+    animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-pulse-slow { animation: pulse-slow 8s ease-in-out infinite; }
+  .animate-bounce-slow { animation: bounce-slow 6s ease-in-out infinite; }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+}
+
+/* =========================================================
+   Accessibility
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-fade-in-up,
+  .animate-pulse-slow,
+  .animate-bounce-slow,
+  .animate-float {
+    animation: none;
+    opacity: 1;
   }
 }

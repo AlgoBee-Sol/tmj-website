@@ -1,10 +1,11 @@
 {
   "about": "TheMuscularJunction is a premier physiotherapy center dedicated to restoring movement and improving quality of life through advanced rehabilitation techniques.",
   "links": [
-    { "label": "Home", "href": "/" },
     { "label": "About Us", "href": "/about" },
     { "label": "Services", "href": "/services" },
+    { "label": "Workshops", "href": "/workshops" },
     { "label": "Doctors", "href": "/doctors" },
+    { "label": "Testimonials", "href": "/#testimonials" },
     { "label": "Contact", "href": "/contact" }
   ],
   "services": [

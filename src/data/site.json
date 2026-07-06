@@ -1,10 +1,12 @@
 {
   "name": "The Muscular Junction",
   "tagline": "Physiotherapy & Rehabilitation Center",
+  "url": "https://themuscularjunction.com",
   "contact": {
     "phone": "+92 339 6116665",
     "email": "themuscularjunction@gmail.com",
     "address": "Gardens Street, Shah's Arcade, River Gardens, Islamabad, Pakistan",
+    "geo": { "lat": 33.549854, "lng": 73.168753 },
     "mapEmbedUrl": "https://www.google.com/maps?q=33.549854,73.168753&hl=en&z=18&output=embed"
   },
   "social": {
