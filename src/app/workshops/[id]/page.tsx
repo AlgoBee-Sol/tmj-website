@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import workshopsData from "@/data/workshops.json";
 import siteData from "@/data/site.json";
 import { getWorkshopIcon } from "@/components/workshops/workshopIcons";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
 import {
   FaRegCalendarAlt,
   FaRegClock,
@@ -36,8 +38,8 @@ export async function generateMetadata({
     return { title: "Workshop Not Found" };
   }
   return {
-    title: `${workshop.title} — ${workshop.date}`,
-    description: workshop.shortDesc,
+    title: `${workshop.title} in Islamabad — ${workshop.date}`,
+    description: `${workshop.shortDesc} Led by Dr. Syed Mozaffar at The Muscular Junction, Islamabad.`,
     alternates: { canonical: `/workshops/${workshop.id}` },
   };
 }
@@ -59,6 +61,32 @@ export default async function WorkshopDetailPage({
     `scheduled on ${workshop.date} (${workshop.time}). Please share the details.`;
   const waLink = `${siteData.social.whatsapp}?text=${encodeURIComponent(waMessage)}`;
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteData.url;
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: workshop.title,
+    description: workshop.fullDesc,
+    url: `${siteUrl}/workshops/${workshop.id}`,
+    image: `${siteUrl}${workshop.image}`,
+    provider: { "@type": "MedicalClinic", name: siteData.name, url: siteUrl },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "Onsite",
+      courseWorkload: workshop.duration,
+      location: {
+        "@type": "Place",
+        name: workshop.venue,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Islamabad",
+          addressCountry: "PK",
+        },
+      },
+      instructor: { "@type": "Person", name: workshop.instructor },
+    },
+  };
+
   const scheduleRows = [
     { icon: FaRegCalendarAlt, label: "Date", value: workshop.date },
     { icon: FaRegClock, label: "Time", value: workshop.time },
@@ -69,6 +97,13 @@ export default async function WorkshopDetailPage({
 
   return (
     <div className="bg-background pb-24">
+      <Breadcrumbs
+        items={[
+          { name: "Workshops", path: "/workshops" },
+          { name: workshop.title, path: `/workshops/${workshop.id}` },
+        ]}
+      />
+      <JsonLd data={courseSchema} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-16 text-white md:py-20">
         <div className="absolute right-[-6%] top-[-30%] h-[360px] w-[360px] animate-pulse-slow rounded-full bg-blue-500 opacity-20 mix-blend-multiply blur-3xl" />

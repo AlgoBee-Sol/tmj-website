@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import WorkshopCard from "@/components/workshops/WorkshopCard";
 import workshopsData from "@/data/workshops.json";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import siteData from "@/data/site.json";
 import {
   FaUserMd,
   FaCertificate,
@@ -9,11 +12,30 @@ import {
   FaHandsHelping,
 } from "react-icons/fa";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteData.url;
+
 export const metadata: Metadata = {
-  title: "Physiotherapy Workshops & Hands-on Trainings",
+  title: "Physiotherapy Workshops & Hands-on Trainings in Islamabad",
   description:
     "Professional physiotherapy workshops led by Dr. Syed Mozaffar — Dry Needling, Kinesio Taping, Mulligan Techniques, HVLA Chiropractic, Cupping Therapy and more. Hands-on, certified training in Islamabad.",
   alternates: { canonical: "/workshops" },
+};
+
+const workshopsItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Professional Physiotherapy Workshops",
+  itemListElement: workshopsData.map((workshop, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "Course",
+      name: workshop.title,
+      description: workshop.shortDesc,
+      url: `${siteUrl}/workshops/${workshop.id}`,
+      provider: { "@type": "MedicalClinic", name: siteData.name, url: siteUrl },
+    },
+  })),
 };
 
 const highlights = [
@@ -42,6 +64,8 @@ const highlights = [
 export default function WorkshopsPage() {
   return (
     <div className="min-h-screen bg-background pb-24">
+      <Breadcrumbs items={[{ name: "Workshops", path: "/workshops" }]} />
+      <JsonLd data={workshopsItemList} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 py-24 text-white">
         <div className="absolute right-[-8%] top-[-20%] h-[420px] w-[420px] rounded-full bg-blue-500 opacity-20 mix-blend-multiply blur-3xl animate-pulse-slow" />

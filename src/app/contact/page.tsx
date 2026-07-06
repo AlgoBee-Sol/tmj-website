@@ -1,11 +1,12 @@
 import siteData from "@/data/site.json";
 import PageHero from "@/components/layout/PageHero";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact & Location — Physiotherapy Clinic in Islamabad",
   description:
-    "Get in touch with The Muscular Junction for appointments and inquiries — phone, email, or visit our clinic in Islamabad.",
+    "Contact The Muscular Junction physiotherapy clinic in River Gardens, Islamabad. Call, WhatsApp or email us to book an appointment, or visit us in person. Open Mon–Sat, 9am–9pm.",
   alternates: { canonical: "/contact" },
 };
 
@@ -32,6 +33,7 @@ export default function ContactPage() {
 
   return (
     <div className="bg-background pb-24">
+      <Breadcrumbs items={[{ name: "Contact Us", path: "/contact" }]} />
       <PageHero
         eyebrow="Get In Touch"
         title="Contact Us"

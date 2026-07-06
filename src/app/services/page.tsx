@@ -3,17 +3,40 @@ import ServiceCard from "@/components/services/ServiceCard";
 import { getServiceIcon } from "@/components/services/serviceIcons";
 import servicesData from "@/data/services.json";
 import PageHero from "@/components/layout/PageHero";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import siteData from "@/data/site.json";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteData.url;
 
 export const metadata = {
-  title: "Our Services",
+  title: "Physiotherapy & Rehabilitation Services in Islamabad",
   description:
-    "Explore our physiotherapy and rehabilitation services — manual therapy, sports rehab, neuro rehab, orthopedic and pediatric physiotherapy and more.",
+    "Explore physiotherapy and rehabilitation services at The Muscular Junction, Islamabad — manual therapy, sports rehab, neuro rehab, orthopedic, pediatric physiotherapy, cryotherapy and more.",
   alternates: { canonical: "/services" },
+};
+
+const servicesItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Physiotherapy & Rehabilitation Services",
+  itemListElement: servicesData.map((service, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "MedicalTherapy",
+      name: service.title,
+      description: service.shortDesc,
+      url: `${siteUrl}/services#${service.id}`,
+    },
+  })),
 };
 
 export default function ServicesPage() {
   return (
     <div className="bg-background pb-24">
+      <Breadcrumbs items={[{ name: "Services", path: "/services" }]} />
+      <JsonLd data={servicesItemList} />
       <PageHero
         eyebrow="Our Expertise"
         title="Our Services"

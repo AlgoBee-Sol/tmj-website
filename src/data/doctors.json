@@ -1,11 +1,11 @@
 [
   {
-    "id": "dr-mozaffar-rizvi",
-    "name": "Dr. Mozaffar Rizvi",
-    "designation": "Lead Physiotherapist",
-    "specializations": ["Sports Injury", "Manual Therapy"],
+    "id": "dr-syed-mozaffar",
+    "name": "Dr. Syed Mozaffar",
+    "designation": "Founder & Lead Physiotherapist",
+    "specializations": ["Sports Injury", "Manual Therapy", "Rehabilitation"],
     "experienceYears": 4,
-    "bio": "Dr. Mozaffar Rizvi has over a decade of experience treating elite athletes and managing chronic pain conditions with advanced manual therapy techniques.",
+    "bio": "Dr. Syed Mozaffar is the founder and lead physiotherapist at The Muscular Junction in Islamabad, specialising in sports injury rehabilitation and advanced manual therapy. He also leads the clinic's professional physiotherapy workshops on dry needling, cupping, Mulligan and HVLA techniques.",
     "image": "/images/doctors/doctor-1.jpg"
   },
   {

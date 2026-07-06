@@ -8,6 +8,7 @@ import ServiceCard from "@/components/services/ServiceCard";
 import DoctorCard from "@/components/doctors/DoctorCard";
 import WorkshopCard from "@/components/workshops/WorkshopCard";
 import TestimonialCard from "@/components/testimonials/TestimonialCard";
+import FaqSection from "@/components/seo/FaqSection";
 
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import {
@@ -78,7 +79,7 @@ export default function Home() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
               </span>
-              Physiotherapy Center
+              Physiotherapy Center in Islamabad
             </div>
 
             <h1 className="text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
@@ -526,6 +527,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ============================= FAQ ============================= */}
+      <FaqSection />
     </div>
   );
 }

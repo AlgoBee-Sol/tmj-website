@@ -1,11 +1,12 @@
 import AppointmentForm from "@/components/appointment/AppointmentForm";
 import siteData from "@/data/site.json";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { FaWhatsapp, FaPhoneAlt, FaCheckCircle, FaRegClock } from "react-icons/fa";
 
 export const metadata = {
-  title: "Book Appointment",
+  title: "Book a Physiotherapy Appointment in Islamabad",
   description:
-    "Book your physiotherapy appointment at The Muscular Junction in seconds — instantly on WhatsApp, or send a request online.",
+    "Book your physiotherapy appointment at The Muscular Junction, Islamabad in seconds — instantly on WhatsApp or send an online request. Certified therapists, flexible timings.",
   alternates: { canonical: "/appointment" },
 };
 
@@ -24,6 +25,7 @@ const waChatLink = `${siteData.social.whatsapp}?text=${encodeURIComponent(
 export default function AppointmentPage() {
   return (
     <div className="bg-background py-16 md:py-20">
+      <Breadcrumbs items={[{ name: "Book Appointment", path: "/appointment" }]} />
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         {/* Header */}
         <div className="mx-auto mb-12 max-w-2xl text-center">

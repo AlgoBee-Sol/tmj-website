@@ -1,11 +1,12 @@
 import siteData from "@/data/site.json";
 import PageHero from "@/components/layout/PageHero";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import { FaHeart, FaHandshake, FaLightbulb } from "react-icons/fa";
 
 export const metadata = {
-  title: "About Us",
+  title: "About Our Physiotherapy Clinic in Islamabad",
   description:
-    "Learn about The Muscular Junction — our mission, values and commitment to advanced physiotherapy and compassionate rehabilitation care in Islamabad.",
+    "Learn about The Muscular Junction — a trusted physiotherapy & rehabilitation clinic in Islamabad led by Dr. Syed Mozaffar, built on patient-centric, evidence-based care.",
   alternates: { canonical: "/about" },
 };
 
@@ -30,6 +31,7 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="bg-background pb-24">
+      <Breadcrumbs items={[{ name: "About Us", path: "/about" }]} />
       <PageHero
         eyebrow="Who We Are"
         title="About Us"
