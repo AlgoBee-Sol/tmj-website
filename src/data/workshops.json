@@ -17,8 +17,7 @@
       "Supervised, hands-on needling practice",
       "Managing common side effects and contraindications",
       "Integrating dry needling into treatment plans"
-    ],
-    "image": "/images/workshops/dry-needling.jpg"
+    ]
   },
   {
     "id": "kinesio-taping",
@@ -38,8 +37,7 @@
       "Taping for swelling and lymphatic drainage",
       "Region-specific applications (shoulder, knee, back, ankle)",
       "Hands-on practice with feedback"
-    ],
-    "image": "/images/workshops/kinesio-taping.jpg"
+    ]
   },
   {
     "id": "mulligan-techniques",
@@ -59,8 +57,7 @@
       "Peripheral joint mobilisation techniques",
       "Correct glide direction, grade and dosage",
       "Supervised partner practice"
-    ],
-    "image": "/images/workshops/mulligan-techniques.jpg"
+    ]
   },
   {
     "id": "hvla-chiropractic",
@@ -80,8 +77,7 @@
       "Patient positioning and setup",
       "Controlled thrust delivery and pre-tension",
       "Supervised hands-on practice"
-    ],
-    "image": "/images/workshops/hvla-chiropractic.jpg"
+    ]
   },
   {
     "id": "cupping-therapy",
@@ -101,8 +97,7 @@
       "Combining cupping with active movement",
       "Hygiene, safety and skin management",
       "Supervised hands-on practice"
-    ],
-    "image": "/images/workshops/cupping-therapy.jpg"
+    ]
   },
   {
     "id": "therapeutic-exercise",
@@ -122,7 +117,6 @@
       "Return-to-sport testing and criteria",
       "Pain management through graded exercise",
       "Improving patient adherence and motivation"
-    ],
-    "image": "/images/workshops/therapeutic-exercise.jpg"
+    ]
   }
 ]

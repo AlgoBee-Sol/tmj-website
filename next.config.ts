@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    /**
+     * OpenNext on Cloudflare only transforms images when an `IMAGES` binding is
+     * configured; without one, `/_next/image` streams the original bytes back
+     * through the Worker — a pointless hop that is slower than serving the
+     * asset directly from the CDN.
+     *
+     * Source images are pre-sized and converted to WebP instead, so requests go
+     * straight to the static asset host. If a Cloudflare Images binding is added
+     * to `wrangler.jsonc` later, drop this flag to get automatic AVIF + srcset.
+     */
+    unoptimized: true,
+  },
+  poweredByHeader: false,
 };
 
 export default nextConfig;

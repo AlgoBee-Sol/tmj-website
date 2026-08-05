@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import siteData from "@/data/site.json";
+import { site } from "@/lib/site";
 
 /**
  * Web App Manifest — improves mobile/PWA signals and installability,
@@ -7,14 +7,14 @@ import siteData from "@/data/site.json";
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${siteData.name} — ${siteData.tagline}`,
-    short_name: siteData.name,
+    name: `${site.name} — ${site.tagline}`,
+    short_name: site.shortName,
     description:
-      "Leading physiotherapy & rehabilitation clinic in Islamabad. Manual therapy, sports & neuro rehab, and professional physiotherapy workshops.",
+      "Evidence-based physiotherapy & rehabilitation in River Gardens, Islamabad. Manual therapy, sports injury, orthopedic, neuro and pediatric rehab.",
     start_url: "/",
     display: "standalone",
-    background_color: "#020617",
-    theme_color: "#2563eb",
+    background_color: "#060e18",
+    theme_color: "#0c5fcd",
     lang: "en",
     dir: "ltr",
     categories: ["health", "medical", "fitness"],

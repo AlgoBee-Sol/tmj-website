@@ -1,71 +1,74 @@
 import Link from "next/link";
-import siteData from "@/data/site.json";
-import footerData from "@/data/footer.json";
-
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import Image from "next/image";
+import { FiMapPin, FiPhone, FiMail, FiClock } from "react-icons/fi";
+import navData from "@/data/nav.json";
+import servicesData from "@/data/services.json";
+import GoogleRating from "@/components/ui/GoogleRating";
+import MapEmbed from "@/components/map/MapEmbed";
+import { site, socialLinks, telHref, mailHref } from "@/lib/site";
 
 export default function Footer() {
-  return (
-    <footer className="border-t border-border bg-muted pt-16 pb-8 text-muted-foreground">
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Top Section */}
-        <div className="mb-12 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {/* Column 1: Clinic Info */}
-          <div>
-            <h3 className="mb-4 text-2xl font-bold text-primary">
-              {siteData.name}
-            </h3>
+  const year = new Date().getFullYear();
 
-            <p className="mb-6 leading-relaxed text-muted-foreground">
-              {footerData.about}
+  return (
+    <footer className="border-t border-border bg-surface">
+      <div className="container-page py-14">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
+          {/* ---- Identity + socials ---- */}
+          <div className="lg:col-span-4">
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/logo-tmj.webp"
+                alt=""
+                width={44}
+                height={44}
+                loading="lazy"
+                className="h-11 w-11 rounded-full"
+              />
+              <span className="flex flex-col leading-none">
+                <span className="font-display text-lg font-bold text-foreground">
+                  The Muscular Junction
+                </span>
+                <span className="mt-1 text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-subtle-foreground">
+                  Physiotherapy &amp; Rehabilitation
+                </span>
+              </span>
+            </div>
+
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              {navData.about}
             </p>
 
-            {/* Social Icons */}
-            <div className="flex gap-4">
-              <a
-                href={siteData.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-[#1877F2] hover:text-white hover:shadow-lg"
-              >
-                <FaFacebookF className="text-lg transition-transform duration-300 group-hover:scale-110" />
-              </a>
-
-              <a
-                href={siteData.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="group relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:text-white hover:shadow-lg"
-              >
-                <span className="absolute inset-0 bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af] opacity-0 transition group-hover:opacity-100" />
-                <FaInstagram className="relative text-lg transition-transform duration-300 group-hover:scale-110" />
-              </a>
-
-              <a
-                href={siteData.social.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="group flex h-11 w-11 items-center justify-center rounded-full border border-border bg-card text-muted-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-[#25D366] hover:text-white hover:shadow-lg"
-              >
-                <FaWhatsapp className="text-lg transition-transform duration-300 group-hover:scale-110" />
-              </a>
+            <div className="mt-6 flex gap-2.5">
+              {socialLinks.map(({ href, label, Icon, brand }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  style={{ "--brand": brand } as React.CSSProperties}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-card text-muted-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--brand)] hover:bg-[var(--brand)] hover:text-white"
+                >
+                  <Icon className="text-[1.05rem]" aria-hidden="true" />
+                </a>
+              ))}
             </div>
+
+            <GoogleRating variant="card" className="mt-6 max-w-sm" />
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="mb-6 text-lg font-bold text-foreground">Quick Links</h4>
-
-            <ul className="flex flex-col gap-3">
-              {footerData.links.map((link) => (
+          {/* ---- Clinic links ---- */}
+          <div className="lg:col-span-2">
+            <h2 className="font-display text-sm font-bold uppercase tracking-wider text-foreground">
+              Clinic
+            </h2>
+            <ul className="mt-5 flex flex-col gap-3 text-sm">
+              {navData.footerClinic.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="relative w-fit text-muted-foreground transition after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:text-primary hover:after:w-full"
+                    className="text-muted-foreground transition hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -74,64 +77,112 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Contact Info */}
-          <div>
-            <h4 className="mb-6 text-lg font-bold text-foreground">Contact Us</h4>
-
-            <ul className="flex flex-col gap-4 text-muted-foreground">
-              <li className="flex items-start gap-3">
-                <FiMapPin className="mt-1 shrink-0 text-primary" />
-                <a
-                  href="https://maps.app.goo.gl/FYRvSV1PP8b67fc79"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition hover:text-primary"
-                >
-                  {siteData.contact.address}
-                </a>
-              </li>
-
-              <li className="flex items-center gap-3">
-                <FiPhone className="shrink-0 text-primary" />
-                <a
-                  href={`tel:${siteData.contact.phone}`}
-                  className="transition hover:text-primary"
-                >
-                  {siteData.contact.phone}
-                </a>
-              </li>
-
-              <li className="flex items-center gap-3">
-                <FiMail className="shrink-0 text-primary" />
-                <a
-                  href={`mailto:${siteData.contact.email}`}
-                  className="transition hover:text-primary"
-                >
-                  {siteData.contact.email}
-                </a>
-              </li>
+          {/* ---- Services (deep links help internal crawl depth) ---- */}
+          <div className="lg:col-span-3">
+            <h2 className="font-display text-sm font-bold uppercase tracking-wider text-foreground">
+              Treatments
+            </h2>
+            <ul className="mt-5 flex flex-col gap-3 text-sm">
+              {servicesData.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    href={`/services/${service.id}`}
+                    className="text-muted-foreground transition hover:text-primary"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 4: Map */}
-          <div className="h-64 overflow-hidden rounded-xl border border-border shadow-lg md:h-auto">
-            <iframe
-              src={siteData.contact.mapEmbedUrl}
-              className="h-full w-full"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Clinic Location"
-            />
+          {/* ---- NAP ---- */}
+          <div className="lg:col-span-3">
+            <h2 className="font-display text-sm font-bold uppercase tracking-wider text-foreground">
+              Visit Us
+            </h2>
+
+            <ul className="mt-5 flex flex-col gap-4 text-sm">
+              <li className="flex items-start gap-3">
+                <FiMapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                  aria-hidden="true"
+                />
+                <a
+                  href={site.contact.mapLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="not-italic text-muted-foreground transition hover:text-primary"
+                >
+                  <address className="not-italic">
+                    {site.contact.streetAddress}
+                    <br />
+                    {site.contact.locality}, {site.contact.countryName}
+                  </address>
+                </a>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <FiPhone
+                  className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                  aria-hidden="true"
+                />
+                <a
+                  href={telHref}
+                  className="font-medium text-foreground transition hover:text-primary"
+                >
+                  {site.contact.phone}
+                </a>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <FiMail
+                  className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                  aria-hidden="true"
+                />
+                <a
+                  href={mailHref}
+                  className="break-all text-muted-foreground transition hover:text-primary"
+                >
+                  {site.contact.email}
+                </a>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <FiClock
+                  className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                  aria-hidden="true"
+                />
+                <div className="text-muted-foreground">
+                  {site.hours.schedule.map((row) => (
+                    <div key={row.days} className="flex gap-2">
+                      <span>{row.days}</span>
+                      <span
+                        className={
+                          row.closed ? "font-medium text-subtle-foreground" : ""
+                        }
+                      >
+                        {row.closed ? "Closed" : `${row.opens} – ${row.closes}`}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </li>
+            </ul>
+
+            <div className="mt-5 h-40 overflow-hidden rounded-xl border border-border">
+              <MapEmbed />
+            </div>
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="border-t border-border pt-8 text-center text-sm text-subtle-foreground">
+        {/* ---- Bottom ---- */}
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-border pt-7 text-xs text-subtle-foreground sm:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} {siteData.name}. All rights
-            reserved.
+            © {year} {site.name}. All rights reserved.
+          </p>
+          <p>
+            Physiotherapy &amp; rehabilitation in {site.contact.address}
           </p>
         </div>
       </div>

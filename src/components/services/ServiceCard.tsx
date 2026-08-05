@@ -1,58 +1,78 @@
 import Link from "next/link";
-import { getServiceIcon } from "./serviceIcons";
+import { ServiceIcon } from "./serviceIcons";
 
 interface ServiceCardProps {
   id: string;
   title: string;
   shortDesc: string;
   icon?: string;
-  image?: string;
+  conditions?: string[];
+  sessionLength?: string;
 }
 
-export default function ServiceCard({ id, title, shortDesc, icon, image }: ServiceCardProps) {
-  const Icon = getServiceIcon(icon);
-
+/**
+ * Icon-led service card.
+ *
+ * There are no stock photos here by design: a generic clinic photo adds a
+ * network request and no information, while the first three conditions treated
+ * tell a visitor within a second whether this is the page for their problem.
+ */
+export default function ServiceCard({
+  id,
+  title,
+  shortDesc,
+  icon,
+  conditions = [],
+}: ServiceCardProps) {
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-2xl">
-      {/* Header — gradient + service icon watermark; a real image overlays it when present */}
-      <div className="relative h-56 overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-sky-600">
-        <div className="absolute inset-0 flex items-center justify-center text-white/25">
-          <Icon className="h-24 w-24" aria-hidden="true" />
-        </div>
-        {image && (
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-            style={{ backgroundImage: `url(${image})` }}
-          ></div>
-        )}
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/65 to-transparent"></div>
+    <Link
+      href={`/services/${id}`}
+      className="card-surface card-hover group relative flex h-full flex-col overflow-hidden p-6"
+    >
+      {/* Corner wash warms up on hover */}
+      <span
+        className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary-soft opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        aria-hidden="true"
+      />
 
-        <div className="absolute bottom-4 left-4 z-20">
-          <h3 className="text-xl font-bold text-white drop-shadow-md">{title}</h3>
-        </div>
-      </div>
+      <span className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary-soft text-xl text-primary ring-1 ring-primary-line transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+        <ServiceIcon name={icon} />
+      </span>
 
-      {/* Content */}
-      <div className="flex flex-grow flex-col p-6">
-        <p className="mb-6 flex-grow text-sm leading-relaxed text-muted-foreground line-clamp-3">
-          {shortDesc}
-        </p>
+      <h3 className="relative mt-5 font-display text-lg font-bold text-foreground">
+        {title}
+      </h3>
 
-        <Link
-          href={`/services#${id}`}
-          className="inline-flex w-full items-center justify-center rounded-xl border border-border bg-muted px-4 py-3 font-bold text-primary transition-colors duration-200 hover:bg-accent hover:text-accent-foreground group-hover:border-primary/30"
+      <p className="relative mt-2 text-sm leading-relaxed text-muted-foreground">
+        {shortDesc}
+      </p>
+
+      {conditions.length > 0 && (
+        <ul className="relative mt-5 flex flex-wrap gap-1.5">
+          {conditions.slice(0, 3).map((condition) => (
+            <li
+              key={condition}
+              className="rounded-full border border-border bg-surface px-2.5 py-1 text-[0.6875rem] font-medium text-muted-foreground"
+            >
+              {condition}
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <span className="relative mt-6 inline-flex items-center gap-1.5 pt-1 text-sm font-semibold text-primary">
+        Treatment details
+        <svg
+          className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          aria-hidden="true"
         >
-          <span>Learn More</span>
-          <svg
-            className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </Link>
-      </div>
-    </div>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-7 7 7-7 7" />
+        </svg>
+      </span>
+    </Link>
   );
 }

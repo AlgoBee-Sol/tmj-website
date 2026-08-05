@@ -1,10 +1,15 @@
+import Image from "next/image";
+
 interface DoctorCardProps {
   name: string;
   designation: string;
+  credentials?: string;
   specializations: string[];
   experienceYears: number;
   bio: string;
   image?: string;
+  /** The first card in a grid can preload its portrait as the LCP candidate. */
+  priority?: boolean;
 }
 
 function getInitials(name: string): string {
@@ -19,52 +24,69 @@ function getInitials(name: string): string {
 export default function DoctorCard({
   name,
   designation,
+  credentials,
   specializations,
   experienceYears,
   bio,
   image,
+  priority = false,
 }: DoctorCardProps) {
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl md:flex-row">
-      {/* Image Side — initials avatar fallback; a real photo overlays it when present */}
-      <div className="relative h-72 overflow-hidden bg-gradient-to-br from-blue-600 to-sky-600 md:h-auto md:min-h-[18rem] md:w-2/5">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-6xl font-bold tracking-wide text-white/90">{getInitials(name)}</span>
-        </div>
-        {image && (
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-            style={{ backgroundImage: `url(${image})` }}
-          ></div>
+    <article className="card-surface card-hover flex h-full flex-col overflow-hidden">
+      <div className="relative aspect-[4/5] overflow-hidden bg-ink">
+        {image ? (
+          <Image
+            src={image}
+            alt={`${name}, ${designation} at The Muscular Junction`}
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            priority={priority}
+            className="object-cover object-top transition-transform duration-500 hover:scale-[1.03]"
+          />
+        ) : (
+          /* Monogram fallback — deliberate, not a broken image */
+          <div className="bg-ink-wash absolute inset-0 flex items-center justify-center">
+            <span
+              className="bg-grid absolute inset-0 text-white opacity-[0.06]"
+              aria-hidden="true"
+            />
+            <span className="relative font-display text-5xl font-bold tracking-wide text-white/85">
+              {getInitials(name)}
+            </span>
+          </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/10"></div>
+
+        <span className="absolute left-3 top-3 rounded-full bg-black/45 px-2.5 py-1 text-[0.6875rem] font-semibold text-white backdrop-blur-sm">
+          {experienceYears}+ yrs
+        </span>
       </div>
 
-      {/* Content Side */}
-      <div className="flex flex-col justify-center p-8 md:w-3/5">
-        <div className="mb-4">
-          <h3 className="text-2xl font-bold text-foreground transition-colors group-hover:text-primary">
-            {name}
-          </h3>
-          <div className="mb-1 mt-2 h-1 w-12 rounded-full bg-primary"></div>
-          <p className="font-semibold text-primary">{designation}</p>
-        </div>
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-display text-lg font-bold leading-tight text-foreground">
+          {name}
+          {credentials && (
+            <span className="ml-1.5 text-sm font-semibold text-subtle-foreground">
+              {credentials}
+            </span>
+          )}
+        </h3>
+        <p className="mt-1 text-sm font-semibold text-primary">{designation}</p>
 
-        <div className="mb-6 space-y-2 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <span className="rounded bg-accent p-1 text-accent-foreground">🏆</span>
-            <span>{specializations.join(", ")}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="rounded bg-accent p-1 text-accent-foreground">⏳</span>
-            <span>{experienceYears}+ Years Experience</span>
-          </div>
-        </div>
-
-        <p className="border-l-4 border-primary/20 pl-4 text-sm italic leading-relaxed text-subtle-foreground">
-          &quot;{bio}&quot;
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+          {bio}
         </p>
+
+        <ul className="mt-4 flex flex-wrap gap-1.5 border-t border-border pt-4">
+          {specializations.map((spec) => (
+            <li
+              key={spec}
+              className="rounded-full bg-primary-soft px-2.5 py-1 text-[0.6875rem] font-medium text-primary"
+            >
+              {spec}
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </article>
   );
 }

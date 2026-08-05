@@ -1,42 +1,31 @@
-import siteData from "@/data/site.json";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaLinkedinIn } from "react-icons/fa";
-import type { IconType } from "react-icons";
-
-interface SocialItem {
-  href: string;
-  label: string;
-  Icon: IconType;
-  hover: string; // brand hover background
-}
-
-const socials: SocialItem[] = [
-  { href: siteData.social.facebook, label: "Facebook", Icon: FaFacebookF, hover: "hover:bg-[#1877F2]" },
-  { href: siteData.social.instagram, label: "Instagram", Icon: FaInstagram, hover: "hover:bg-[#E1306C]" },
-  { href: siteData.social.whatsapp, label: "WhatsApp", Icon: FaWhatsapp, hover: "hover:bg-[#25D366]" },
-  { href: siteData.social.linkedin, label: "LinkedIn", Icon: FaLinkedinIn, hover: "hover:bg-[#0A66C2]" },
-];
+import { socialLinks } from "@/lib/site";
 
 /**
- * Fixed, vertically-centered social bar pinned to the right edge of the
- * viewport. Each pill expands to reveal its label on hover. Hidden on small
- * screens (the footer carries the socials there) to avoid covering content.
+ * Fixed social rail pinned to the right edge on large screens. Each pill
+ * expands to reveal its label on hover and fills with the platform's own brand
+ * colour, passed down as a `--brand` custom property.
+ *
+ * Hidden below `lg` — the mobile action bar and footer carry these links there.
+ * Order (WhatsApp → Instagram → LinkedIn → Facebook) is owned by `socialLinks`
+ * in `@/lib/site` so every placement on the site stays in sync.
  */
 export default function SocialSidebar() {
   return (
-    <div className="fixed right-0 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-end gap-2.5 md:flex">
-      {socials.map(({ href, label, Icon, hover }) => (
+    <div className="fixed right-0 top-1/2 z-30 hidden -translate-y-1/2 flex-col items-end gap-2 lg:flex">
+      {socialLinks.map(({ href, label, Icon, brand }) => (
         <a
           key={label}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className={`group flex items-center justify-end overflow-hidden rounded-l-xl border border-r-0 border-border bg-card text-foreground shadow-md transition-colors duration-300 ${hover}`}
+          style={{ "--brand": brand } as React.CSSProperties}
+          className="group flex items-center justify-end overflow-hidden rounded-l-xl border border-r-0 border-border bg-card text-muted-foreground shadow-sm transition-colors duration-300 hover:border-[var(--brand)] hover:bg-[var(--brand)] hover:text-white"
         >
-          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold text-white opacity-0 transition-all duration-300 group-hover:max-w-[160px] group-hover:pl-4 group-hover:opacity-100">
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold opacity-0 transition-all duration-300 group-hover:max-w-[10rem] group-hover:pl-4 group-hover:opacity-100">
             {label}
           </span>
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center text-lg transition-colors duration-300 group-hover:text-white">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center text-lg">
             <Icon aria-hidden="true" />
           </span>
         </a>

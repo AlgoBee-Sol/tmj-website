@@ -1,73 +1,60 @@
-import siteData from "@/data/site.json";
 import servicesData from "@/data/services.json";
+import doctorsData from "@/data/doctors.json";
+import { site, siteUrl, absoluteUrl, sameAs } from "@/lib/site";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteData.url;
-
-// Cities/areas the clinic serves — powers "physiotherapy near me" style local intent.
-const areaServed = [
-  "Islamabad",
-  "Rawalpindi",
-  "Bahria Town",
-  "DHA Islamabad",
-].map((name) => ({ "@type": "City", name }));
+const clinicId = `${siteUrl}/#clinic`;
+const founderId = `${siteUrl}/#dr-syed-mozaffar`;
 
 /**
- * JSON-LD structured data for local / medical SEO.
- * Rendered once in the root layout so it is present on every page.
- * Helps Google (and AI answer engines) surface the clinic in Maps,
- * rich results, knowledge panels and generative overviews.
+ * Site-wide JSON-LD for local and medical search.
+ *
+ * Rendered once from the root layout so the clinic entity is present on every
+ * page and Google can reconcile the NAP here with the Google Business Profile.
+ *
+ * Note: the Google rating is shown to visitors and links out to the real
+ * reviews page, but is deliberately NOT emitted as `aggregateRating`. Google's
+ * review-snippet guidelines exclude self-serving ratings a business publishes
+ * about itself, and marking them up risks a structured-data manual action.
  */
 export default function StructuredData() {
-  const clinicId = `${siteUrl}/#clinic`;
-  const founderId = `${siteUrl}/#dr-syed-mozaffar`;
-
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": ["MedicalClinic", "Physiotherapy", "LocalBusiness"],
         "@id": clinicId,
-        name: siteData.name,
-        alternateName: "TMJ Physiotherapy Islamabad",
+        name: site.name,
+        alternateName: site.shortName,
         description:
-          "Leading physiotherapy and rehabilitation clinic in Islamabad offering manual therapy, sports rehab, neuro rehab, orthopedic and pediatric physiotherapy, plus professional physiotherapy workshops.",
-        slogan: "Recover Faster. Move Better.",
+          "Evidence-based physiotherapy and rehabilitation clinic in Zone V, River Gardens, Islamabad — manual therapy, sports injury rehabilitation, orthopedic, neurological and pediatric physiotherapy, dry needling and cupping.",
+        slogan: "Assessed properly. Treated precisely. Back to moving.",
         url: siteUrl,
-        telephone: siteData.contact.phone,
-        email: siteData.contact.email,
+        telephone: site.contact.phone,
+        email: site.contact.email,
         image: [
-          `${siteUrl}/images/logo-tmj.png`,
-          `${siteUrl}/images/clinic-interior.png`,
+          absoluteUrl("/images/logo-tmj.png"),
+          absoluteUrl("/images/clinic-interior-1920.webp"),
         ],
-        logo: `${siteUrl}/images/logo-tmj.png`,
+        logo: absoluteUrl("/images/logo-tmj.png"),
         priceRange: "$$",
         currenciesAccepted: "PKR",
         paymentAccepted: "Cash, Credit Card, Debit Card, Bank Transfer",
         medicalSpecialty: "Physiotherapy",
-        knowsAbout: [
-          "Physiotherapy",
-          "Manual Therapy",
-          "Sports Rehabilitation",
-          "Neurological Rehabilitation",
-          "Orthopedic Physiotherapy",
-          "Pediatric Physiotherapy",
-          "Dry Needling",
-          "Cupping Therapy",
-        ],
+        knowsAbout: servicesData.map((s) => s.title),
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Gardens Street, Shah's Arcade, River Gardens",
-          addressLocality: "Islamabad",
-          addressRegion: "Islamabad Capital Territory",
-          addressCountry: "PK",
+          streetAddress: site.contact.streetAddress,
+          addressLocality: site.contact.locality,
+          addressRegion: site.contact.region,
+          addressCountry: site.contact.country,
         },
         geo: {
           "@type": "GeoCoordinates",
-          latitude: siteData.contact.geo.lat,
-          longitude: siteData.contact.geo.lng,
+          latitude: site.contact.geo.lat,
+          longitude: site.contact.geo.lng,
         },
-        hasMap: siteData.contact.mapEmbedUrl,
-        areaServed,
+        hasMap: site.contact.mapLink,
+        areaServed: site.areasServed.map((name) => ({ "@type": "City", name })),
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -77,24 +64,55 @@ export default function StructuredData() {
               "Wednesday",
               "Thursday",
               "Friday",
-              "Saturday",
             ],
             opens: "09:00",
             closes: "21:00",
           },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Saturday",
+            opens: "10:00",
+            closes: "18:00",
+          },
         ],
         founder: { "@id": founderId },
-        employee: { "@id": founderId },
-        sameAs: [
-          siteData.social.facebook,
-          siteData.social.instagram,
-          siteData.social.linkedin,
-        ],
-        availableService: servicesData.map((service) => ({
-          "@type": "MedicalTherapy",
-          name: service.title,
-          description: service.shortDesc,
+        employee: doctorsData.map((doc) => ({
+          "@type": ["Person", "Physician"],
+          name: doc.name,
+          jobTitle: doc.designation,
+          medicalSpecialty: "Physiotherapy",
+          knowsAbout: doc.specializations,
         })),
+        sameAs,
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Physiotherapy & Rehabilitation Services",
+          itemListElement: servicesData.map((service) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "MedicalTherapy",
+              name: service.title,
+              description: service.shortDesc,
+              url: absoluteUrl(`/services/${service.id}`),
+            },
+          })),
+        },
+        potentialAction: {
+          "@type": "ReserveAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: absoluteUrl("/appointment"),
+            inLanguage: "en",
+            actionPlatform: [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform",
+            ],
+          },
+          result: {
+            "@type": "Reservation",
+            name: "Physiotherapy appointment",
+          },
+        },
       },
       {
         "@type": ["Person", "Physician"],
@@ -111,14 +129,15 @@ export default function StructuredData() {
           "Mulligan Techniques",
           "HVLA Chiropractic",
         ],
-        url: `${siteUrl}/doctors`,
+        url: absoluteUrl("/doctors"),
+        image: absoluteUrl("/images/doctors/doctor-1.jpg"),
       },
       {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
-        name: siteData.name,
-        description: siteData.tagline,
+        name: site.name,
+        description: site.positioning,
         inLanguage: "en",
         publisher: { "@id": clinicId },
       },
@@ -128,7 +147,7 @@ export default function StructuredData() {
   return (
     <script
       type="application/ld+json"
-      // JSON-LD is trusted, developer-authored content built from local data.
+      // Developer-authored, built from local data only.
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );

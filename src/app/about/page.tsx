@@ -1,122 +1,196 @@
-import siteData from "@/data/site.json";
+import type { Metadata } from "next";
+import { FiTarget, FiEye, FiHeart, FiCheck } from "react-icons/fi";
 import PageHero from "@/components/layout/PageHero";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
-import { FaHeart, FaHandshake, FaLightbulb } from "react-icons/fa";
+import SectionHeading from "@/components/ui/SectionHeading";
+import GoogleRating from "@/components/ui/GoogleRating";
+import CtaBand from "@/components/ui/CtaBand";
+import WhyUs from "@/components/home/WhyUs";
+import { site } from "@/lib/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About Our Physiotherapy Clinic in Islamabad",
   description:
-    "Learn about The Muscular Junction — a trusted physiotherapy & rehabilitation clinic in Islamabad led by Dr. Syed Mozaffar, built on patient-centric, evidence-based care.",
+    "The Muscular Junction is an evidence-based physiotherapy and rehabilitation clinic in Zone V, River Gardens, Islamabad — five years of assessment-led care, led by Dr. Syed Mozaffar.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   {
-    icon: FaHeart,
-    title: "Patient-Centric Care",
-    desc: "Your health and comfort are our top priorities. We tailor every session to your unique needs.",
+    Icon: FiTarget,
+    title: "Precision over guesswork",
+    desc: "We do not treat a region because it hurts. We assess, identify the structure responsible, and treat that — then re-test to prove it worked.",
   },
   {
-    icon: FaHandshake,
-    title: "Integrity & Trust",
-    desc: "We believe in honest communication and transparent treatment plans with no hidden costs.",
+    Icon: FiEye,
+    title: "Honesty about outcomes",
+    desc: "If physiotherapy is not the right answer for your problem, we will say so and point you to who can help. We would rather lose a booking than waste your money.",
   },
   {
-    icon: FaLightbulb,
-    title: "Continuous Innovation",
-    desc: "We stay updated with the latest advancements in physiotherapy to provide the best care.",
+    Icon: FiHeart,
+    title: "Care that respects your time",
+    desc: "Clear session counts, no open-ended packages, and a discharge plan from the start. Recovery should have an endpoint you can see.",
   },
+];
+
+const facilities = [
+  "Private, curtained treatment rooms",
+  "Full rehabilitation gym and parallel bars",
+  "Electrotherapy and modality suite",
+  "Dedicated pediatric therapy space",
+  "Sterile, single-use dry needling supplies",
+  "Ground-floor access with parking outside",
 ];
 
 export default function AboutPage() {
   return (
-    <div className="bg-background pb-24">
+    <>
       <Breadcrumbs items={[{ name: "About Us", path: "/about" }]} />
+
       <PageHero
         eyebrow="Who We Are"
-        title="About Us"
-        subtitle="Dedicated to restoring your health through advanced physiotherapy and compassionate care."
+        title="Five years of evidence-based physiotherapy in Islamabad"
+        subtitle={`The Muscular Junction opened in ${new Date().getFullYear() - site.yearsOfExcellence} with one aim: to make properly assessed, properly measured physiotherapy the normal standard in Islamabad rather than the exception.`}
       />
 
-      <div className="container mx-auto mt-16 px-4 md:px-6">
-        {/* Mission */}
-        <div className="mb-20 grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-          <div className="overflow-hidden rounded-2xl border border-border shadow-xl">
-            <img
-              src="/images/clinic-interior.png"
-              alt="The Muscular Junction clinic interior"
-              className="h-full w-full object-cover"
-              style={{ minHeight: "320px", backgroundColor: "#e2e8f0" }}
-            />
-          </div>
-          <div>
-            <span className="mb-2 block text-sm font-bold uppercase tracking-widest text-primary">
-              Our Mission
-            </span>
-            <h2 className="mb-6 text-3xl font-bold text-foreground">
-              Empowering Pain-Free, Active Lives
-            </h2>
-            <p className="mb-6 text-lg leading-relaxed text-muted-foreground">
-              At {siteData.name}, our mission is to provide world-class
-              rehabilitation services that empower our patients to live
-              pain-free, active lives. We believe in a holistic approach,
-              treating not just the symptoms but the root cause of the problem.
-            </p>
-            <p className="mb-8 leading-relaxed text-muted-foreground">
-              Established with a vision to bridge the gap between injury and
-              recovery, we utilize the latest evidence-based techniques and
-              state-of-the-art equipment to ensure faster and safer recovery.
-            </p>
+      {/* ---------------- Story ---------------- */}
+      <section className="section">
+        <div className="container-page">
+          <div className="grid items-start gap-12 lg:grid-cols-2">
+            <div>
+              {/* eslint-disable-next-line @next/next/no-img-element --
+                  see Hero.tsx: unoptimized next/image cannot emit a srcset. */}
+              <img
+                src="/images/clinic-interior-1920.webp"
+                srcSet="/images/clinic-interior-1024.webp 1024w, /images/clinic-interior-1920.webp 1920w"
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                alt="Reception and rehabilitation area at The Muscular Junction clinic, River Gardens, Islamabad"
+                width={1920}
+                height={1033}
+                loading="lazy"
+                decoding="async"
+                className="w-full rounded-2xl border border-border object-cover shadow-[var(--shadow-lg)]"
+              />
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="rounded-xl border border-border bg-accent p-5">
-                <span className="mb-1 block text-4xl font-bold text-primary">
-                  4+
-                </span>
-                <span className="font-medium text-muted-foreground">
-                  Years Experience
-                </span>
+              <div className="mt-6 grid grid-cols-2 gap-4">
+                <div className="card-surface p-5">
+                  <span className="tabular block font-display text-3xl font-bold text-primary">
+                    {site.yearsOfExcellence}
+                  </span>
+                  <span className="mt-1 block text-sm font-medium text-muted-foreground">
+                    Years of Excellence
+                  </span>
+                </div>
+                <div className="card-surface p-5">
+                  <span className="tabular block font-display text-3xl font-bold text-primary">
+                    {site.patientsTreated}
+                  </span>
+                  <span className="mt-1 block text-sm font-medium text-muted-foreground">
+                    Patients Treated
+                  </span>
+                </div>
               </div>
-              <div className="rounded-xl border border-border bg-accent p-5">
-                <span className="mb-1 block text-4xl font-bold text-primary">
-                  1500+
-                </span>
-                <span className="font-medium text-muted-foreground">
-                  Happy Patients
-                </span>
+            </div>
+
+            <div>
+              <span className="eyebrow">Our Story</span>
+              <h2 className="display-2 mt-4 text-balance text-foreground">
+                Built to close the gap between injury and recovery
+              </h2>
+
+              <div className="mt-6 space-y-5 text-[1.0625rem] leading-relaxed text-muted-foreground">
+                <p>
+                  Dr. Syed Mozaffar founded The Muscular Junction after seeing
+                  the same pattern too often: patients handed a set of exercises
+                  and a heat pack, discharged without ever being told what was
+                  actually wrong, and back in pain within a month.
+                </p>
+                <p>
+                  We built the clinic around the opposite approach. Every
+                  patient gets a full physical assessment before any treatment
+                  begins, a diagnosis explained in language that makes sense, and
+                  a plan with a realistic number of sessions attached to it.
+                  Progress is re-measured as we go — so when something is not
+                  working, we know early and change it.
+                </p>
+                <p>
+                  That standard is also why we teach. Dr. Mozaffar runs certified
+                  workshops in dry needling, Mulligan techniques, HVLA and
+                  cupping for practising physiotherapists across Pakistan,
+                  because raising the floor for the profession helps patients
+                  well beyond our own treatment rooms.
+                </p>
               </div>
+
+              <GoogleRating variant="card" className="mt-8" />
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Values */}
-        <div>
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <span className="mb-2 block text-sm font-bold uppercase tracking-widest text-primary">
-              Our Core Values
-            </span>
-            <h2 className="text-3xl font-bold text-foreground">
-              What We Stand For
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {values.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="rounded-2xl border border-border bg-card p-8 transition duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl"
-              >
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 text-2xl text-white shadow-lg shadow-blue-500/20">
+      {/* ---------------- Values ---------------- */}
+      <section className="section bg-surface">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="What We Stand For"
+            title="Three commitments we hold ourselves to"
+          />
+
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
+            {values.map(({ Icon, title, desc }) => (
+              <div key={title} className="card-surface card-hover p-7">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-soft text-xl text-primary ring-1 ring-primary-line">
                   <Icon aria-hidden="true" />
-                </div>
-                <h3 className="mb-3 text-xl font-bold text-foreground">
+                </span>
+                <h3 className="mt-5 font-display text-lg font-bold text-foreground">
                   {title}
                 </h3>
-                <p className="leading-relaxed text-muted-foreground">{desc}</p>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  {desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* ---------------- Facilities ---------------- */}
+      <section className="section">
+        <div className="container-page">
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <span className="eyebrow">The Clinic</span>
+              <h2 className="display-2 mt-4 text-balance text-foreground">
+                A space built for rehabilitation, not just treatment
+              </h2>
+              <p className="lead mt-5 text-muted-foreground">
+                Hands-on therapy needs a private room. Loading and gait work need
+                actual floor space and equipment. Our clinic in{" "}
+                {site.contact.address} has both.
+              </p>
+            </div>
+
+            <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+              {facilities.map((facility) => (
+                <li
+                  key={facility}
+                  className="card-surface flex items-start gap-3 p-5"
+                >
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-success-soft text-success">
+                    <FiCheck className="h-3 w-3" aria-hidden="true" />
+                  </span>
+                  <span className="text-[0.9375rem] text-muted-foreground">
+                    {facility}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <WhyUs showCta={false} />
+      <CtaBand />
+    </>
   );
 }

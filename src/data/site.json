@@ -1,18 +1,57 @@
 {
   "name": "The Muscular Junction",
+  "shortName": "TMJ Physiotherapy",
   "tagline": "Physiotherapy & Rehabilitation Center",
+  "positioning": "Evidence-based physiotherapy & rehabilitation in Islamabad",
   "url": "https://themuscularjunction.com",
+  "yearsOfExcellence": 5,
+  "patientsTreated": "300+",
   "contact": {
     "phone": "+92 339 6116665",
+    "phoneDial": "+923396116665",
     "email": "themuscularjunction@gmail.com",
-    "address": "Gardens Street, Shah's Arcade, River Gardens, Islamabad, Pakistan",
+    "address": "Zone V, River Gardens, Islamabad",
+    "streetAddress": "Zone V, River Gardens",
+    "locality": "Islamabad",
+    "region": "Islamabad Capital Territory",
+    "country": "PK",
+    "countryName": "Pakistan",
     "geo": { "lat": 33.549854, "lng": 73.168753 },
-    "mapEmbedUrl": "https://www.google.com/maps?q=33.549854,73.168753&hl=en&z=18&output=embed"
+    "mapEmbedUrl": "https://www.google.com/maps?q=33.549854,73.168753&hl=en&z=18&output=embed",
+    "mapLink": "https://maps.app.goo.gl/FYRvSV1PP8b67fc79"
   },
+  "rating": {
+    "value": "5.0",
+    "stars": 5,
+    "count": 63,
+    "countLabel": "60+",
+    "platform": "Google",
+    "url": "https://maps.app.goo.gl/FYRvSV1PP8b67fc79"
+  },
+  "hours": {
+    "summary": "Mon – Sat · 9:00 AM – 9:00 PM",
+    "schedule": [
+      { "days": "Monday – Saturday", "opens": "9:00 AM", "closes": "9:00 PM" },
+      { "days": "Sunday", "opens": "", "closes": "", "closed": true }
+    ]
+  },
+  "areasServed": [
+    "River Gardens",
+    "Islamabad",
+    "Rawalpindi",
+    "Bahria Town",
+    "DHA Islamabad",
+    "Gulberg Greens",
+    "Soan Gardens",
+    "PWD Housing Society",
+    "Naval Anchorage",
+    "Jinnah Gardens",
+    "Zone V"
+  ],
   "social": {
-    "instagram": "https://www.instagram.com/themuscularjunction",
-    "facebook": "https://www.facebook.com/themuscularjunction",
     "whatsapp": "https://wa.me/923396116665",
-    "linkedin": "https://www.linkedin.com/company/themuscularjunction"
+    "instagram": "https://www.instagram.com/themuscularjunction",
+    "linkedin": "https://www.linkedin.com/company/themuscularjunction",
+    "facebook": "https://www.facebook.com/themuscularjunction"
   }
 }

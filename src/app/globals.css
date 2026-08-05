@@ -6,157 +6,334 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* =========================================================
-   Semantic color tokens (swap between light & dark)
+   Design tokens
+   -----------------------------------------------------------
+   Palette is anchored on the clinic mark: a deep clinical blue
+   with a cyan-teal accent, over a near-white clinical surface.
+   Every colour used in the UI resolves through a token here so
+   light and dark stay in lock-step.
    ========================================================= */
 :root {
   color-scheme: light;
 
-  --background: #f8fafc;          /* page background        */
-  --foreground: #0f172a;          /* strong text / headings */
-  --card: #ffffff;                /* raised surfaces        */
-  --card-foreground: #0f172a;
-  --muted: #f1f5f9;               /* subtle section bg      */
-  --muted-foreground: #475569;    /* body / secondary text  */
-  --subtle-foreground: #64748b;   /* meta / captions        */
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #2563eb;
+  /* Surfaces */
+  --background: #ffffff;
+  --surface: #f4f8fc;           /* alternating section band  */
+  --card: #ffffff;
 
-  --primary: #2563eb;             /* Blue 600 */
+  /* Text */
+  --foreground: #08192b;        /* headings / strong text    */
+  --muted-foreground: #4a5f73;  /* body copy                 */
+  --subtle-foreground: #6b8095; /* meta, captions            */
+
+  /* Lines & fields */
+  --border: #e3ebf3;
+  --border-strong: #cfdde9;
+  --input: #d5e2ee;
+  --ring: #0c5fcd;
+
+  /* Brand */
+  --primary: #0c5fcd;
   --primary-foreground: #ffffff;
-  --primary-dark: #1d4ed8;        /* Blue 700 */
-  --primary-light: #dbeafe;       /* Blue 100 */
+  --primary-dark: #0a4ca6;
+  --primary-soft: #eaf2fe;      /* tinted fill               */
+  --primary-line: #c9defb;      /* tinted border             */
 
-  --secondary: #0ea5e9;           /* Sky 500 */
-  --secondary-dark: #0284c7;
+  --teal: #0d8fa0;
+  --teal-soft: #e4f6f8;
 
-  --accent: #eff6ff;              /* soft blue tint bg */
-  --accent-foreground: #1d4ed8;   /* text on accent    */
+  /* Deep sections (hero, CTA bands) */
+  --ink: #051323;
+  --ink-2: #0a2137;
+  --on-ink: #eef5fb;
+  --on-ink-muted: #a6bed3;
+
+  /* Signals */
+  --rating: #f0a020;
+  --success: #0f9d63;
+  --success-soft: #e6f7f0;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1eb457;
+
+  /* Elevation — layered, low-spread shadows read as "clinical" */
+  --shadow-xs: 0 1px 2px rgb(8 25 43 / 0.05);
+  --shadow-sm: 0 1px 2px rgb(8 25 43 / 0.04), 0 2px 6px rgb(8 25 43 / 0.04);
+  --shadow-md: 0 2px 4px rgb(8 25 43 / 0.04), 0 8px 20px rgb(8 25 43 / 0.06);
+  --shadow-lg: 0 4px 8px rgb(8 25 43 / 0.04), 0 18px 40px rgb(8 25 43 / 0.09);
+  --shadow-primary: 0 8px 24px rgb(12 95 205 / 0.24);
 }
 
 .dark {
   color-scheme: dark;
 
-  --background: #0b1120;
-  --foreground: #f1f5f9;
-  --card: #131c31;
-  --card-foreground: #f1f5f9;
-  --muted: #0f1728;
-  --muted-foreground: #94a3b8;
-  --subtle-foreground: #7c8aa5;
-  --border: #24304a;
-  --input: #2a3650;
-  --ring: #3b82f6;
+  --background: #060e18;
+  --surface: #0a1522;
+  --card: #0d1a29;
 
-  --primary: #3b82f6;             /* Blue 500 — pops on dark */
-  --primary-foreground: #ffffff;
-  --primary-dark: #60a5fa;
-  --primary-light: #1e3a8a;
+  --foreground: #e9f1f8;
+  --muted-foreground: #9db0c2;
+  --subtle-foreground: #7d92a6;
 
-  --secondary: #38bdf8;
-  --secondary-dark: #0ea5e9;
+  --border: #1c2d41;
+  --border-strong: #273b53;
+  --input: #24374d;
+  --ring: #4c9aff;
 
-  --accent: #172554;              /* Blue 950 */
-  --accent-foreground: #bfdbfe;
+  --primary: #4c9aff;
+  --primary-foreground: #04101d;
+  --primary-dark: #7ab5ff;
+  --primary-soft: #0f2540;
+  --primary-line: #1d3f66;
+
+  --teal: #2cc9d6;
+  --teal-soft: #0a2b31;
+
+  --ink: #04101d;
+  --ink-2: #0a1c2d;
+  --on-ink: #e9f1f8;
+  --on-ink-muted: #9db0c2;
+
+  --rating: #ffb020;
+  --success: #2ec98a;
+  --success-soft: #08281c;
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1eb457;
+
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4), 0 2px 6px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 2px 4px rgb(0 0 0 / 0.4), 0 8px 20px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 4px 8px rgb(0 0 0 / 0.4), 0 18px 40px rgb(0 0 0 / 0.5);
+  --shadow-primary: 0 8px 24px rgb(0 0 0 / 0.45);
 }
 
 /* =========================================================
    Expose tokens to Tailwind utilities
-   (bg-background, text-foreground, bg-card, border-border, …)
    ========================================================= */
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
   --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-muted: var(--muted);
+
+  --color-foreground: var(--foreground);
   --color-muted-foreground: var(--muted-foreground);
   --color-subtle-foreground: var(--subtle-foreground);
+
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-input: var(--input);
   --color-ring: var(--ring);
 
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-dark: var(--primary-dark);
-  --color-primary-light: var(--primary-light);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-line: var(--primary-line);
 
-  --color-secondary: var(--secondary);
-  --color-secondary-dark: var(--secondary-dark);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
 
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-on-ink: var(--on-ink);
+  --color-on-ink-muted: var(--on-ink-muted);
+
+  --color-rating: var(--rating);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-dark: var(--whatsapp-dark);
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), var(--font-body), ui-sans-serif, sans-serif;
+
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-primary: var(--shadow-primary);
 }
 
 /* =========================================================
-   Base styles
+   Base
    ========================================================= */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 6rem; /* clear the sticky header (h-20) */
+  scroll-padding-top: 7rem;     /* clears the sticky header */
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  overflow-x: hidden;
+  font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   text-rendering: optimizeLegibility;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Selection */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading), var(--font-body), ui-sans-serif, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Consistent, visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 ::selection {
-  background-color: color-mix(in srgb, var(--primary) 25%, transparent);
+  background-color: color-mix(in srgb, var(--primary) 22%, transparent);
 }
 
-/* =========================================================
-   Keyframes
-   ========================================================= */
-@keyframes fade-in-up {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse-slow {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50%      { opacity: 0.3;  transform: scale(1.05); }
-}
-@keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-14px); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
-}
+/* Tabular figures keep stat rows from jittering */
+.tabular { font-variant-numeric: tabular-nums; }
 
 /* =========================================================
-   Custom utilities
+   Layout primitives
    ========================================================= */
 @layer utilities {
-  .text-balance { text-wrap: balance; }
-
-  .animate-fade-in-up {
-    opacity: 0;
-    animation: fade-in-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  /* One page gutter, one max width — used by every section. */
+  .container-page {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
   }
-  .animate-pulse-slow { animation: pulse-slow 8s ease-in-out infinite; }
-  .animate-bounce-slow { animation: bounce-slow 6s ease-in-out infinite; }
-  .animate-float { animation: float 6s ease-in-out infinite; }
+  @media (min-width: 768px) {
+    .container-page { padding-inline: 2rem; }
+  }
+
+  .container-prose {
+    width: 100%;
+    max-width: 46rem;
+    margin-inline: auto;
+  }
+
+  /* Vertical rhythm: one scale, three densities. */
+  .section      { padding-block: clamp(4rem, 3rem + 4vw, 7rem); }
+  .section-tight{ padding-block: clamp(2.75rem, 2rem + 3vw, 4.5rem); }
+
+  /* ---- Type scale (fluid) ---- */
+  .display-1 {
+    font-size: clamp(2.5rem, 1.35rem + 4.6vw, 4.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    font-weight: 700;
+  }
+  .display-2 {
+    font-size: clamp(2rem, 1.35rem + 2.6vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+  .display-3 {
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.022em;
+    font-weight: 700;
+  }
+  .lead {
+    font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+    line-height: 1.65;
+  }
+
+  /* Small caps label that opens most sections */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.5rem;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+  .eyebrow-center { justify-content: center; }
+
+  /* ---- Surfaces ---- */
+  .card-surface {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+      border-color 0.25s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-line);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Hairline divider used inside dark bands */
+  .rule-ink {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgb(255 255 255 / 0.16),
+      transparent
+    );
+  }
+
+  /* ---- Decorative ---- */
+  /* Faint clinical grid — pure CSS, no image request. */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, currentColor 1px, transparent 1px),
+      linear-gradient(to bottom, currentColor 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  /* Soft radial wash for dark bands — cheaper than a blurred blob. */
+  .bg-ink-wash {
+    background-image:
+      radial-gradient(60% 70% at 78% 8%, rgb(12 95 205 / 0.34), transparent 65%),
+      radial-gradient(55% 60% at 10% 92%, rgb(13 143 160 / 0.24), transparent 62%);
+  }
+
+  /* ---- Motion ---- */
+  .rise {
+    animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
 }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes ping-soft {
+  0%        { transform: scale(1);   opacity: 0.7; }
+  70%, 100% { transform: scale(2.4); opacity: 0; }
+}
+.animate-ping-soft { animation: ping-soft 2.4s cubic-bezier(0, 0, 0.2, 1) infinite; }
 
 /* =========================================================
    Accessibility
    ========================================================= */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .animate-fade-in-up,
-  .animate-pulse-slow,
-  .animate-bounce-slow,
-  .animate-float {
-    animation: none;
-    opacity: 1;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
+  .rise { opacity: 1; transform: none; }
 }

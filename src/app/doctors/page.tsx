@@ -1,16 +1,17 @@
-import DoctorCard from "@/components/doctors/DoctorCard";
+import type { Metadata } from "next";
 import doctorsData from "@/data/doctors.json";
+import DoctorCard from "@/components/doctors/DoctorCard";
 import PageHero from "@/components/layout/PageHero";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import JsonLd from "@/components/seo/JsonLd";
-import siteData from "@/data/site.json";
+import GoogleRating from "@/components/ui/GoogleRating";
+import CtaBand from "@/components/ui/CtaBand";
+import { site, absoluteUrl } from "@/lib/site";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteData.url;
-
-export const metadata = {
+export const metadata: Metadata = {
   title: "Our Physiotherapists — Dr. Syed Mozaffar & Team",
   description:
-    "Meet the experienced physiotherapists at The Muscular Junction, Islamabad — led by founder Dr. Syed Mozaffar, with specialists in sports injury, manual therapy, neuro and pediatric rehabilitation.",
+    "Meet the physiotherapists at The Muscular Junction, River Gardens, Islamabad — led by founder Dr. Syed Mozaffar, with specialists in sports injury, manual therapy, women's health, neurological and pediatric rehabilitation.",
   alternates: { canonical: "/doctors" },
 };
 
@@ -28,30 +29,42 @@ const doctorsItemList = {
       description: doc.bio,
       medicalSpecialty: "Physiotherapy",
       knowsAbout: doc.specializations,
-      worksFor: { "@type": "MedicalClinic", name: siteData.name },
-      image: `${siteUrl}${doc.image}`,
+      worksFor: { "@type": "MedicalClinic", name: site.name },
+      ...(doc.image ? { image: absoluteUrl(doc.image) } : {}),
     },
   })),
 };
 
 export default function DoctorsPage() {
   return (
-    <div className="bg-background pb-24">
+    <>
       <Breadcrumbs items={[{ name: "Our Team", path: "/doctors" }]} />
       <JsonLd data={doctorsItemList} />
+
       <PageHero
         eyebrow="Our Team"
-        title="Meet Our Experts"
-        subtitle="Highly qualified professionals dedicated to your recovery and well-being."
+        title="The physiotherapists behind your recovery"
+        subtitle="Four clinicians with defined specialties, so you are matched to the right one from the first visit — including a female physiotherapist for patients who prefer one."
       />
 
-      <div className="container mx-auto mt-12 px-4 md:px-6">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 lg:grid-cols-2">
-          {doctorsData.map((doc) => (
-            <DoctorCard key={doc.id} {...doc} />
-          ))}
+      <section className="section">
+        <div className="container-page">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {doctorsData.map((doc, i) => (
+              <DoctorCard key={doc.id} {...doc} priority={i === 0} />
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <GoogleRating variant="card" className="w-full max-w-md" />
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <CtaBand
+        title="Book with the right therapist"
+        description="Tell us what is going on and we will schedule you with the clinician who treats it every day. Mention if you would prefer a female physiotherapist."
+      />
+    </>
   );
 }

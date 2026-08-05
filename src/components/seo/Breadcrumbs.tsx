@@ -1,7 +1,5 @@
-import siteData from "@/data/site.json";
 import JsonLd from "./JsonLd";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteData.url;
+import { siteUrl } from "@/lib/site";
 
 export interface Crumb {
   name: string;

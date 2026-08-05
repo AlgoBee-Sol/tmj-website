@@ -1,0 +1,19 @@
+{
+  "about": "The Muscular Junction is an evidence-based physiotherapy and rehabilitation clinic in Zone V, River Gardens, Islamabad — restoring movement and confidence through assessment-led, individually planned care.",
+  "primary": [
+    { "label": "Services", "href": "/services" },
+    { "label": "Conditions", "href": "/services#conditions" },
+    { "label": "Our Team", "href": "/doctors" },
+    { "label": "Workshops", "href": "/workshops" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "footerClinic": [
+    { "label": "About Us", "href": "/about" },
+    { "label": "Our Team", "href": "/doctors" },
+    { "label": "Patient Reviews", "href": "/#reviews" },
+    { "label": "Workshops", "href": "/workshops" },
+    { "label": "Contact & Location", "href": "/contact" },
+    { "label": "Book Appointment", "href": "/appointment" }
+  ]
+}

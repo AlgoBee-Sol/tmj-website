@@ -2,25 +2,23 @@
   {
     "id": 1,
     "name": "Ms. Sohail",
-    "text": "The team at TheMuscularJunction is amazing! They helped me recover from my knee surgery much faster than I expected.",
-    "role": "Patient",
-    "videoUrl": "https://www.instagram.com/themuscularjunction",
-    "thumbnail": "/images/testimonials/testimonial-1.jpg"
+    "role": "Post-operative knee rehab",
+    "text": "The team at The Muscular Junction is amazing. They helped me recover from my knee surgery much faster than I expected, and every session had a clear plan behind it.",
+    "videoUrl": "https://www.instagram.com/themuscularjunction"
   },
   {
     "id": 2,
     "name": "Brig. Abdul Ghafoor",
-    "text": "Excellent service and professional doctors. The manual therapy sessions were a game changer for my back pain.",
-    "role": "Patient",
+    "role": "Chronic back pain",
+    "text": "Excellent service and genuinely professional doctors. The manual therapy sessions were a game changer for my back pain after years of trying other things.",
     "videoUrl": "https://www.instagram.com/reel/DXZgbsHDVox/",
-    "thumbnail": "/images/testimonials/testimonial-2.jpeg"
+    "thumbnail": "/images/testimonials/testimonial-2.webp"
   },
   {
     "id": 3,
     "name": "Mr. Tariq Abrar",
-    "text": "Highly recommended for anyone looking for serious physiotherapy. The facilities are top-notch.",
-    "role": "Patient",
-    "videoUrl": "https://www.instagram.com/themuscularjunction",
-    "thumbnail": "/images/testimonials/testimonial-3.jpg"
+    "role": "Sports injury",
+    "text": "Highly recommended for anyone looking for serious physiotherapy. They explained exactly what was wrong and what the plan was, week by week.",
+    "videoUrl": "https://www.instagram.com/themuscularjunction"
   }
 ]

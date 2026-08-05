@@ -1,34 +1,43 @@
+import type { ReactNode } from "react";
+
 interface PageHeroProps {
   title: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
   eyebrow?: string;
+  children?: ReactNode;
 }
 
-export default function PageHero({ title, subtitle, eyebrow }: PageHeroProps) {
+/** Shared inner-page header. One ink band, one type scale, every route. */
+export default function PageHero({
+  title,
+  subtitle,
+  eyebrow,
+  children,
+}: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 py-20 text-white md:py-24">
-      {/* Decorative blobs */}
-      <div className="absolute right-[-6%] top-[-30%] h-[360px] w-[360px] animate-pulse-slow rounded-full bg-blue-500 opacity-20 mix-blend-multiply blur-3xl" />
+    <section className="relative isolate overflow-hidden bg-ink">
+      <div className="bg-ink-wash absolute inset-0 -z-10" aria-hidden="true" />
       <div
-        className="absolute bottom-[-40%] left-[-6%] h-[380px] w-[380px] animate-pulse-slow rounded-full bg-sky-600 opacity-20 mix-blend-multiply blur-3xl"
-        style={{ animationDelay: "2s" }}
+        className="bg-grid absolute inset-0 -z-10 text-white opacity-[0.05]"
+        aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.08]" />
 
-      <div className="container relative z-10 mx-auto max-w-3xl px-4 text-center md:px-6">
+      <div className="container-page py-16 text-center md:py-20">
         {eyebrow && (
-          <span className="mb-3 inline-block rounded-full border border-blue-500/30 bg-blue-800/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-300 backdrop-blur-sm">
-            {eyebrow}
-          </span>
+          <span className="eyebrow eyebrow-center text-teal">{eyebrow}</span>
         )}
-        <h1 className="text-balance text-4xl font-bold tracking-tight md:text-5xl">
+
+        <h1 className="display-1 mx-auto mt-4 max-w-4xl text-balance text-white">
           {title}
         </h1>
+
         {subtitle && (
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-300">
+          <p className="lead mx-auto mt-5 max-w-2xl text-on-ink-muted">
             {subtitle}
           </p>
         )}
+
+        {children && <div className="mt-8">{children}</div>}
       </div>
     </section>
   );

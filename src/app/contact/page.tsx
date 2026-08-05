@@ -1,102 +1,138 @@
-import siteData from "@/data/site.json";
+import type { Metadata } from "next";
+import { FiPhone, FiMail, FiMapPin, FiMessageSquare } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import PageHero from "@/components/layout/PageHero";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
-import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import LocationSection from "@/components/home/LocationSection";
+import CtaBand from "@/components/ui/CtaBand";
+import GoogleRating from "@/components/ui/GoogleRating";
+import {
+  site,
+  telHref,
+  mailHref,
+  waHref,
+  defaultWaMessage,
+} from "@/lib/site";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact & Location — Physiotherapy Clinic in Islamabad",
   description:
-    "Contact The Muscular Junction physiotherapy clinic in River Gardens, Islamabad. Call, WhatsApp or email us to book an appointment, or visit us in person. Open Mon–Sat, 9am–9pm.",
+    "Contact The Muscular Junction physiotherapy clinic in Zone V, River Gardens, Islamabad. Call, WhatsApp or email to book an appointment. Open Mon–Fri 9am–9pm, Sat 10am–6pm.",
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
-  const details = [
-    {
-      icon: FiMapPin,
-      title: "Address",
-      content: siteData.contact.address,
-    },
-    {
-      icon: FiPhone,
-      title: "Phone",
-      content: siteData.contact.phone,
-      href: `tel:${siteData.contact.phone}`,
-    },
-    {
-      icon: FiMail,
-      title: "Email",
-      content: siteData.contact.email,
-      href: `mailto:${siteData.contact.email}`,
-    },
-  ];
+const channels = [
+  {
+    Icon: FaWhatsapp,
+    title: "WhatsApp",
+    detail: "Fastest — usually answered same day",
+    action: "Start a chat",
+    href: waHref(defaultWaMessage),
+    accent: "text-[var(--whatsapp)]",
+  },
+  {
+    Icon: FiPhone,
+    title: "Phone",
+    detail: site.contact.phone,
+    action: "Call the clinic",
+    href: telHref,
+    accent: "text-primary",
+  },
+  {
+    Icon: FiMail,
+    title: "Email",
+    detail: site.contact.email,
+    action: "Send an email",
+    href: mailHref,
+    accent: "text-primary",
+  },
+  {
+    Icon: FiMessageSquare,
+    title: "Booking form",
+    detail: "Tell us the details up front",
+    action: "Open the form",
+    href: "/appointment",
+    accent: "text-primary",
+  },
+];
 
+export default function ContactPage() {
   return (
-    <div className="bg-background pb-24">
+    <>
       <Breadcrumbs items={[{ name: "Contact Us", path: "/contact" }]} />
+
       <PageHero
         eyebrow="Get In Touch"
-        title="Contact Us"
-        subtitle="We are here to help. Reach out via phone, email, or visit our clinic."
+        title="Contact The Muscular Junction"
+        subtitle={`We are in ${site.contact.address}. Reach us whichever way suits you — WhatsApp is usually the quickest.`}
       />
 
-      <div className="container mx-auto mt-12 px-4 md:px-6">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-          {/* Contact Info */}
-          <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
-            <h3 className="mb-6 text-2xl font-bold text-foreground">Get in Touch</h3>
+      <section className="section">
+        <div className="container-page">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {channels.map(({ Icon, title, detail, action, href, accent }) => {
+              return (
+                <a
+                  key={title}
+                  href={href}
+                  {...(href.startsWith("http")
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="card-surface card-hover group flex flex-col p-6"
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface text-xl ring-1 ring-border">
+                    <Icon className={accent} aria-hidden="true" />
+                  </span>
 
-            <div className="space-y-6">
-              {details.map(({ icon: Icon, title, content, href }) => (
-                <div key={title} className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-accent text-xl text-primary">
-                    <Icon aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground">{title}</h4>
-                    {href ? (
-                      <a href={href} className="text-muted-foreground transition hover:text-primary">
-                        {content}
-                      </a>
-                    ) : (
-                      <p className="text-muted-foreground">{content}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+                  <h2 className="mt-5 font-display text-lg font-bold text-foreground">
+                    {title}
+                  </h2>
+                  <p className="mt-1 flex-1 break-words text-sm text-muted-foreground">
+                    {detail}
+                  </p>
 
-            <div className="mt-8 border-t border-border pt-8">
-              <h4 className="mb-4 font-bold text-foreground">Working Hours</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex justify-between">
-                  <span>Monday - Friday</span> <span>9:00 AM - 8:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Saturday</span> <span>10:00 AM - 6:00 PM</span>
-                </li>
-                <li className="flex justify-between font-medium text-red-500">
-                  <span>Sunday</span> <span>Closed</span>
-                </li>
-              </ul>
-            </div>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                    {action}
+                    <svg
+                      className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 12h14m-6-7 7 7-7 7"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              );
+            })}
           </div>
 
-          {/* Map */}
-          <div className="h-96 overflow-hidden rounded-2xl border border-border bg-muted shadow-lg lg:h-auto">
-            <iframe
-              src={siteData.contact.mapEmbedUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Clinic Location"
-            ></iframe>
+          <div className="mt-12 flex flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-6 text-center sm:flex-row sm:justify-between sm:text-left">
+            <p className="flex items-center gap-3 text-sm text-muted-foreground">
+              <FiMapPin
+                className="h-5 w-5 shrink-0 text-primary"
+                aria-hidden="true"
+              />
+              <span>
+                <span className="font-semibold text-foreground">
+                  Visiting us?
+                </span>{" "}
+                We are on the ground floor with parking outside.
+              </span>
+            </p>
+            <GoogleRating variant="inline" />
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <LocationSection />
+      <CtaBand />
+    </>
   );
 }

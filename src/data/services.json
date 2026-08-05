@@ -2,49 +2,176 @@
   {
     "id": "manual-therapy",
     "title": "Manual Therapy",
-    "shortDesc": "Hands-on techniques to mobilize joints and soft tissues.",
-    "fullDesc": "Manual therapy involves specialized hands-on techniques to diagnose and treat soft tissues and joint structures. It helps in reducing pain, increasing range of motion, and reducing inflammation.",
+    "seoTitle": "Manual Therapy in Islamabad",
+    "shortDesc": "Hands-on joint and soft-tissue treatment to restore pain-free movement.",
+    "metaDescription": "Hands-on manual therapy in Islamabad for neck pain, back pain and stiff joints. Joint mobilisation, soft-tissue release and Mulligan techniques at The Muscular Junction.",
+    "fullDesc": "Manual therapy uses skilled, hands-on techniques — joint mobilisation, manipulation and soft-tissue release — to reduce pain and restore movement where a joint or muscle has become stiff, guarded or painful. Your therapist assesses how you move, identifies the segment that is actually restricted, and treats it directly. Hands-on work is paired with exercise so the range you gain in the session is one you keep.",
     "icon": "FaHandsHelping",
-    "image": "/images/services/manual-therapy.jpg"
+    "sessionLength": "45–60 minutes",
+    "typicalCourse": "4–8 sessions",
+    "conditions": [
+      "Neck pain & stiffness",
+      "Lower back pain",
+      "Frozen shoulder",
+      "Tension headaches",
+      "Sciatica",
+      "Postural pain"
+    ],
+    "whatWeDo": [
+      "Full movement and joint assessment before any hands-on treatment",
+      "Joint mobilisation, Mulligan mobilisation-with-movement and HVLA where indicated",
+      "Soft-tissue release, trigger-point work and dry needling",
+      "A short home exercise plan to hold on to the range you gain"
+    ]
   },
   {
     "id": "sports-rehab",
     "title": "Sports Rehabilitation",
-    "shortDesc": "Specialized care for sports-related injuries and performance.",
-    "fullDesc": "Our sports rehabilitation program is designed to help athletes recover from injuries and return to their sport stronger. We focus on injury prevention, pain management, and functional training.",
+    "seoTitle": "Sports Injury Rehabilitation in Islamabad",
+    "shortDesc": "Structured return-to-sport programmes built on objective testing.",
+    "metaDescription": "Sports injury rehabilitation in Islamabad — ACL, hamstring, ankle and shoulder injuries. Criteria-based return-to-sport programmes at The Muscular Junction.",
+    "fullDesc": "Getting back to sport is not about waiting for pain to settle — it is about rebuilding strength, control and confidence to the level your sport demands. We assess the injured limb against the other side, load it progressively, and only clear you to return when you meet objective criteria rather than a calendar date. That is what keeps re-injury rates down.",
     "icon": "FaRunning",
-    "image": "/images/services/sports-rehab.jpg"
-  },
-  {
-    "id": "crypto-therapy",
-    "title": "Cryotherapy",
-    "shortDesc": "Cold therapy to reduce inflammation and pain.",
-    "fullDesc": "Cryotherapy uses extreme cold to freeze and destroy abnormal tissue. It is used to treat skin conditions, tumors, and muscle damage.",
-    "icon": "FaSnowflake",
-    "image": "/images/services/cryotherapy.jpg"
-  },
-  {
-    "id": "neuro-rehab",
-    "title": "Neuro Rehabilitation",
-    "shortDesc": "Rehabilitation for stroke, Parkinson's, and other conditions.",
-    "fullDesc": "Neurological rehabilitation involves a doctor-supervised program for people with diseases, injury, or disorders of the nervous system. It can often improve functionality, reduce symptoms, and improve the well-being of the patient.",
-    "icon": "FaBrain",
-    "image": "/images/services/neuro-rehab.jpg"
+    "sessionLength": "45–60 minutes",
+    "typicalCourse": "6–12 weeks",
+    "conditions": [
+      "ACL & meniscus rehabilitation",
+      "Hamstring & groin strains",
+      "Ankle sprains",
+      "Tennis & golfer's elbow",
+      "Rotator cuff injuries",
+      "Shin splints"
+    ],
+    "whatWeDo": [
+      "Baseline strength and movement testing, compared side to side",
+      "Progressive loading through strength, power and plyometric phases",
+      "Sport-specific drills that rebuild change-of-direction confidence",
+      "Objective return-to-sport criteria before you are cleared to play"
+    ]
   },
   {
     "id": "orthopedic",
     "title": "Orthopedic Physiotherapy",
-    "shortDesc": "Recovery from fractures, surgeries, and skeletal issues.",
-    "fullDesc": "Orthopedic physiotherapy focuses on the treatment of the musculoskeletal system, including joints, muscles, tendons, ligaments, and bones.",
+    "seoTitle": "Orthopedic Physiotherapy in Islamabad",
+    "shortDesc": "Recovery after fractures, joint replacements and orthopedic surgery.",
+    "metaDescription": "Post-operative and orthopedic physiotherapy in Islamabad — knee replacement, fracture and post-surgical rehabilitation at The Muscular Junction, River Gardens.",
+    "fullDesc": "After a fracture, a joint replacement or orthopedic surgery, the tissue heals on its own timeline — but range, strength and normal walking do not come back without work. We follow your surgeon's protocol, restore movement safely within it, and rebuild the strength around the joint so you return to normal daily activity rather than settling for a stiff, protected limb.",
     "icon": "FaBone",
-    "image": "/images/services/orthopedic.jpg"
+    "sessionLength": "45–60 minutes",
+    "typicalCourse": "8–16 weeks",
+    "conditions": [
+      "Post knee & hip replacement",
+      "Fracture rehabilitation",
+      "Post-operative ACL repair",
+      "Osteoarthritis",
+      "Rotator cuff repair",
+      "Spinal surgery recovery"
+    ],
+    "whatWeDo": [
+      "Rehabilitation staged to your surgeon's post-operative protocol",
+      "Safe, early range-of-motion work to prevent lasting stiffness",
+      "Progressive strengthening around the operated joint",
+      "Gait retraining and walking-aid progression"
+    ]
+  },
+  {
+    "id": "neuro-rehab",
+    "title": "Neurological Rehabilitation",
+    "seoTitle": "Neuro Rehabilitation in Islamabad",
+    "shortDesc": "Regaining movement, balance and independence after neurological injury.",
+    "metaDescription": "Neurological rehabilitation in Islamabad for stroke, Parkinson's, Bell's palsy and nerve injury. Task-specific neuro physiotherapy at The Muscular Junction.",
+    "fullDesc": "The nervous system retains a real capacity to reorganise after injury, but that change is driven by repetition of the specific task you want to recover. Our neurological rehabilitation is built around that principle: high-repetition, task-specific practice of walking, balance, reaching and hand function, progressed as you improve, with training for the family members supporting you at home.",
+    "icon": "FaBrain",
+    "sessionLength": "45–60 minutes",
+    "typicalCourse": "Ongoing, reviewed monthly",
+    "conditions": [
+      "Stroke rehabilitation",
+      "Parkinson's disease",
+      "Bell's palsy",
+      "Peripheral nerve injury",
+      "Multiple sclerosis",
+      "Balance & gait disorders"
+    ],
+    "whatWeDo": [
+      "Task-specific, high-repetition retraining of walking, balance and hand function",
+      "Tone, spasticity and contracture management",
+      "Falls-risk assessment and balance training",
+      "Home programme and hands-on training for family caregivers"
+    ]
   },
   {
     "id": "pediatric",
     "title": "Pediatric Physiotherapy",
-    "shortDesc": "Developmental support for children and infants.",
-    "fullDesc": "Pediatric physiotherapy assists in the early detection of health problems and uses a wide variety of modalities to treat disorders in the pediatric population.",
+    "seoTitle": "Pediatric Physiotherapy in Islamabad",
+    "shortDesc": "Play-based therapy helping children reach their movement milestones.",
+    "metaDescription": "Pediatric physiotherapy in Islamabad for developmental delay, cerebral palsy, torticollis and gait concerns. Child-friendly, play-based sessions at The Muscular Junction.",
+    "fullDesc": "Children are not small adults, and children's rehabilitation does not work as a list of exercises. Sessions are built around play, so a child practising balance thinks they are playing a game. We work closely with parents, because most of the meaningful repetition happens at home between visits — you leave every session knowing exactly what to practise and why.",
     "icon": "FaChild",
-    "image": "/images/services/pediatric.jpg"
+    "sessionLength": "30–45 minutes",
+    "typicalCourse": "Reviewed every 6–8 weeks",
+    "conditions": [
+      "Delayed motor milestones",
+      "Cerebral palsy",
+      "Torticollis",
+      "Toe walking & gait concerns",
+      "Low muscle tone",
+      "Post-operative pediatric rehab"
+    ],
+    "whatWeDo": [
+      "Developmental screening against age-appropriate milestones",
+      "Play-based sessions that hold a child's attention",
+      "Positioning, handling and orthotic advice",
+      "Parent coaching so progress continues at home"
+    ]
+  },
+  {
+    "id": "dry-needling-cupping",
+    "title": "Dry Needling & Cupping",
+    "seoTitle": "Dry Needling & Cupping Therapy in Islamabad",
+    "shortDesc": "Targeted techniques for stubborn muscle tightness and myofascial pain.",
+    "metaDescription": "Dry needling and cupping therapy in Islamabad for trigger points, myofascial pain and muscle tightness — delivered by trained physiotherapists at The Muscular Junction.",
+    "fullDesc": "When a muscle stays tight and tender despite hands-on treatment, trigger-point dry needling and myofascial cupping can reach tissue that manual work alone struggles to change. Both are used here as adjuncts, never as a standalone treatment — they open a window of reduced pain and better movement that we then use for loading and exercise, which is what makes the change last.",
+    "icon": "FaSyringe",
+    "sessionLength": "30–45 minutes",
+    "typicalCourse": "Used alongside your main plan",
+    "conditions": [
+      "Myofascial trigger points",
+      "Chronic muscle tightness",
+      "Upper back & shoulder tension",
+      "Calf & hamstring tightness",
+      "Plantar fasciitis",
+      "Delayed onset muscle soreness"
+    ],
+    "whatWeDo": [
+      "Screening for contraindications before any needling",
+      "Trigger-point dry needling using single-use sterile needles",
+      "Static and moving (myofascial decompression) cupping",
+      "Immediate follow-up with movement and loading work"
+    ]
+  },
+  {
+    "id": "cryotherapy",
+    "title": "Cryotherapy & Cold Therapy",
+    "seoTitle": "Cryotherapy & Cold Therapy in Islamabad",
+    "shortDesc": "Controlled cold to settle acute pain and swelling early in recovery.",
+    "metaDescription": "Cryotherapy and cold therapy in Islamabad for acute injury, swelling and post-operative pain — used as part of a wider rehabilitation plan at The Muscular Junction.",
+    "fullDesc": "Controlled cold application is a simple, well-evidenced way to reduce pain and swelling in the early phase after an acute injury or operation. We use it to make the first days of rehabilitation tolerable — enough pain relief that you can start moving sooner. It is a supporting tool within a rehabilitation plan, not a treatment on its own, and we will always tell you when it has stopped being useful.",
+    "icon": "FaSnowflake",
+    "sessionLength": "15–20 minutes",
+    "typicalCourse": "Early phase of recovery",
+    "conditions": [
+      "Acute sprains & strains",
+      "Post-operative swelling",
+      "Acute joint flare-ups",
+      "Sports-field injuries",
+      "Bruising & contusions",
+      "Post-exercise soreness"
+    ],
+    "whatWeDo": [
+      "Assessment of whether cold is appropriate for your stage of healing",
+      "Controlled, timed application with skin monitoring",
+      "Combined cold and compression for swelling management",
+      "Clear guidance on safe use at home"
+    ]
   }
 ]

@@ -1,0 +1,46 @@
+[
+  {
+    "group": "Back & Neck",
+    "items": [
+      "Lower back pain",
+      "Neck pain & stiffness",
+      "Sciatica",
+      "Slipped / herniated disc",
+      "Postural & desk-work pain",
+      "Tension headaches"
+    ]
+  },
+  {
+    "group": "Joints & Limbs",
+    "items": [
+      "Frozen shoulder",
+      "Knee pain & osteoarthritis",
+      "Tennis & golfer's elbow",
+      "Plantar fasciitis / heel pain",
+      "Ankle sprains",
+      "Rotator cuff injuries"
+    ]
+  },
+  {
+    "group": "Post-Surgery & Injury",
+    "items": [
+      "Post knee & hip replacement",
+      "ACL & meniscus repair",
+      "Fracture rehabilitation",
+      "Ligament & muscle tears",
+      "Post-operative stiffness",
+      "Return-to-sport rehab"
+    ]
+  },
+  {
+    "group": "Neurological & Pediatric",
+    "items": [
+      "Stroke rehabilitation",
+      "Bell's palsy",
+      "Parkinson's disease",
+      "Balance & gait disorders",
+      "Delayed motor milestones",
+      "Cerebral palsy"
+    ]
+  }
+]

@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
-import siteData from "@/data/site.json";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteData.url;
+import { siteUrl } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,5 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }

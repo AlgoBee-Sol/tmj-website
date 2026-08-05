@@ -1,4 +1,6 @@
-import { FaInstagram, FaPlay } from "react-icons/fa";
+import Image from "next/image";
+import { FaInstagram, FaPlay, FaQuoteLeft } from "react-icons/fa";
+import Stars from "@/components/ui/Stars";
 
 export interface TestimonialCardProps {
   name: string;
@@ -20,47 +22,58 @@ export default function TestimonialCard({
       href={videoUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`Watch ${name}'s video review on Instagram`}
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-2xl"
+      aria-label={`Watch ${name}'s video review on Instagram — opens in a new tab`}
+      className="card-surface card-hover group flex h-full flex-col p-6"
     >
-      {/* Video thumbnail — branded gradient base; a real thumbnail overlays it when present */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900">
-        {thumbnail && (
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-            style={{ backgroundImage: `url(${thumbnail})` }}
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/10" />
+      <div className="flex items-center justify-between">
+        <Stars value={5} size={15} className="text-foreground" />
+        <FaQuoteLeft
+          className="text-2xl text-primary-soft"
+          aria-hidden="true"
+        />
+      </div>
 
-        {/* Instagram badge */}
-        <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur-sm">
-          <FaInstagram className="text-lg" aria-hidden="true" />
+      <blockquote className="mt-4 flex-1 text-[0.9375rem] leading-relaxed text-muted-foreground">
+        &ldquo;{text}&rdquo;
+      </blockquote>
+
+      <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
+        <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-primary-soft text-sm font-bold text-primary">
+          {thumbnail ? (
+            <Image
+              src={thumbnail}
+              alt=""
+              fill
+              sizes="44px"
+              loading="lazy"
+              className="object-cover"
+            />
+          ) : (
+            name
+              .replace(/^(Dr|Mr|Ms|Mrs|Brig)\.?\s+/i, "")
+              .charAt(0)
+              .toUpperCase()
+          )}
         </span>
 
-        {/* Play button */}
-        <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-blue-700 shadow-xl transition-transform duration-300 group-hover:scale-110">
-          <FaPlay className="ml-1 text-xl" aria-hidden="true" />
-        </span>
-
-        {/* Name / role */}
-        <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-          <p className="text-lg font-bold drop-shadow">{name}</p>
-          <p className="text-xs font-semibold uppercase tracking-wider text-blue-200">
+        <span className="min-w-0 flex-1">
+          <span className="block truncate text-sm font-bold text-foreground">
+            {name}
+          </span>
+          <span className="block truncate text-xs text-subtle-foreground">
             {role}
-          </p>
-        </div>
-      </div>
-
-      {/* Quote */}
-      <div className="flex flex-grow flex-col p-6">
-        <p className="flex-grow text-sm leading-relaxed text-muted-foreground line-clamp-3">
-          &ldquo;{text}&rdquo;
-        </p>
-        <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-primary">
-          <FaInstagram aria-hidden="true" /> Watch on Instagram
+          </span>
         </span>
-      </div>
+
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-surface text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+          <FaPlay className="ml-0.5 text-[0.7rem]" aria-hidden="true" />
+        </span>
+      </figcaption>
+
+      <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-subtle-foreground transition-colors group-hover:text-primary">
+        <FaInstagram aria-hidden="true" />
+        Watch the full story on Instagram
+      </span>
     </a>
   );
 }
