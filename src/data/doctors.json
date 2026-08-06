@@ -13,7 +13,7 @@
     ],
     "experienceYears": 5,
     "bio": "Dr. Syed Mozaffar founded The Muscular Junction to bring genuinely evidence-based physiotherapy to Islamabad. He specialises in sports injury rehabilitation and advanced manual therapy, and leads the clinic's professional workshops on dry needling, cupping, Mulligan and HVLA techniques for practising clinicians across Pakistan.",
-    "image": "/images/doctors/doctor-1.webp"
+    "image": "/images/doctors/doctor-1-mozaffar.webp"
   },
   {
     "id": "dr-abdul-wahab",
@@ -27,7 +27,7 @@
     ],
     "experienceYears": 1,
     "bio": "Dr. Abdul Wahab works with children and adults, using play-based sessions to help them reach their motor milestones — and coaching parents so the progress continues at home between visits.",
-    "image": "/images/doctors/doctor-3.webp"
+    "image": "/images/doctors/doctor-2-wahab.webp"
   },
   {
     "id": "dr-m-abdullah",
@@ -36,15 +36,16 @@
     "credentials": "DPT",
     "specializations": [
       "Child Development",
-      "Neuro Rehabilitation"
+      "Neuro Rehabilitation",
+      "Stretching and Strengthening"
     ],
     "experienceYears": 1,
     "bio": "Dr. M. Abdullah supports children through developmental and neurological rehabilitation programmes, designing sessions that hold a child's attention while still delivering the repetition recovery depends on.",
-    "image": "/images/doctors/doctor-4.webp"
+    "image": "/images/doctors/doctor-3-abdullah.webp"
   },
   {
-    "id": "dr-niha-batool",
-    "name": "Dr. Niha Batool",
+    "id": "dr-ulfat-zahra",
+    "name": "Dr. Ulfat Zahra",
     "designation": "Physiotherapist — Female Patients",
     "credentials": "DPT",
     "specializations": [
@@ -53,7 +54,36 @@
       "Post-operative Care"
     ],
     "experienceYears": 2,
-    "bio": "Dr. Niha leads care for female patients who prefer a female therapist, working across musculoskeletal and post-operative rehabilitation to help patients regain mobility, balance and independence after injury or surgery.",
-    "image": "/images/doctors/doctor-2.webp"
+    "bio": "Dr. Ulfat Zahra, leads care for female patients who prefer a female therapist, working across musculoskeletal and post-operative rehabilitation to help patients regain mobility, balance and independence after injury or surgery.",
+    "image": "/images/doctors/female-placeholder.webp"
+  },
+  
+  {
+    "id": "dr-Eman-Fatima",
+    "name": "Dr. Eman Fatima",
+    "designation": "Physiotherapist - Female Patients",
+    "credentials": "DPT",
+    "specializations": [
+      "Musculoskeletal Rehab",
+      "Women's Health",
+      "Post-operative Care"
+    ],
+    "experienceYears": 2,
+    "bio": "Dr. Eman Fatima, leads care for female patients who prefer a female therapist, working across musculoskeletal and post-operative rehabilitation to help patients regain mobility, balance and independence after injury or surgery.",
+    "image": "/images/doctors/female-placeholder.webp"
+  },
+  {
+    "id": "dr-ayesha",
+    "name": "Dr. Ayesha",
+    "designation": "Physiotherapist — Female Patients",
+    "credentials": "DPT",
+    "specializations": [
+      "Musculoskeletal Rehab",
+      "Women's Health",
+      "Post-operative Care"
+    ],
+    "experienceYears": 2,
+    "bio": "Dr. Ayesha, leads care for female patients who prefer a female therapist, working across musculoskeletal and post-operative rehabilitation to help patients regain mobility, balance and independence after injury or surgery.",
+    "image": "/images/doctors/female-placeholder.webp"
   }
 ]
