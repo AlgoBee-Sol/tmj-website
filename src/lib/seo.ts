@@ -9,9 +9,13 @@ export function pageMetadata(
   path: string,
   article = false,
 ): Metadata {
-  const fullTitle = `${title} | ${site.name}`;
+  const fullTitle =
+    path === "/"
+      ? `${site.name} | Physiotherapy in Islamabad`
+      : `${title} | ${site.name}`;
   return {
-    title,
+    // The root layout's title template does not apply to its own page segment.
+    title: { absolute: fullTitle },
     description,
     alternates: { canonical: absoluteUrl(path) },
     openGraph: {

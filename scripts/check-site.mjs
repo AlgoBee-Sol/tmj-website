@@ -43,6 +43,7 @@ for (const route of routes) {
   );
   const title = html.match(/<title>(.*?)<\/title>/s)?.[1];
   assert.ok(title, route);
+  assert.ok(title.includes(site.name), `${route}: clinic name missing from title`);
   assert.ok(!titles.has(title), `${route}: duplicate title`);
   titles.add(title);
   const metas = [...html.matchAll(/<meta\b[^>]*>/g)].map((m) => attrs(m[0]));

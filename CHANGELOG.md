@@ -1,5 +1,11 @@
 # Changelog
 
+## Post-release fixes — 2026-10-13
+
+- Restored the clinic name in the homepage browser/search title and added a branded-title check to the HTTP audit.
+- Added the public Search Console verification tag and documented indexing follow-up.
+- Configured Cloudflare to redirect HTTP and `www` website URLs to canonical HTTPS, preserving paths and query strings.
+
 ## 0.2.0 — 2026-10-13
 
 ### Added

@@ -28,13 +28,12 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   icons: { icon: "/favicon.ico", apple: "/images/logo-tmj.png" },
-  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
-    ? {
-        verification: {
-          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
-        },
-      }
-    : {}),
+  verification: {
+    // Public ownership proof for the clinic's Search Console property.
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
+      "l36SifjDS2hXSybTIhUct3aGcpKT4W_AM1sYpEP9sRM",
+  },
 };
 export const viewport: Viewport = {
   width: "device-width",
