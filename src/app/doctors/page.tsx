@@ -1,70 +1,60 @@
-import type { Metadata } from "next";
-import doctorsData from "@/data/doctors.json";
+import doctors from "@/data/doctors.json";
 import DoctorCard from "@/components/doctors/DoctorCard";
 import PageHero from "@/components/layout/PageHero";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import JsonLd from "@/components/seo/JsonLd";
-import GoogleRating from "@/components/ui/GoogleRating";
 import CtaBand from "@/components/ui/CtaBand";
-import { site, absoluteUrl } from "@/lib/site";
-
-export const metadata: Metadata = {
-  title: "Our Physiotherapists — Dr. Syed Mozaffar & Team",
-  description:
-    "Meet the physiotherapists at The Muscular Junction, River Gardens, Islamabad — led by founder Dr. Syed Mozaffar, with specialists in sports injury, manual therapy, women's health, neurological and pediatric rehabilitation.",
-  alternates: { canonical: "/doctors" },
-};
-
-const doctorsItemList = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Physiotherapists at The Muscular Junction",
-  itemListElement: doctorsData.map((doc, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    item: {
-      "@type": ["Person", "Physician"],
-      name: doc.name,
-      jobTitle: doc.designation,
-      description: doc.bio,
-      medicalSpecialty: "Physiotherapy",
-      knowsAbout: doc.specializations,
-      worksFor: { "@type": "MedicalClinic", name: site.name },
-      ...(doc.image ? { image: absoluteUrl(doc.image) } : {}),
-    },
-  })),
-};
-
-export default function DoctorsPage() {
+import { pageMetadata, clinicId, founderId } from "@/lib/seo";
+import { absoluteUrl } from "@/lib/site";
+export const metadata = pageMetadata(
+  "Our physiotherapists — Dr. Syed Mozaffar & team",
+  "Meet the physiotherapists at The Muscular Junction, Islamabad, including Dr. Syed Mozaffar and female physiotherapists Ulfat Zahra, Eman Fatima and Ayesha.",
+  "/doctors",
+);
+export default function Page() {
+  const team = doctors.filter((d) => d.published);
   return (
     <>
-      <Breadcrumbs items={[{ name: "Our Team", path: "/doctors" }]} />
-      <JsonLd data={doctorsItemList} />
-
+      <Breadcrumbs items={[{ name: "Doctors", path: "/doctors" }]} />
       <PageHero
-        eyebrow="Our Team"
-        title="The physiotherapists behind your recovery"
-        subtitle="Four clinicians with defined specialties, so you are matched to the right one from the first visit — including a female physiotherapist for patients who prefer one."
+        eyebrow="People behind the care"
+        title="Meet your physiotherapy team."
+        subtitle="Talk to us about your needs and preferences. We will help you arrange an appointment with a suitable clinician at our River Gardens clinic."
       />
-
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": team.map((d) => ({
+            "@type": "Person",
+            "@id":
+              d.id === "dr-syed-mozaffar"
+                ? founderId
+                : absoluteUrl(`/doctors#${d.id}`),
+            name: d.name,
+            jobTitle: d.designation,
+            description: d.bio,
+            knowsAbout: d.specializations,
+            worksFor: { "@id": clinicId },
+            ...(d.image ? { image: absoluteUrl(d.image) } : {}),
+          })),
+        }}
+      />
       <section className="section">
         <div className="container-page">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {doctorsData.map((doc, i) => (
-              <DoctorCard key={doc.id} {...doc} priority={i === 0} />
+          <h2 className="sr-only">Our clinicians</h2>
+          <div className="team-grid">
+            {team.map((d) => (
+              <DoctorCard key={d.id} {...d} />
             ))}
           </div>
-
-          <div className="mt-12 flex justify-center">
-            <GoogleRating variant="card" className="w-full max-w-md" />
-          </div>
+          <p className="mt-8 text-muted-foreground">
+            Female physiotherapists are available. Please request Dr. Ulfat
+            Zahra, Dr. Eman Fatima or Dr. Ayesha when booking; availability will
+            be confirmed by the clinic.
+          </p>
         </div>
       </section>
-
-      <CtaBand
-        title="Book with the right therapist"
-        description="Tell us what is going on and we will schedule you with the clinician who treats it every day. Mention if you would prefer a female physiotherapist."
-      />
+      <CtaBand />
     </>
   );
 }

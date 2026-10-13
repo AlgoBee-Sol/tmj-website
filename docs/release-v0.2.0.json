@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "tag": "v0.2.0",
+  "date": "2026-10-13",
+  "productionUrl": "https://themuscularjunction.com",
+  "worker": "tmj-website",
+  "initialReleaseVersionId": "b475ab13-353f-4d44-89e9-4538f8d9aad3",
+  "previousVersionId": "48df4a6d-a63d-4339-ac9d-6c8bc3882d3b",
+  "checks": [
+    "lint",
+    "typecheck",
+    "5 Node tests",
+    "Next production build",
+    "OpenNext Cloudflare build",
+    "Wrangler dry run",
+    "43-page live HTTP audit"
+  ],
+  "deploymentWorkflow": "Existing main-branch Cloudflare Workers Builds integration; initial release also deployed with the project OpenNext CLI.",
+  "screenshots": "README visuals captured from the live domain; device frames composed with docs/website-showcase.html."
+}

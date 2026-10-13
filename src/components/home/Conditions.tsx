@@ -1,61 +1,35 @@
-import conditionsData from "@/data/conditions.json";
-import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
-import { FiArrowRight } from "react-icons/fi";
-
-/**
- * "Do you treat my problem?" — the first question most visitors actually have.
- *
- * Answering it explicitly is both the fastest qualification step in the funnel
- * and the page's densest block of genuine local search terms.
- */
-export default function Conditions({
-  className = "",
-}: {
-  className?: string;
-}) {
+import Link from "next/link";
+import conditions from "@/data/condition-pages.json";
+import { FiArrowUpRight } from "react-icons/fi";
+export default function Conditions({ className = "" }: { className?: string }) {
   return (
-    <section id="conditions" className={`section scroll-mt-28 ${className}`}>
+    <section id="conditions" className={`section ${className}`}>
       <div className="container-page">
-        <SectionHeading
-          eyebrow="Conditions We Treat"
-          title="Come in with a problem, leave with a plan"
-          description="If your condition is on this list, we see it regularly. If it isn't, send us a message anyway — we will tell you honestly whether physiotherapy is the right route."
-        />
-
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {conditionsData.map((group) => (
-            <div key={group.group} className="card-surface p-6">
-              <h3 className="font-display text-sm font-bold uppercase tracking-wider text-primary">
-                {group.group}
-              </h3>
-
-              <ul className="mt-4 space-y-2.5">
-                {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
-                  >
-                    <svg
-                      className="mt-1.5 h-1.5 w-1.5 shrink-0 text-primary"
-                      viewBox="0 0 6 6"
-                      aria-hidden="true"
-                    >
-                      <circle cx="3" cy="3" r="3" fill="currentColor" />
-                    </svg>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="section-intro">
+          <div>
+            <p className="eyebrow">Find your starting point</p>
+            <h2 className="display-2 mt-4">
+              What’s getting in
+              <br className="hidden md:block" /> the way of your day?
+            </h2>
+          </div>
+          <div>
+            <p className="lead">
+              Explore common problems we help people manage, from everyday aches
+              to rehabilitation after injury.
+            </p>
+            <Link href="/conditions" className="text-link mt-5">
+              All condition guides <FiArrowUpRight aria-hidden="true" />
+            </Link>
+          </div>
         </div>
-
-        <div className="mt-10 flex justify-center">
-          <Button href="/appointment" variant="secondary" size="lg">
-            Not sure? Book an assessment
-            <FiArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Button>
+        <div className="condition-links">
+          {conditions.slice(0, 8).map((c) => (
+            <Link href={`/conditions/${c.id}`} key={c.id}>
+              <span>{c.title}</span>
+              <FiArrowUpRight aria-hidden="true" />
+            </Link>
+          ))}
         </div>
       </div>
     </section>

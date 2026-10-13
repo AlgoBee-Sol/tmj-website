@@ -1,0 +1,333 @@
+[
+  {
+    "id": "back-pain",
+    "title": "Back pain",
+    "group": "Back & neck",
+    "seoTitle": "Back pain physiotherapy in Islamabad",
+    "metaDescription": "Understand assessment and rehabilitation for lower back pain at The Muscular Junction in River Gardens, Islamabad.",
+    "intro": "Back pain can affect sitting, lifting, sleep and confidence in movement. It may follow a change in activity or develop gradually; there is not always one identifiable cause. Physiotherapy considers how symptoms behave and the activities you want to return to.",
+    "symptoms": [
+      "Aching or stiffness in the lower back",
+      "Discomfort with sitting, standing or lifting",
+      "Movement that feels restricted or guarded"
+    ],
+    "causes": "Muscle strain, changes in activity and joint or disc-related problems can contribute. Symptoms alone cannot confirm a diagnosis, and not everyone needs imaging.",
+    "assessment": "We ask about the onset, leg symptoms, work, sleep and your medical history. Assessment may include relevant movement, strength and nerve checks. We agree a starting level of activity that fits your current tolerance.",
+    "treatment": "Your plan may combine activity advice, progressive exercise and selected manual therapy. A useful goal might be sitting through a journey or lifting a household item with greater confidence. We review function as well as pain.",
+    "recovery": "Many episodes improve, but persistent or recurring pain needs an individual plan. Progress can fluctuate. A sudden change in symptoms should prompt reassessment rather than simply continuing the same exercises.",
+    "seekHelp": "Seek emergency care for new bladder or bowel problems, numbness around the genitals or anus, or new weakness/numbness in both legs. Major trauma, fever or feeling very unwell with back pain also needs urgent medical assessment.",
+    "serviceIds": ["manual-therapy", "musculoskeletal-physiotherapy"],
+    "relatedIds": ["sciatica", "neck-pain"],
+    "source": "https://www.nhs.uk/conditions/back-pain/",
+    "faqs": [
+      {
+        "q": "Do I need a scan before booking?",
+        "a": "Not routinely. Bring existing reports if you have them. Your clinical history and examination help determine whether medical assessment or imaging is needed."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "neck-pain",
+    "title": "Neck pain",
+    "group": "Back & neck",
+    "seoTitle": "Neck pain physiotherapy in Islamabad",
+    "metaDescription": "Assessment-led neck pain care in River Gardens, Islamabad. Learn about symptoms, movement rehabilitation and when to seek medical advice.",
+    "intro": "Neck pain may make it difficult to turn your head, work at a desk or sleep comfortably. Stiffness can come and go, and the most comfortable movement range may change during the day. An assessment helps decide which factors are relevant to you.",
+    "symptoms": [
+      "Stiffness when turning or looking up",
+      "Aching in the neck and upper shoulder region",
+      "Discomfort during prolonged desk work"
+    ],
+    "causes": "Awkward sleeping positions, sustained activity, injury and nerve irritation are possible contributors. There is no single posture or exercise that explains every case.",
+    "assessment": "We discuss symptom patterns, previous injury, headaches and any arm symptoms. Your therapist checks relevant movement and function and explains when another professional’s assessment is needed.",
+    "treatment": "A plan may include movement practice, gradual strengthening and ways to vary prolonged positions. Hands-on techniques are optional. Your goals might include turning to look behind you or managing a working day more comfortably.",
+    "recovery": "Progress depends on the cause and duration of symptoms. Regular review is helpful if pain persists, changes or affects daily tasks despite adjustments.",
+    "seekHelp": "Get urgent medical help after significant trauma or for severe neck pain with fever, new weakness or a severe unusual headache. Arm tingling, numbness or a cold arm should be assessed medically.",
+    "serviceIds": ["manual-therapy", "musculoskeletal-physiotherapy"],
+    "relatedIds": ["back-pain", "shoulder-pain"],
+    "source": "https://www.nhs.uk/symptoms/neck-pain-and-stiff-neck/",
+    "faqs": [
+      {
+        "q": "Will I need neck manipulation?",
+        "a": "No. Your preferences matter. Exercise, advice and other treatment options can be discussed; any hands-on technique needs assessment and consent."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "sciatica",
+    "title": "Sciatica",
+    "group": "Back & neck",
+    "seoTitle": "Sciatica physiotherapy in Islamabad",
+    "metaDescription": "Learn how physiotherapy may support sciatica recovery, with assessment and referral guidance at The Muscular Junction, Islamabad.",
+    "intro": "Sciatica describes pain associated with irritation of the sciatic nerve, often travelling from the buttock into a leg. It can occur with tingling, numbness or weakness. Back pain alone does not necessarily mean sciatica.",
+    "symptoms": [
+      "Pain travelling down one leg",
+      "Tingling or altered sensation",
+      "Weakness or discomfort with some positions"
+    ],
+    "causes": "Disc-related nerve irritation and other changes around the spine can contribute. Assessment is important because several conditions can produce similar leg symptoms.",
+    "assessment": "We ask where symptoms travel, whether strength or sensation has changed and how daily activity is affected. Relevant nerve and movement checks help guide the plan and identify reasons for referral.",
+    "treatment": "Treatment may focus on tolerable movement, pacing and gradual strengthening. We discuss which activities to adjust and how to monitor changes. An exercise that helps one person may aggravate another, so a generic routine is not a substitute for assessment.",
+    "recovery": "Recovery varies and symptoms may fluctuate. New or worsening weakness calls for prompt reassessment. A useful plan includes clear advice on when to stop and seek medical help.",
+    "seekHelp": "New bladder or bowel difficulties, numbness around the genitals or anus, or symptoms in both legs with worsening weakness need emergency assessment. Do not wait for a routine appointment.",
+    "serviceIds": ["musculoskeletal-physiotherapy", "manual-therapy"],
+    "relatedIds": ["back-pain"],
+    "source": "https://www.nhs.uk/conditions/sciatica/",
+    "faqs": [
+      {
+        "q": "Is all leg pain sciatica?",
+        "a": "No. Several muscle, joint, nerve and circulation problems can cause leg pain. An assessment helps decide whether physiotherapy is appropriate."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "frozen-shoulder",
+    "title": "Frozen shoulder",
+    "group": "Joints & limbs",
+    "seoTitle": "Frozen shoulder physiotherapy in Islamabad",
+    "metaDescription": "Support for shoulder stiffness and restricted movement in River Gardens, Islamabad. Explore assessment, rehabilitation and realistic expectations.",
+    "intro": "Frozen shoulder is a condition involving shoulder pain and a marked loss of movement. Dressing, reaching behind your back and sleeping may become difficult. It can last many months and sometimes longer; a short course of treatment cannot guarantee resolution.",
+    "symptoms": [
+      "Pain that may disturb sleep",
+      "Increasing stiffness in several directions",
+      "Difficulty reaching shelves or fastening clothing"
+    ],
+    "causes": "The tissue around the shoulder joint becomes tight and restricted. Sometimes there is no clear cause; it can occur after injury or reduced movement and is more common in people with diabetes.",
+    "assessment": "We ask about the pattern of pain and stiffness and compare active and assisted shoulder movement. Other shoulder problems can look similar, so your therapist may recommend medical assessment.",
+    "treatment": "We choose movement exercises that fit your symptoms and discuss pacing daily tasks. Strengthening and selected mobilisation may be introduced as tolerated. We avoid treating a painful shoulder as a test of how much force you can endure.",
+    "recovery": "Goals may start with better sleep or easier dressing before larger gains in range. Progress is individual, and medical options may need discussion if pain remains difficult to manage.",
+    "seekHelp": "A hot or swollen shoulder with fever, sudden severe pain after injury, or inability to move the arm needs urgent medical assessment. Persistent stiffness also deserves assessment rather than self-diagnosis.",
+    "serviceIds": ["manual-therapy", "orthopedic"],
+    "relatedIds": ["shoulder-pain"],
+    "source": "https://www.nhs.uk/conditions/frozen-shoulder/",
+    "faqs": [
+      {
+        "q": "Can a frozen shoulder recover in a few visits?",
+        "a": "There is no reliable promise of that. Recovery can take months or longer. Rehabilitation goals and visit frequency should reflect your symptoms and progress."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "knee-pain",
+    "title": "Knee pain",
+    "group": "Joints & limbs",
+    "seoTitle": "Knee pain physiotherapy in Islamabad",
+    "metaDescription": "Knee pain assessment and rehabilitation in River Gardens, Islamabad, for walking, stairs and return to activity.",
+    "intro": "Knee pain can affect walking, stairs, kneeling or sport. Symptoms can follow an injury or develop over time. Different structures and conditions can cause similar symptoms, so treatment starts with understanding your history and function.",
+    "symptoms": [
+      "Pain with stairs or rising from a chair",
+      "Stiffness or swelling",
+      "Discomfort with bending, running or kneeling"
+    ],
+    "causes": "Joint changes, tendon problems and ligament or meniscus injuries are among possible contributors. A painful knee is not automatically arthritis or a surgical problem.",
+    "assessment": "Your therapist asks about injury, swelling, locking and giving way. We assess relevant movement, strength and walking. Bring operation notes or imaging if you already have them.",
+    "treatment": "Rehabilitation may include progressive strength work, movement practice and changes to the amount of activity you do. We choose goals that matter to you, such as a flight of stairs or a longer walk, and measure progress against them.",
+    "recovery": "The plan depends on the cause and your response. Symptoms after surgery must be managed within the surgeon’s restrictions. A fixed session count cannot predict recovery.",
+    "seekHelp": "Seek urgent medical assessment if you cannot bear weight, the knee is badly swollen or deformed, it locks, or it is hot and red with fever. A significant injury should be assessed before exercise.",
+    "serviceIds": [
+      "orthopedic",
+      "sports-rehab",
+      "post-operative-rehabilitation"
+    ],
+    "relatedIds": ["acl-injury-rehabilitation", "sports-injuries"],
+    "source": "https://www.nhs.uk/symptoms/knee-pain/",
+    "faqs": [
+      {
+        "q": "Should I stop all activity for knee pain?",
+        "a": "That depends on the problem. Your therapist can help you choose a tolerable level of activity; severe symptoms or an acute injury may require medical assessment first."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "shoulder-pain",
+    "title": "Shoulder pain",
+    "group": "Joints & limbs",
+    "seoTitle": "Shoulder pain physiotherapy in Islamabad",
+    "metaDescription": "Assessment and movement rehabilitation for shoulder pain at The Muscular Junction, River Gardens, Islamabad.",
+    "intro": "Shoulder pain may interfere with reaching, carrying, sleep or overhead activity. It can arise from the shoulder itself or nearby areas. A useful assessment looks at the tasks that provoke symptoms and the activities you want to regain.",
+    "symptoms": [
+      "Pain reaching overhead or behind your back",
+      "Discomfort lifting or carrying",
+      "Aching around the shoulder or upper arm"
+    ],
+    "causes": "Tendon irritation, joint stiffness, injury and referred symptoms can all contribute. Similar symptoms do not necessarily mean the same condition.",
+    "assessment": "We discuss pain patterns, weakness, previous dislocation or surgery and any neck or arm symptoms. Movement and strength checks guide the clinical impression and help identify when medical advice is needed.",
+    "treatment": "Your programme may use graded shoulder exercises, activity adjustments and selected manual therapy. We work from tasks you can manage toward more demanding reaching or lifting, with review of your response.",
+    "recovery": "Pain and strength may improve at different rates. Progress is judged against your goals, and persistent or worsening symptoms should trigger reassessment.",
+    "seekHelp": "Sudden severe shoulder pain, a change in shape, inability to move the arm, a hot joint with fever or persistent loss of sensation needs urgent assessment. Shoulder or arm pain with chest pain or breathing difficulty is an emergency.",
+    "serviceIds": [
+      "manual-therapy",
+      "orthopedic",
+      "musculoskeletal-physiotherapy"
+    ],
+    "relatedIds": ["frozen-shoulder", "neck-pain"],
+    "source": "https://www.nhs.uk/symptoms/shoulder-pain/",
+    "faqs": [
+      {
+        "q": "Is shoulder pain always a rotator cuff tear?",
+        "a": "No. Pain can come from several structures and sometimes from the neck. An examination is more useful than guessing from the pain location alone."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "acl-injury-rehabilitation",
+    "title": "ACL injury rehabilitation",
+    "group": "Sport & recovery",
+    "seoTitle": "ACL rehabilitation in Islamabad",
+    "metaDescription": "Individual ACL rehabilitation in River Gardens, Islamabad, with progressive strength work and surgeon-guided recovery after reconstruction.",
+    "intro": "The anterior cruciate ligament helps stabilise the knee. Rehabilitation may be needed after an ACL injury, with or without reconstruction. The appropriate pathway depends on your knee, activity goals and discussion with your orthopedic team.",
+    "symptoms": [
+      "Swelling after a twisting injury",
+      "A feeling of instability or giving way",
+      "Reduced confidence with changing direction"
+    ],
+    "causes": "ACL injury can occur during pivoting, landing or a collision. Other structures may also be injured, so the diagnosis and any surgical restrictions matter.",
+    "assessment": "Bring your assessment reports and any operation protocol. We review swelling, movement, walking and muscle function, then identify the next practical milestone. Early and later stages require different tests.",
+    "treatment": "Rehabilitation progresses from restoring useful movement and strength toward balance, control and sport-specific demands. Later return-to-sport decisions should consider objective testing and your treating team’s advice, not the calendar alone.",
+    "recovery": "ACL rehabilitation is usually a substantial process. The rate of progression depends on healing, associated injuries, surgery and function; no return date can be guaranteed at the first appointment.",
+    "seekHelp": "An acutely injured knee that cannot bear weight or is locked needs medical assessment. After surgery, new calf swelling, fever or wound changes need urgent advice; chest pain or shortness of breath needs emergency care.",
+    "serviceIds": [
+      "sports-rehab",
+      "post-operative-rehabilitation",
+      "orthopedic"
+    ],
+    "relatedIds": ["knee-pain", "sports-injuries"],
+    "source": "https://www.nhs.uk/tests-and-treatments/acl-anterior-cruciate-ligament-surgery/recovering/",
+    "faqs": [
+      {
+        "q": "Can I return to sport as soon as pain settles?",
+        "a": "Pain is only one part of readiness. Strength, movement control, knee response and the medical team’s recommendations also inform return-to-sport decisions."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "sports-injuries",
+    "title": "Sports injuries",
+    "group": "Sport & recovery",
+    "seoTitle": "Sports injury physiotherapy in Islamabad",
+    "metaDescription": "Rehabilitation for sports injuries in River Gardens, Islamabad. Build a plan for strength, movement and a gradual return to your activity.",
+    "intro": "Sports injuries range from a sudden sprain or strain to discomfort that develops as training changes. Rehabilitation should relate to the demands of your sport and the level you want to return to, whether that is recreational exercise or competition.",
+    "symptoms": [
+      "Pain during or after training",
+      "Swelling, stiffness or reduced movement",
+      "Loss of confidence in a previously comfortable activity"
+    ],
+    "causes": "A sudden overload, collision or change in training can contribute. Previous injury and the balance between activity and recovery may also be relevant, but a history and examination are needed.",
+    "assessment": "We discuss how the injury happened, current training and your goals. Relevant strength, movement and balance tasks help identify a starting point and any need for medical referral.",
+    "treatment": "Your plan may include early activity modification, progressive strength work and later sport-specific practice. We discuss how to reintroduce training and recognise a response that calls for adjustment.",
+    "recovery": "The same label, such as a sprain, can describe injuries of different severity. Recovery and readiness for competition should be assessed individually.",
+    "seekHelp": "Suspected fracture, a deformed limb, inability to bear weight or increasing numbness needs urgent medical attention. Head injuries and chest symptoms should not be managed through a routine physiotherapy booking.",
+    "serviceIds": ["sports-rehab", "musculoskeletal-physiotherapy"],
+    "relatedIds": ["acl-injury-rehabilitation", "knee-pain", "tennis-elbow"],
+    "source": "https://www.nhs.uk/conditions/sprains-and-strains/",
+    "faqs": [
+      {
+        "q": "Can I keep training during rehabilitation?",
+        "a": "Sometimes modified training is possible. Discuss your sport, symptoms and restrictions with the treating clinician before deciding what to continue."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "tennis-elbow",
+    "title": "Tennis elbow",
+    "group": "Joints & limbs",
+    "seoTitle": "Tennis elbow physiotherapy in Islamabad",
+    "metaDescription": "Care for outer elbow pain and gripping difficulties at The Muscular Junction, River Gardens, Islamabad.",
+    "intro": "Tennis elbow describes pain around the outer elbow, often linked to the tendons used in wrist and hand activity. It can affect people who do not play tennis. Gripping tools, lifting a kettle or using a mouse may become uncomfortable.",
+    "symptoms": [
+      "Outer elbow tenderness",
+      "Pain with gripping or lifting",
+      "Discomfort with repeated wrist use"
+    ],
+    "causes": "Repeated or increased forearm loading can contribute. Other elbow or nerve problems can cause similar symptoms, so the label should follow assessment rather than assumptions about your work or sport.",
+    "assessment": "We discuss work, sport and recent changes in activity. Your therapist checks relevant wrist and elbow movements and grip-related tasks, and considers symptoms that may come from the neck or nerves.",
+    "treatment": "A plan may include adjusting irritating loads and gradually building forearm capacity. Practical work changes can help you continue necessary tasks while reviewing symptoms. Hands-on treatment may be discussed as a supporting option.",
+    "recovery": "Tendon symptoms can take time to settle. The aim is a workable progression rather than repeatedly testing the most painful grip. We review how daily tasks change over time.",
+    "seekHelp": "Severe pain after an injury, deformity, a hot swollen elbow with fever, or new loss of hand strength or sensation needs medical assessment.",
+    "serviceIds": ["musculoskeletal-physiotherapy", "sports-rehab"],
+    "relatedIds": ["sports-injuries"],
+    "source": "https://www.nhs.uk/conditions/tennis-elbow/",
+    "faqs": [
+      {
+        "q": "Do only tennis players get tennis elbow?",
+        "a": "No. Repeated gripping and wrist use in work, hobbies and other sports can also be associated with outer elbow symptoms."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "plantar-fasciitis",
+    "title": "Plantar fasciitis",
+    "group": "Joints & limbs",
+    "seoTitle": "Heel pain physiotherapy in Islamabad",
+    "metaDescription": "Assessment for plantar heel pain and walking discomfort in River Gardens, Islamabad, with an individual rehabilitation plan.",
+    "intro": "Plantar fasciitis is a common label for pain under the heel or along the sole of the foot. It may be particularly noticeable with the first steps after resting. An assessment helps distinguish it from other causes of heel pain.",
+    "symptoms": [
+      "Heel or sole pain on first steps",
+      "Discomfort after long periods on your feet",
+      "Pain with walking or running"
+    ],
+    "causes": "Changes in walking or running load, prolonged standing and footwear may contribute. Not every painful heel has the same cause, and diabetes or changes in sensation require particular attention.",
+    "assessment": "We ask about your activity, footwear and symptom pattern. Assessment may include walking, foot and ankle movement and relevant strength checks. Your usual footwear can be useful to bring.",
+    "treatment": "Your plan may include load adjustment, suitable stretching and strengthening, and advice about footwear. We connect the programme to daily needs such as standing at work or returning to walking for exercise.",
+    "recovery": "Improvement is often gradual. Review helps decide whether the current loading level is appropriate or another assessment is needed. There is no universal exercise dose for everyone with heel pain.",
+    "seekHelp": "Get medical advice for severe pain after injury, inability to walk, a hot or swollen foot, or numbness. Foot pain with diabetes should be assessed rather than treated solely from online guidance.",
+    "serviceIds": ["musculoskeletal-physiotherapy", "sports-rehab"],
+    "relatedIds": ["sports-injuries"],
+    "source": "https://www.nhs.uk/conditions/plantar-fasciitis/",
+    "faqs": [
+      {
+        "q": "Is complete rest the only option?",
+        "a": "Not necessarily. An individual plan can help adjust activity and gradually rebuild tolerance while considering other causes of heel pain."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  },
+  {
+    "id": "stroke-rehabilitation",
+    "title": "Stroke rehabilitation",
+    "group": "Neurological rehabilitation",
+    "seoTitle": "Stroke rehabilitation in Islamabad",
+    "metaDescription": "Physiotherapy support for movement and everyday function after stroke in River Gardens, Islamabad, coordinated with medical care.",
+    "intro": "A stroke can affect movement, balance, sensation, communication and daily independence. Physiotherapy is one part of a wider rehabilitation team. The plan should reflect the person’s priorities, medical condition and available support.",
+    "symptoms": [
+      "Difficulty with transfers or walking",
+      "Weakness or reduced use of an arm or leg",
+      "Problems with balance and everyday tasks"
+    ],
+    "causes": "Stroke results from interrupted blood supply or bleeding in the brain. The type and extent of a stroke affect rehabilitation needs, and medical follow-up remains essential.",
+    "assessment": "We discuss current abilities, falls risk, fatigue and the help available at home. Assessment focuses on safe, meaningful tasks rather than assuming every person has the same recovery goals.",
+    "treatment": "Practice may include getting in and out of a chair, standing balance, walking or using an arm in daily activity. Caregivers can learn agreed ways to support practice. Speech, swallowing and other concerns need the appropriate professionals.",
+    "recovery": "Recovery varies widely and may continue over a long period. Goals and support needs should be reviewed regularly; rehabilitation cannot promise full recovery or a fixed timeframe.",
+    "seekHelp": "New facial droop, arm weakness or speech difficulty is an emergency, even if symptoms disappear. Seek emergency medical care immediately; do not wait for a rehabilitation appointment.",
+    "serviceIds": ["neuro-rehab"],
+    "relatedIds": [],
+    "source": "https://www.nhs.uk/conditions/stroke/recovery/",
+    "faqs": [
+      {
+        "q": "Can a family member attend?",
+        "a": "Yes. Family or caregiver involvement can help with understanding goals and practising agreed tasks safely. Discuss the person’s preferences and consent with the clinic."
+      }
+    ],
+    "sourceLabel": "NHS patient information",
+    "updated": "2026-10-13"
+  }
+]

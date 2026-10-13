@@ -1,132 +1,92 @@
-import type { Metadata } from "next";
-import { FaUserMd, FaCertificate, FaUsers, FaHandsHelping } from "react-icons/fa";
-import workshopsData from "@/data/workshops.json";
+import workshops from "@/data/workshops.json";
 import WorkshopCard from "@/components/workshops/WorkshopCard";
 import PageHero from "@/components/layout/PageHero";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
-import JsonLd from "@/components/seo/JsonLd";
-import SectionHeading from "@/components/ui/SectionHeading";
+import { pageMetadata } from "@/lib/seo";
+import { workshopStatus } from "@/lib/workshops.mjs";
 import Button from "@/components/ui/Button";
-import CtaBand from "@/components/ui/CtaBand";
-import { site, absoluteUrl } from "@/lib/site";
-
-export const metadata: Metadata = {
-  title: "Physiotherapy Workshops & Hands-on Training in Islamabad",
-  description:
-    "Certified physiotherapy workshops in Islamabad led by Dr. Syed Mozaffar — dry needling, kinesio taping, Mulligan techniques, HVLA chiropractic, cupping therapy and therapeutic exercise.",
-  alternates: { canonical: "/workshops" },
-};
-
-const workshopsItemList = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Professional Physiotherapy Workshops",
-  itemListElement: workshopsData.map((workshop, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    item: {
-      "@type": "Course",
-      name: workshop.title,
-      description: workshop.shortDesc,
-      url: absoluteUrl(`/workshops/${workshop.id}`),
-      provider: {
-        "@type": "MedicalClinic",
-        name: site.name,
-        url: absoluteUrl("/"),
-      },
-    },
-  })),
-};
-
-const highlights = [
-  {
-    Icon: FaUserMd,
-    title: "Expert-led",
-    desc: "Every workshop is run directly by Dr. Syed Mozaffar, not a franchised instructor.",
-  },
-  {
-    Icon: FaHandsHelping,
-    title: "Hands-on practice",
-    desc: "Small groups with supervised practical application — you leave able to use the technique.",
-  },
-  {
-    Icon: FaCertificate,
-    title: "Certification",
-    desc: "A certificate of completion you can put toward your clinical portfolio.",
-  },
-  {
-    Icon: FaUsers,
-    title: "Every level",
-    desc: "Built for final-year students, new graduates and practising clinicians alike.",
-  },
-];
-
-export default function WorkshopsPage() {
+import { waHref } from "@/lib/site";
+export const dynamic = "force-dynamic";
+export const metadata = pageMetadata(
+  "Physiotherapy workshops in Islamabad",
+  "Explore Mulligan Technique, Kinesiology Taping and other physiotherapy workshops at The Muscular Junction, River Gardens, Islamabad. Dates, programmes and archives.",
+  "/workshops",
+);
+export default function Page() {
+  const upcoming = workshops
+    .filter((w) => ["upcoming", "in-progress"].includes(workshopStatus(w)))
+    .sort((a, b) => (a.startDate || "").localeCompare(b.startDate || ""));
+  const past = workshops.filter((w) => workshopStatus(w) === "past");
   return (
     <>
       <Breadcrumbs items={[{ name: "Workshops", path: "/workshops" }]} />
-      <JsonLd data={workshopsItemList} />
-
       <PageHero
-        eyebrow="For Clinicians"
-        title="Professional physiotherapy workshops"
-        subtitle="Hands-on, certified training in advanced therapy techniques — conducted under the direct guidance of Dr. Syed Mozaffar at our Islamabad clinic."
-      >
-        <div className="flex flex-col justify-center gap-3 sm:flex-row">
-          <Button href="/contact" size="lg">
-            Register your interest
-          </Button>
-          <Button href="#programmes" variant="on-ink" size="lg">
-            See all workshops
-          </Button>
-        </div>
-      </PageHero>
-
-      {/* Highlights */}
-      <section className="relative z-10">
-        <div className="container-page">
-          <div className="-mt-10 grid gap-4 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-lg)] sm:grid-cols-2 lg:grid-cols-4">
-            {highlights.map(({ Icon, title, desc }) => (
-              <div key={title} className="flex gap-4 p-2">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-lg text-primary">
-                  <Icon aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 className="font-display text-sm font-bold text-foreground">
-                    {title}
-                  </h2>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Programmes */}
-      <section id="programmes" className="section scroll-mt-28">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="Our Programmes"
-            title="Available workshops"
-            description="New dates are announced regularly. Register your interest and we will let you know when the next cohort opens."
-          />
-
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {workshopsData.map((workshop) => (
-              <WorkshopCard key={workshop.id} {...workshop} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CtaBand
-        title="Want in-house or custom training?"
-        description="We arrange tailored workshops for clinics, hospitals and universities. Tell us your group size and the techniques you want covered."
-        waMessage="Hi, I'd like to enquire about a custom or in-house physiotherapy workshop."
+        eyebrow="Professional education"
+        title="Learn together. Practise thoughtfully."
+        subtitle="Hands-on physiotherapy workshops at The Muscular Junction in River Gardens, Islamabad. Explore the principles, practical applications and clinical reasoning behind treatment."
       />
+      <section className="section" id="programmes">
+        <div className="container-page">
+          <h2 className="display-2 mb-8">Upcoming workshops</h2>
+          {upcoming.length ? (
+            <div className="workshop-grid">
+              {upcoming.map((w) => (
+                <WorkshopCard key={w.id} workshop={w} />
+              ))}
+            </div>
+          ) : (
+            <p className="lead">
+              Contact the clinic for the next workshop dates.
+            </p>
+          )}
+          <p className="text-sm text-muted-foreground mt-6">
+            Please confirm eligibility, fees and availability with the clinic
+            before registering. Workshop participation does not replace
+            professional registration or permission to practise.
+          </p>
+        </div>
+      </section>
+      {past.length > 0 && (
+        <section className="section bg-surface">
+          <div className="container-page">
+            <h2 className="display-2 mb-8">Past events</h2>
+            <div className="workshop-grid">
+              {past.map((w) => (
+                <WorkshopCard key={w.id} workshop={w} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+      <section className="section bg-surface">
+        <div className="container-page">
+          <p className="eyebrow">Continue exploring</p>
+          <h2 className="display-2 mt-4 mb-8">Programme archive</h2>
+          <div className="workshop-grid">
+            {workshops
+              .filter((w) => !w.startDate)
+              .map((w) => (
+                <WorkshopCard key={w.id} workshop={w} />
+              ))}
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container-page">
+          <h2 className="display-2">Training enquiries</h2>
+          <p className="lead mt-4">
+            Ask about future sessions, group learning or a previous workshop.
+          </p>
+          <Button
+            className="mt-6"
+            href={waHref(
+              "Hello, I would like information about physiotherapy workshops at The Muscular Junction.",
+            )}
+          >
+            Ask about workshops ↗
+          </Button>
+        </div>
+      </section>
     </>
   );
 }

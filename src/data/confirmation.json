@@ -1,0 +1,50 @@
+{
+  "hours": {
+    "status": "owner-confirmed",
+    "value": "Daily 12 noon to midnight",
+    "date": "2026-10-13"
+  },
+  "address": {
+    "status": "owner-confirmed",
+    "value": "Shah's Arcade, Gardens Street, River Gardens, Islamabad",
+    "map": "https://maps.app.goo.gl/kDKBstiiea5hcUwB6",
+    "date": "2026-10-13"
+  },
+  "femaleClinicians": {
+    "status": "owner-confirmed",
+    "names": [
+      "Ulfat Zahra",
+      "Eman Fatima",
+      "Ayesha"
+    ],
+    "date": "2026-10-13"
+  },
+  "reviews": {
+    "status": "owner-confirmed",
+    "value": 5,
+    "count": 79,
+    "date": "2026-10-13"
+  },
+  "workshops": {
+    "status": "partially-confirmed",
+    "confirmed": "August and October workshops held. Upcoming Mulligan 25 October 2026 and taping 8 November 2026, 09:00–14:00.",
+    "remaining": "Exact historical session dates and September occurrence, individual workshop photos and accreditation."
+  },
+  "clinicalContent": {
+    "status": "clinical-review-required-before-publication",
+    "reason": "New general patient information needs review and sign-off by the treating clinician; no reviewedBy claim is published."
+  },
+  "testimonials": {
+    "status": "owner-confirmation-required",
+    "reason": "Existing quotations retained verbatim; reconfirm consent, attribution and individual source links."
+  },
+  "credentials": {
+    "status": "reconfirm-before-publication",
+    "reason": "DPT and roles retained from supplied source; no new credentials, registrations or awards added."
+  },
+  "founderBiography": {
+    "status": "owner-supplied",
+    "confirmed": "Neuro rehabilitation specialist; physical therapy education at Shaheed Zulfiqar Ali Bhutto Medical University, Islamabad; PIMS experience in the acute spinal ward, neurology ward, OT and cardiac department; clinical leadership in dry needling, cupping, Mulligan and HVLA techniques.",
+    "note": "OT retained as supplied; no department expansion, certification, employment dates or additional qualification inferred."
+  }
+}

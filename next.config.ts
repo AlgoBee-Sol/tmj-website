@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import redirects from "./src/data/redirects.json";
 
 const nextConfig: NextConfig = {
   images: {
@@ -15,6 +16,24 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   poweredByHeader: false,
+  async redirects() {
+    return redirects;
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

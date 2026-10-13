@@ -3,12 +3,12 @@
     "id": "manual-therapy",
     "title": "Manual Therapy",
     "seoTitle": "Manual Therapy in Islamabad",
-    "shortDesc": "Hands-on joint and soft-tissue treatment to restore pain-free movement.",
+    "shortDesc": "Hands-on care to support comfortable movement, alongside an active rehabilitation plan.",
     "metaDescription": "Hands-on manual therapy in Islamabad for neck pain, back pain and stiff joints. Joint mobilisation, soft-tissue release and Mulligan techniques at The Muscular Junction.",
-    "fullDesc": "Manual therapy uses skilled, hands-on techniques — joint mobilisation, manipulation and soft-tissue release — to reduce pain and restore movement where a joint or muscle has become stiff, guarded or painful. Your therapist assesses how you move, identifies the segment that is actually restricted, and treats it directly. Hands-on work is paired with exercise so the range you gain in the session is one you keep.",
+    "fullDesc": "Manual therapy includes joint mobilisation and soft-tissue techniques selected after assessment. At our River Gardens clinic, hands-on treatment is used alongside exercise and practical advice. Your therapist explains the purpose of each technique, asks for consent and checks your response. Mulligan mobilisation with movement may be considered when appropriate; manipulation is never a requirement for care.",
     "icon": "FaHandsHelping",
     "sessionLength": "45–60 minutes",
-    "typicalCourse": "4–8 sessions",
+    "typicalCourse": "Agreed after assessment",
     "conditions": [
       "Neck pain & stiffness",
       "Lower back pain",
@@ -21,19 +21,32 @@
       "Full movement and joint assessment before any hands-on treatment",
       "Joint mobilisation, Mulligan mobilisation-with-movement and HVLA where indicated",
       "Soft-tissue release, trigger-point work and dry needling",
-      "A short home exercise plan to hold on to the range you gain"
+      "A short home exercise plan to practise between visits"
+    ],
+    "conditionIds": ["back-pain", "neck-pain", "frozen-shoulder"],
+    "suitability": "Tell your therapist about recent trauma, osteoporosis, neurological symptoms, operations and any medication affecting bleeding. Some techniques may be inappropriate. You can decline hands-on treatment and discuss alternatives.",
+    "benefit": "The aim is to make meaningful activities more manageable. We agree a functional goal and review whether treatment is helping; improvement and the number of visits vary.",
+    "faqs": [
+      {
+        "q": "Is manual therapy suitable for everyone?",
+        "a": "Tell your therapist about recent trauma, osteoporosis, neurological symptoms, operations and any medication affecting bleeding. Some techniques may be inappropriate. You can decline hands-on treatment and discuss alternatives."
+      },
+      {
+        "q": "How is the treatment plan decided?",
+        "a": "We discuss your goals, assess movement and explain the options. Your response and preferences guide follow-up; there is no fixed package or guaranteed recovery time."
+      }
     ]
   },
   {
     "id": "sports-rehab",
     "title": "Sports Rehabilitation",
     "seoTitle": "Sports Injury Rehabilitation in Islamabad",
-    "shortDesc": "Structured return-to-sport programmes built on objective testing.",
+    "shortDesc": "Progressive rehabilitation for the activities and sport you want to return to.",
     "metaDescription": "Sports injury rehabilitation in Islamabad — ACL, hamstring, ankle and shoulder injuries. Criteria-based return-to-sport programmes at The Muscular Junction.",
-    "fullDesc": "Getting back to sport is not about waiting for pain to settle — it is about rebuilding strength, control and confidence to the level your sport demands. We assess the injured limb against the other side, load it progressively, and only clear you to return when you meet objective criteria rather than a calendar date. That is what keeps re-injury rates down.",
+    "fullDesc": "Sports rehabilitation connects recovery with the demands of your sport. We consider your training history, injury and goals before planning a gradual return to loading. Strength, balance and movement tasks help guide progression. Return to sport is a shared decision that may also involve your surgeon, doctor or coach; reduced pain alone does not establish readiness.",
     "icon": "FaRunning",
     "sessionLength": "45–60 minutes",
-    "typicalCourse": "6–12 weeks",
+    "typicalCourse": "Agreed after assessment",
     "conditions": [
       "ACL & meniscus rehabilitation",
       "Hamstring & groin strains",
@@ -46,19 +59,36 @@
       "Baseline strength and movement testing, compared side to side",
       "Progressive loading through strength, power and plyometric phases",
       "Sport-specific drills that rebuild change-of-direction confidence",
-      "Objective return-to-sport criteria before you are cleared to play"
+      "Objective return-to-sport criteria to inform return-to-sport planning"
+    ],
+    "conditionIds": [
+      "sports-injuries",
+      "acl-injury-rehabilitation",
+      "knee-pain"
+    ],
+    "suitability": "A suspected fracture, a locked joint, severe swelling or inability to bear weight needs medical assessment. Training restrictions after surgery take priority over generic return-to-sport advice.",
+    "benefit": "The aim is to make meaningful activities more manageable. We agree a functional goal and review whether treatment is helping; improvement and the number of visits vary.",
+    "faqs": [
+      {
+        "q": "Is sports rehabilitation suitable for everyone?",
+        "a": "A suspected fracture, a locked joint, severe swelling or inability to bear weight needs medical assessment. Training restrictions after surgery take priority over generic return-to-sport advice."
+      },
+      {
+        "q": "How is the treatment plan decided?",
+        "a": "We discuss your goals, assess movement and explain the options. Your response and preferences guide follow-up; there is no fixed package or guaranteed recovery time."
+      }
     ]
   },
   {
     "id": "orthopedic",
     "title": "Orthopedic Physiotherapy",
     "seoTitle": "Orthopedic Physiotherapy in Islamabad",
-    "shortDesc": "Recovery after fractures, joint replacements and orthopedic surgery.",
+    "shortDesc": "Movement and strength support for joint problems, fractures and orthopedic recovery.",
     "metaDescription": "Post-operative and orthopedic physiotherapy in Islamabad — knee replacement, fracture and post-surgical rehabilitation at The Muscular Junction, River Gardens.",
-    "fullDesc": "After a fracture, a joint replacement or orthopedic surgery, the tissue heals on its own timeline — but range, strength and normal walking do not come back without work. We follow your surgeon's protocol, restore movement safely within it, and rebuild the strength around the joint so you return to normal daily activity rather than settling for a stiff, protected limb.",
+    "fullDesc": "Orthopedic physiotherapy focuses on movement affected by joint conditions, fractures and surgery. An assessment looks at pain, stiffness, strength and everyday function. If you have had surgery or a fracture, bring your discharge information and restrictions. Rehabilitation must respect tissue healing and the instructions of your orthopedic team.",
     "icon": "FaBone",
     "sessionLength": "45–60 minutes",
-    "typicalCourse": "8–16 weeks",
+    "typicalCourse": "Agreed after assessment",
     "conditions": [
       "Post knee & hip replacement",
       "Fracture rehabilitation",
@@ -69,21 +99,34 @@
     ],
     "whatWeDo": [
       "Rehabilitation staged to your surgeon's post-operative protocol",
-      "Safe, early range-of-motion work to prevent lasting stiffness",
+      "Safe, early range-of-motion work within your restrictions",
       "Progressive strengthening around the operated joint",
       "Gait retraining and walking-aid progression"
+    ],
+    "conditionIds": ["knee-pain", "shoulder-pain", "acl-injury-rehabilitation"],
+    "suitability": "New wound problems, fever, unusual calf swelling or a sudden loss of function after surgery require prompt medical advice. Bring weight-bearing restrictions and your surgeon’s protocol.",
+    "benefit": "The aim is to make meaningful activities more manageable. We agree a functional goal and review whether treatment is helping; improvement and the number of visits vary.",
+    "faqs": [
+      {
+        "q": "Is orthopedic physiotherapy suitable for everyone?",
+        "a": "New wound problems, fever, unusual calf swelling or a sudden loss of function after surgery require prompt medical advice. Bring weight-bearing restrictions and your surgeon’s protocol."
+      },
+      {
+        "q": "How is the treatment plan decided?",
+        "a": "We discuss your goals, assess movement and explain the options. Your response and preferences guide follow-up; there is no fixed package or guaranteed recovery time."
+      }
     ]
   },
   {
     "id": "neuro-rehab",
     "title": "Neurological Rehabilitation",
     "seoTitle": "Neuro Rehabilitation in Islamabad",
-    "shortDesc": "Regaining movement, balance and independence after neurological injury.",
+    "shortDesc": "Task-based rehabilitation for movement, balance and daily independence.",
     "metaDescription": "Neurological rehabilitation in Islamabad for stroke, Parkinson's, Bell's palsy and nerve injury. Task-specific neuro physiotherapy at The Muscular Junction.",
-    "fullDesc": "The nervous system retains a real capacity to reorganise after injury, but that change is driven by repetition of the specific task you want to recover. Our neurological rehabilitation is built around that principle: high-repetition, task-specific practice of walking, balance, reaching and hand function, progressed as you improve, with training for the family members supporting you at home.",
+    "fullDesc": "Neurological rehabilitation supports people whose movement has been affected by a nervous-system condition. Goals may include transfers, walking, balance and using an arm in daily activities. Tasks are adapted to ability, fatigue and safety. Family involvement can help carry a plan into the home, with coordination with the wider medical team when needed.",
     "icon": "FaBrain",
     "sessionLength": "45–60 minutes",
-    "typicalCourse": "Ongoing, reviewed monthly",
+    "typicalCourse": "Agreed after assessment",
     "conditions": [
       "Stroke rehabilitation",
       "Parkinson's disease",
@@ -97,18 +140,31 @@
       "Tone, spasticity and contracture management",
       "Falls-risk assessment and balance training",
       "Home programme and hands-on training for family caregivers"
+    ],
+    "conditionIds": ["stroke-rehabilitation"],
+    "suitability": "New facial droop, arm weakness or speech changes require emergency care, even if they resolve. Rehabilitation appointments are for ongoing care after medical assessment, not a new stroke.",
+    "benefit": "The aim is to make meaningful activities more manageable. We agree a functional goal and review whether treatment is helping; improvement and the number of visits vary.",
+    "faqs": [
+      {
+        "q": "Is neurological rehabilitation suitable for everyone?",
+        "a": "New facial droop, arm weakness or speech changes require emergency care, even if they resolve. Rehabilitation appointments are for ongoing care after medical assessment, not a new stroke."
+      },
+      {
+        "q": "How is the treatment plan decided?",
+        "a": "We discuss your goals, assess movement and explain the options. Your response and preferences guide follow-up; there is no fixed package or guaranteed recovery time."
+      }
     ]
   },
   {
     "id": "pediatric",
     "title": "Pediatric Physiotherapy",
     "seoTitle": "Pediatric Physiotherapy in Islamabad",
-    "shortDesc": "Play-based therapy helping children reach their movement milestones.",
+    "shortDesc": "Play-based movement support, developed with children and their families.",
     "metaDescription": "Pediatric physiotherapy in Islamabad for developmental delay, cerebral palsy, torticollis and gait concerns. Child-friendly, play-based sessions at The Muscular Junction.",
-    "fullDesc": "Children are not small adults, and children's rehabilitation does not work as a list of exercises. Sessions are built around play, so a child practising balance thinks they are playing a game. We work closely with parents, because most of the meaningful repetition happens at home between visits — you leave every session knowing exactly what to practise and why.",
+    "fullDesc": "Pediatric physiotherapy considers a child’s development, movement and participation in family life. Sessions use age-appropriate play and guided practice. Parents and caregivers help identify priorities and learn how to support the agreed activities at home. Development varies, so assessment and follow-up are more useful than comparison with a single milestone checklist.",
     "icon": "FaChild",
     "sessionLength": "30–45 minutes",
-    "typicalCourse": "Reviewed every 6–8 weeks",
+    "typicalCourse": "Agreed after assessment",
     "conditions": [
       "Delayed motor milestones",
       "Cerebral palsy",
@@ -122,18 +178,31 @@
       "Play-based sessions that hold a child's attention",
       "Positioning, handling and orthotic advice",
       "Parent coaching so progress continues at home"
+    ],
+    "conditionIds": [],
+    "suitability": "Loss of previously acquired skills or a sudden change in a child’s movement needs medical assessment. A parent or guardian should attend and help discuss consent and the child’s comfort.",
+    "benefit": "The aim is to make meaningful activities more manageable. We agree a functional goal and review whether treatment is helping; improvement and the number of visits vary.",
+    "faqs": [
+      {
+        "q": "Is pediatric physiotherapy suitable for everyone?",
+        "a": "Loss of previously acquired skills or a sudden change in a child’s movement needs medical assessment. A parent or guardian should attend and help discuss consent and the child’s comfort."
+      },
+      {
+        "q": "How is the treatment plan decided?",
+        "a": "We discuss your goals, assess movement and explain the options. Your response and preferences guide follow-up; there is no fixed package or guaranteed recovery time."
+      }
     ]
   },
   {
     "id": "dry-needling-cupping",
     "title": "Dry Needling & Cupping",
     "seoTitle": "Dry Needling & Cupping Therapy in Islamabad",
-    "shortDesc": "Targeted techniques for stubborn muscle tightness and myofascial pain.",
+    "shortDesc": "Understand two optional techniques and how they fit within rehabilitation.",
     "metaDescription": "Dry needling and cupping therapy in Islamabad for trigger points, myofascial pain and muscle tightness — delivered by trained physiotherapists at The Muscular Junction.",
-    "fullDesc": "When a muscle stays tight and tender despite hands-on treatment, trigger-point dry needling and myofascial cupping can reach tissue that manual work alone struggles to change. Both are used here as adjuncts, never as a standalone treatment — they open a window of reduced pain and better movement that we then use for loading and exercise, which is what makes the change last.",
+    "fullDesc": "Dry needling and cupping are different approaches sometimes considered alongside physiotherapy. Needling uses fine needles; dry cupping applies suction to the skin. Neither replaces assessment, exercise or appropriate medical care. This overview explains the distinction and links to the individual treatment pages so you can discuss benefits, uncertainty and risks before deciding.",
     "icon": "FaSyringe",
     "sessionLength": "30–45 minutes",
-    "typicalCourse": "Used alongside your main plan",
+    "typicalCourse": "Agreed after assessment",
     "conditions": [
       "Myofascial trigger points",
       "Chronic muscle tightness",
@@ -147,18 +216,31 @@
       "Trigger-point dry needling using single-use sterile needles",
       "Static and moving (myofascial decompression) cupping",
       "Immediate follow-up with movement and loading work"
+    ],
+    "conditionIds": ["neck-pain", "shoulder-pain"],
+    "suitability": "Needling and cupping are optional and require separate screening and consent. Tell the therapist about blood-thinning medication, pregnancy, skin problems, reduced sensation and previous reactions.",
+    "benefit": "The aim is to make meaningful activities more manageable. We agree a functional goal and review whether treatment is helping; improvement and the number of visits vary.",
+    "faqs": [
+      {
+        "q": "Is dry needling & cupping suitable for everyone?",
+        "a": "Needling and cupping are optional and require separate screening and consent. Tell the therapist about blood-thinning medication, pregnancy, skin problems, reduced sensation and previous reactions."
+      },
+      {
+        "q": "How is the treatment plan decided?",
+        "a": "We discuss your goals, assess movement and explain the options. Your response and preferences guide follow-up; there is no fixed package or guaranteed recovery time."
+      }
     ]
   },
   {
     "id": "cryotherapy",
     "title": "Cryotherapy & Cold Therapy",
     "seoTitle": "Cryotherapy & Cold Therapy in Islamabad",
-    "shortDesc": "Controlled cold to settle acute pain and swelling early in recovery.",
+    "shortDesc": "Carefully monitored local cold application as a supporting treatment.",
     "metaDescription": "Cryotherapy and cold therapy in Islamabad for acute injury, swelling and post-operative pain — used as part of a wider rehabilitation plan at The Muscular Junction.",
-    "fullDesc": "Controlled cold application is a simple, well-evidenced way to reduce pain and swelling in the early phase after an acute injury or operation. We use it to make the first days of rehabilitation tolerable — enough pain relief that you can start moving sooner. It is a supporting tool within a rehabilitation plan, not a treatment on its own, and we will always tell you when it has stopped being useful.",
+    "fullDesc": "Local cold therapy may provide short-term relief after some injuries or procedures. It is a supporting measure rather than a complete rehabilitation plan. Your therapist considers skin condition, sensation, circulation and your stage of recovery before recommending it. This service describes local cold application, not whole-body cryotherapy.",
     "icon": "FaSnowflake",
     "sessionLength": "15–20 minutes",
-    "typicalCourse": "Early phase of recovery",
+    "typicalCourse": "Agreed after assessment",
     "conditions": [
       "Acute sprains & strains",
       "Post-operative swelling",
@@ -172,6 +254,149 @@
       "Controlled, timed application with skin monitoring",
       "Combined cold and compression for swelling management",
       "Clear guidance on safe use at home"
+    ],
+    "conditionIds": ["sports-injuries", "knee-pain"],
+    "suitability": "Reduced circulation, altered sensation and some cold-sensitive conditions can make cold application unsuitable. Do not apply ice directly to skin or continue if the skin becomes painful or unusually pale.",
+    "benefit": "The aim is to make meaningful activities more manageable. We agree a functional goal and review whether treatment is helping; improvement and the number of visits vary.",
+    "faqs": [
+      {
+        "q": "Is cryotherapy & cold therapy suitable for everyone?",
+        "a": "Reduced circulation, altered sensation and some cold-sensitive conditions can make cold application unsuitable. Do not apply ice directly to skin or continue if the skin becomes painful or unusually pale."
+      },
+      {
+        "q": "How is the treatment plan decided?",
+        "a": "We discuss your goals, assess movement and explain the options. Your response and preferences guide follow-up; there is no fixed package or guaranteed recovery time."
+      }
+    ]
+  },
+  {
+    "id": "dry-needling",
+    "title": "Dry Needling",
+    "seoTitle": "Dry Needling in Islamabad",
+    "shortDesc": "An optional needling technique, considered after screening and informed consent.",
+    "metaDescription": "Dry Needling at The Muscular Junction, River Gardens, Islamabad. Learn about assessment, suitability and what to expect before booking.",
+    "fullDesc": "Dry needling uses fine, single-use needles in selected muscle areas. It may be discussed for some muscle-related pain, alongside an active plan. Responses vary and soreness or bruising can occur. Your clinician should explain the evidence, alternatives and risks, including uncommon serious complications such as injury to underlying structures. You do not need to agree to needling to receive physiotherapy.",
+    "icon": "FaSyringe",
+    "sessionLength": "Discuss when booking",
+    "typicalCourse": "Agreed after assessment",
+    "conditions": [],
+    "conditionIds": ["neck-pain", "shoulder-pain"],
+    "whatWeDo": [
+      "Discuss symptoms, medical history and alternatives",
+      "Explain risks and obtain consent before needling",
+      "Use single-use sterile needles and appropriate hygiene",
+      "Check your response and give aftercare guidance"
+    ],
+    "suitability": "Tell your clinician about pregnancy, blood-thinning medicines, bleeding disorders, infection, immune problems or needle anxiety. Suitability depends on your history and the proposed treatment area.",
+    "benefit": "The plan focuses on your daily function and agreed goals. Your response guides whether this approach remains useful; outcomes vary.",
+    "faqs": [
+      {
+        "q": "What should I discuss before dry needling?",
+        "a": "Tell your clinician about pregnancy, blood-thinning medicines, bleeding disorders, infection, immune problems or needle anxiety. Suitability depends on your history and the proposed treatment area."
+      },
+      {
+        "q": "Can I discuss other treatment options?",
+        "a": "Yes. Your therapist should explain alternatives and help you decide on a plan that fits your needs and preferences."
+      }
+    ]
+  },
+  {
+    "id": "cupping-therapy",
+    "title": "Cupping Therapy",
+    "seoTitle": "Cupping Therapy in Islamabad",
+    "shortDesc": "A discussion of dry cupping as an optional addition to rehabilitation.",
+    "metaDescription": "Cupping Therapy at The Muscular Junction, River Gardens, Islamabad. Learn about assessment, suitability and what to expect before booking.",
+    "fullDesc": "Dry cupping applies suction with cups placed on the skin. Some people seek it for muscle discomfort, but evidence for lasting benefit is limited. Temporary circular marks and soreness can occur. At an assessment, discuss whether it adds anything useful to your rehabilitation and what alternatives are available. This page covers dry cupping; it does not describe wet cupping or bloodletting.",
+    "icon": "FaHandsHelping",
+    "sessionLength": "Discuss when booking",
+    "typicalCourse": "Agreed after assessment",
+    "conditions": [],
+    "conditionIds": ["back-pain", "shoulder-pain"],
+    "whatWeDo": [
+      "Discuss the reason for considering cupping",
+      "Screen skin health and relevant medical conditions",
+      "Explain possible marks, discomfort and uncertain benefit",
+      "Review comfort and continue the agreed movement plan"
+    ],
+    "suitability": "Skin infection, fragile or damaged skin, reduced sensation and bleeding risk may make cupping unsuitable. Disclose medication and medical conditions, and stop if treatment is uncomfortable.",
+    "benefit": "The plan focuses on your daily function and agreed goals. Your response guides whether this approach remains useful; outcomes vary.",
+    "faqs": [
+      {
+        "q": "What should I discuss before cupping therapy?",
+        "a": "Skin infection, fragile or damaged skin, reduced sensation and bleeding risk may make cupping unsuitable. Disclose medication and medical conditions, and stop if treatment is uncomfortable."
+      },
+      {
+        "q": "Can I discuss other treatment options?",
+        "a": "Yes. Your therapist should explain alternatives and help you decide on a plan that fits your needs and preferences."
+      }
+    ]
+  },
+  {
+    "id": "post-operative-rehabilitation",
+    "title": "Post-operative Rehabilitation",
+    "seoTitle": "Post-operative Rehabilitation in Islamabad",
+    "shortDesc": "A coordinated recovery plan that respects your surgery and restrictions.",
+    "metaDescription": "Post-operative Rehabilitation at The Muscular Junction, River Gardens, Islamabad. Learn about assessment, suitability and what to expect before booking.",
+    "fullDesc": "Post-operative rehabilitation helps you work toward daily function after surgery. The procedure, your health and the surgeon’s instructions determine when and how activities progress. Bring your discharge summary and protocol to your first appointment. We discuss practical goals such as walking, using stairs or returning to work, then review progress without promising a fixed recovery date.",
+    "icon": "FaBone",
+    "sessionLength": "Discuss when booking",
+    "typicalCourse": "Agreed after assessment",
+    "conditions": [],
+    "conditionIds": ["acl-injury-rehabilitation", "knee-pain", "shoulder-pain"],
+    "whatWeDo": [
+      "Review the operation and surgeon’s rehabilitation protocol",
+      "Assess walking, joint range and relevant muscle function",
+      "Plan safe movement and progressive strengthening",
+      "Review milestones and communicate concerns to the surgical team"
+    ],
+    "suitability": "Contact your surgical team urgently for wound discharge, fever or new calf swelling. Chest pain or shortness of breath after surgery needs emergency assessment. Do not change weight-bearing restrictions without advice.",
+    "benefit": "The plan focuses on your daily function and agreed goals. Your response guides whether this approach remains useful; outcomes vary.",
+    "faqs": [
+      {
+        "q": "What should I discuss before post-operative rehabilitation?",
+        "a": "Contact your surgical team urgently for wound discharge, fever or new calf swelling. Chest pain or shortness of breath after surgery needs emergency assessment. Do not change weight-bearing restrictions without advice."
+      },
+      {
+        "q": "Can I discuss other treatment options?",
+        "a": "Yes. Your therapist should explain alternatives and help you decide on a plan that fits your needs and preferences."
+      }
+    ]
+  },
+  {
+    "id": "musculoskeletal-physiotherapy",
+    "title": "Musculoskeletal Physiotherapy",
+    "seoTitle": "Musculoskeletal Physiotherapy in Islamabad",
+    "shortDesc": "Assessment and rehabilitation for muscle, joint and tendon problems.",
+    "metaDescription": "Musculoskeletal Physiotherapy at The Muscular Junction, River Gardens, Islamabad. Learn about assessment, suitability and what to expect before booking.",
+    "fullDesc": "Musculoskeletal physiotherapy considers how muscles, joints and tendons affect your daily life. The assessment explores symptoms, physical activity, work and the activities you want to regain. Education, appropriately paced exercise and sometimes hands-on treatment can form a plan. A scan is not always needed, and the clinical findings help determine whether further medical assessment is appropriate.",
+    "icon": "FaRunning",
+    "sessionLength": "Discuss when booking",
+    "typicalCourse": "Agreed after assessment",
+    "conditions": [],
+    "conditionIds": [
+      "back-pain",
+      "neck-pain",
+      "knee-pain",
+      "tennis-elbow",
+      "plantar-fasciitis"
+    ],
+    "whatWeDo": [
+      "Explore symptoms and daily activity demands",
+      "Assess relevant movement, strength and function",
+      "Agree an achievable exercise and activity plan",
+      "Review meaningful changes and adapt your programme"
+    ],
+    "suitability": "Persistent unexplained symptoms, fever, major trauma or new neurological changes may need medical assessment before rehabilitation. Tell your therapist about other conditions and any recent change in health.",
+    "benefit": "The plan focuses on your daily function and agreed goals. Your response guides whether this approach remains useful; outcomes vary.",
+    "faqs": [
+      {
+        "q": "What should I discuss before musculoskeletal physiotherapy?",
+        "a": "Persistent unexplained symptoms, fever, major trauma or new neurological changes may need medical assessment before rehabilitation. Tell your therapist about other conditions and any recent change in health."
+      },
+      {
+        "q": "Can I discuss other treatment options?",
+        "a": "Yes. Your therapist should explain alternatives and help you decide on a plan that fits your needs and preferences."
+      }
     ]
   }
 ]

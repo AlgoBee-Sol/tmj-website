@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-13",
+  "browser": "Chrome",
+  "viewports": [
+    320,
+    390,
+    768,
+    1024,
+    1200,
+    1440
+  ],
+  "overflow": "No horizontal overflow observed on checked core templates",
+  "templatesAt320": [
+    "home",
+    "appointment",
+    "service",
+    "condition",
+    "founder",
+    "contact",
+    "workshop",
+    "article"
+  ],
+  "behaviour": [
+    "Mobile menu modal focus, Escape dismissal and restoration",
+    "Booking errors focus summary",
+    "Booking draft prepared locally without sending",
+    "Editing preserves details and restores field focus",
+    "Map iframe uses confirmed clinic coordinates",
+    "Social sidebar links and keyboard label expansion; hidden on mobile"
+  ],
+  "productionConsole": "No new warnings or errors during final production navigation",
+  "screenshots": [
+    "screenshots/home-desktop.jpg",
+    "screenshots/home-mobile.jpg"
+  ],
+  "limitations": [
+    "No live calls, WhatsApp messages or EmailJS delivery sent",
+    "No field Core Web Vitals measurements or Lighthouse score claimed"
+  ]
+}

@@ -1,38 +1,55 @@
 {
   "name": "The Muscular Junction",
   "shortName": "TMJ Physiotherapy",
-  "tagline": "Physiotherapy & Rehabilitation Center",
-  "positioning": "Evidence-based physiotherapy & rehabilitation in Islamabad",
+  "tagline": "Physiotherapy & Clinical Rehabilitation",
+  "positioning": "Assessment-led physiotherapy and rehabilitation in River Gardens, Islamabad",
   "url": "https://themuscularjunction.com",
-  "yearsOfExcellence": 5,
-  "patientsTreated": "300+",
+  "acceptingNewPatients": true,
   "contact": {
     "phone": "+92 339 6116665",
     "phoneDial": "+923396116665",
     "email": "themuscularjunction@gmail.com",
-    "address": "Zone V, River Gardens, Islamabad",
-    "streetAddress": "Zone V, River Gardens",
+    "address": "Shah's Arcade, Gardens Street, River Gardens, Islamabad",
+    "shortAddress": "River Gardens, Islamabad",
+    "streetAddress": "Shah's Arcade, Gardens Street, River Gardens",
     "locality": "Islamabad",
     "region": "Islamabad Capital Territory",
     "country": "PK",
     "countryName": "Pakistan",
-    "geo": { "lat": 33.549854, "lng": 73.168753 },
-    "mapEmbedUrl": "https://www.google.com/maps?q=33.549854,73.168753&hl=en&z=18&output=embed",
-    "mapLink": "https://maps.app.goo.gl/FYRvSV1PP8b67fc79"
+    "geo": {
+      "lat": 33.5497932,
+      "lng": 73.1687074
+    },
+    "mapEmbedUrl": "https://www.google.com/maps?q=33.5497932,73.1687074&hl=en&z=18&output=embed",
+    "mapLink": "https://maps.app.goo.gl/kDKBstiiea5hcUwB6",
+    "accessNote": "The existing clinic information lists ground-floor access and parking outside. Please call ahead to discuss your access needs."
   },
   "rating": {
     "value": "5.0",
     "stars": 5,
-    "count": 63,
-    "countLabel": "60+",
+    "count": 79,
     "platform": "Google",
-    "url": "https://maps.app.goo.gl/FYRvSV1PP8b67fc79"
+    "url": "https://maps.app.goo.gl/kDKBstiiea5hcUwB6",
+    "confirmed": true,
+    "verifiedAt": "2026-10-13"
   },
   "hours": {
-    "summary": "Mon – Sat · 9:00 AM – 9:00 PM",
-    "schedule": [
-      { "days": "Monday – Saturday", "opens": "9:00 AM", "closes": "9:00 PM" },
-      { "days": "Sunday", "opens": "", "closes": "", "closed": true }
+    "confirmed": true,
+    "timezone": "Asia/Karachi",
+    "schema": [
+      {
+        "days": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "12:00",
+        "closes": "00:00"
+      }
     ]
   },
   "areasServed": [

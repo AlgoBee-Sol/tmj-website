@@ -2,13 +2,11 @@
   {
     "id": "dry-needling",
     "title": "Dry Needling Workshop",
-    "shortDesc": "Master trigger-point dry needling to release myofascial tension and accelerate pain relief, covering safe needle handling, precise point location and evidence-based clinical application.",
-    "fullDesc": "This hands-on workshop trains you in trigger-point dry needling — one of the most effective tools for releasing myofascial tension and relieving pain. Under the direct supervision of Dr. Syed Mozaffar, you will learn safe needle handling, precise point location, and how to integrate dry needling into a wider treatment plan. The session combines short theory blocks with supervised practical application so you leave confident to use the technique in clinic.",
+    "shortDesc": "Screening, anatomy, consent and supervised dry needling practice for clinicians.",
+    "fullDesc": "Screening, anatomy, consent and supervised dry needling practice for clinicians. The programme description includes safe needle handling, trigger-point identification and integration into a wider treatment plan. Practical training must be appropriate to participants’ qualifications and scope of practice.",
     "icon": "FaSyringe",
     "duration": "2 Days",
-    "level": "Hands-on Certification",
-    "date": "Saturday–Sunday, 16–17 August 2026",
-    "time": "9:00 AM – 5:00 PM",
+    "level": "Professional education",
     "venue": "The Muscular Junction Clinic, Islamabad",
     "instructor": "Dr. Syed Mozaffar",
     "highlights": [
@@ -17,18 +15,30 @@
       "Supervised, hands-on needling practice",
       "Managing common side effects and contraindications",
       "Integrating dry needling into treatment plans"
-    ]
+    ],
+    "sourceSchedule": {
+      "date": "Saturday–Sunday, 16–17 August 2026",
+      "time": "9:00 AM – 5:00 PM"
+    },
+    "status": "archive",
+    "date": "Programme archive",
+    "time": "Confirm with the clinic",
+    "photos": [],
+    "serviceIds": ["dry-needling"],
+    "startDate": null,
+    "endDate": null,
+    "programmeId": null,
+    "completionConfirmed": true,
+    "historicalMonth": "August 2026"
   },
   {
     "id": "kinesio-taping",
     "title": "Kinesio Taping Workshop",
-    "shortDesc": "Learn evidence-based elastic taping techniques to support muscles and joints, reduce swelling, improve proprioception and enhance functional movement.",
-    "fullDesc": "Kinesio taping is a versatile, low-cost tool used across sports and clinical rehabilitation. In this practical workshop you will learn the principles of elastic taping and how to apply it to support muscles and joints, reduce swelling, and improve proprioception. You will practise the most common taping applications for the shoulder, knee, back and ankle, and understand when and why each technique is used.",
+    "shortDesc": "Practical taping applications, skin screening and discussion of clinical evidence.",
+    "fullDesc": "Practical taping applications, skin screening and discussion of clinical evidence. The programme covers shoulder, knee, back and ankle applications. Participants discuss indications, alternatives and how to evaluate a patient’s response rather than assuming that taping is necessary.",
     "icon": "FaBandAid",
     "duration": "1 Day",
-    "level": "Practical Training",
-    "date": "Sunday, 31 August 2026",
-    "time": "10:00 AM – 4:00 PM",
+    "level": "Professional education",
     "venue": "The Muscular Junction Clinic, Islamabad",
     "instructor": "Dr. Syed Mozaffar",
     "highlights": [
@@ -37,18 +47,30 @@
       "Taping for swelling and lymphatic drainage",
       "Region-specific applications (shoulder, knee, back, ankle)",
       "Hands-on practice with feedback"
-    ]
+    ],
+    "sourceSchedule": {
+      "date": "Sunday, 31 August 2026",
+      "time": "10:00 AM – 4:00 PM"
+    },
+    "status": "archive",
+    "date": "Programme archive",
+    "time": "Confirm with the clinic",
+    "photos": [],
+    "serviceIds": ["sports-rehab"],
+    "startDate": null,
+    "endDate": null,
+    "programmeId": null,
+    "completionConfirmed": true,
+    "historicalMonth": "August 2026"
   },
   {
     "id": "mulligan-techniques",
     "title": "Mulligan Techniques Hands-on Workshop",
-    "shortDesc": "Mobilisation with Movement (MWM), SNAGs and NAGs for the spine and peripheral joints to restore pain-free range of motion through applied, hands-on practice.",
-    "fullDesc": "The Mulligan Concept is a gentle, effective manual therapy approach that restores pain-free movement. This hands-on workshop covers Mobilisation with Movement (MWM), SNAGs and NAGs for the spine and peripheral joints. You will pair up to practise each technique under guidance, learning correct hand placement, direction of glide and dosage so you can apply the concept safely and confidently.",
+    "shortDesc": "Mobilisation with movement, SNAGs and NAGs in supervised clinical practice.",
+    "fullDesc": "Mobilisation with movement, SNAGs and NAGs in supervised clinical practice. The programme covers hand placement, glide direction and appropriate application to spine and peripheral joints. Clinical reasoning and patient response guide the choice of technique.",
     "icon": "FaHandsHelping",
     "duration": "2 Days",
-    "level": "Hands-on Workshop",
-    "date": "Saturday–Sunday, 13–14 September 2026",
-    "time": "9:00 AM – 5:00 PM",
+    "level": "Professional education",
     "venue": "The Muscular Junction Clinic, Islamabad",
     "instructor": "Dr. Syed Mozaffar",
     "highlights": [
@@ -57,18 +79,30 @@
       "Peripheral joint mobilisation techniques",
       "Correct glide direction, grade and dosage",
       "Supervised partner practice"
-    ]
+    ],
+    "sourceSchedule": {
+      "date": "Saturday–Sunday, 13–14 September 2026",
+      "time": "9:00 AM – 5:00 PM"
+    },
+    "status": "archive",
+    "date": "Programme archive",
+    "time": "Confirm with the clinic",
+    "photos": [],
+    "serviceIds": ["manual-therapy"],
+    "startDate": null,
+    "endDate": null,
+    "programmeId": null,
+    "completionConfirmed": false,
+    "historicalMonth": null
   },
   {
     "id": "hvla-chiropractic",
     "title": "HVLA Chiropractic Workshop",
-    "shortDesc": "High-Velocity Low-Amplitude spinal manipulation techniques delivered safely and effectively across the cervical, thoracic and lumbar spine.",
-    "fullDesc": "This advanced workshop teaches High-Velocity Low-Amplitude (HVLA) spinal manipulation for the cervical, thoracic and lumbar spine. Emphasis is placed on patient safety, screening, correct positioning and controlled delivery. Through supervised practice you will develop the feel and precision required to perform HVLA techniques effectively and responsibly.",
+    "shortDesc": "An advanced workshop topic covering screening, consent and HVLA manipulation.",
+    "fullDesc": "An advanced workshop topic covering screening, consent and HVLA manipulation. The original workshop title is retained in this archive. Discussion centres on contraindications, referral, informed consent and safe decision-making; attendance does not confer chiropractic registration or authorisation to practise outside an existing professional scope.",
     "icon": "FaBone",
     "duration": "2 Days",
-    "level": "Advanced Level",
-    "date": "Saturday–Sunday, 27–28 September 2026",
-    "time": "9:00 AM – 5:00 PM",
+    "level": "Professional education",
     "venue": "The Muscular Junction Clinic, Islamabad",
     "instructor": "Dr. Syed Mozaffar",
     "highlights": [
@@ -77,18 +111,30 @@
       "Patient positioning and setup",
       "Controlled thrust delivery and pre-tension",
       "Supervised hands-on practice"
-    ]
+    ],
+    "sourceSchedule": {
+      "date": "Saturday–Sunday, 27–28 September 2026",
+      "time": "9:00 AM – 5:00 PM"
+    },
+    "status": "archive",
+    "date": "Programme archive",
+    "time": "Confirm with the clinic",
+    "photos": [],
+    "serviceIds": ["manual-therapy"],
+    "startDate": null,
+    "endDate": null,
+    "programmeId": null,
+    "completionConfirmed": false,
+    "historicalMonth": null
   },
   {
     "id": "cupping-therapy",
     "title": "Cupping Therapy Workshop",
-    "shortDesc": "Traditional and myofascial decompression cupping to enhance circulation, release fascial restrictions and speed up soft-tissue recovery.",
-    "fullDesc": "Cupping therapy is widely used to enhance circulation, release fascial restrictions and speed up soft-tissue recovery. This practical workshop covers both traditional static cupping and myofascial decompression (moving cups). You will learn indications, contraindications, and how to combine cupping with movement for the best results — with plenty of supervised hands-on time.",
+    "shortDesc": "Dry cupping techniques, hygiene, skin monitoring and discussion of limitations.",
+    "fullDesc": "Dry cupping techniques, hygiene, skin monitoring and discussion of limitations. The programme description includes static and moving dry cupping, contraindications and combining treatment with active movement. Evidence limitations and possible skin effects should form part of the discussion.",
     "icon": "FaFireAlt",
     "duration": "1 Day",
-    "level": "Certification",
-    "date": "Sunday, 12 October 2026",
-    "time": "10:00 AM – 4:00 PM",
+    "level": "Professional education",
     "venue": "The Muscular Junction Clinic, Islamabad",
     "instructor": "Dr. Syed Mozaffar",
     "highlights": [
@@ -97,18 +143,30 @@
       "Combining cupping with active movement",
       "Hygiene, safety and skin management",
       "Supervised hands-on practice"
-    ]
+    ],
+    "sourceSchedule": {
+      "date": "Sunday, 12 October 2026",
+      "time": "10:00 AM – 4:00 PM"
+    },
+    "status": "archive",
+    "date": "Programme archive",
+    "time": "Confirm with the clinic",
+    "photos": [],
+    "serviceIds": ["cupping-therapy"],
+    "startDate": null,
+    "endDate": null,
+    "programmeId": null,
+    "completionConfirmed": true,
+    "historicalMonth": "October 2026"
   },
   {
     "id": "therapeutic-exercise",
     "title": "Therapeutic Exercise & Clinical Rehab",
-    "shortDesc": "Design progressive, evidence-based exercise programmes for injury rehabilitation, return-to-sport and long-term performance and pain management.",
-    "fullDesc": "Exercise is the cornerstone of lasting rehabilitation. This workshop teaches you how to design progressive, evidence-based exercise programmes for injury rehab, return-to-sport and long-term pain management. You will learn how to assess, dose and progress loading, and how to keep patients motivated and adherent throughout their recovery.",
+    "shortDesc": "Exercise selection, progression and meaningful rehabilitation goals.",
+    "fullDesc": "Exercise selection, progression and meaningful rehabilitation goals. The programme covers loading, exercise dosage and return-to-activity decisions. Participants consider ways to make rehabilitation practical for patients and how to review response over time.",
     "icon": "FaDumbbell",
     "duration": "2 Days",
-    "level": "Practical Training",
-    "date": "Saturday–Sunday, 25–26 October 2026",
-    "time": "9:00 AM – 5:00 PM",
+    "level": "Professional education",
     "venue": "The Muscular Junction Clinic, Islamabad",
     "instructor": "Dr. Syed Mozaffar",
     "highlights": [
@@ -117,6 +175,80 @@
       "Return-to-sport testing and criteria",
       "Pain management through graded exercise",
       "Improving patient adherence and motivation"
-    ]
+    ],
+    "sourceSchedule": {
+      "date": "Saturday–Sunday, 25–26 October 2026",
+      "time": "9:00 AM – 5:00 PM"
+    },
+    "status": "archive",
+    "date": "Programme archive",
+    "time": "Confirm with the clinic",
+    "photos": [],
+    "serviceIds": ["musculoskeletal-physiotherapy", "sports-rehab"],
+    "startDate": null,
+    "endDate": null,
+    "programmeId": null,
+    "completionConfirmed": false,
+    "historicalMonth": null
+  },
+  {
+    "id": "mulligan-technique-october-2026",
+    "title": "Mulligan Technique — Hands-on Workshop",
+    "shortDesc": "A practical session with Dr. Syed Mozaffar, combining principles, supervised clinical application and case discussion.",
+    "fullDesc": "Join Dr. Syed Mozaffar for a hands-on workshop exploring the Mulligan Technique. The session brings together the theoretical basis of mobilisation with movement, practical clinical applications and discussion of the evidence. Participants can ask questions and connect technique selection to clinical reasoning.",
+    "icon": "FaHandsHelping",
+    "duration": "5 hours",
+    "level": "Professional education",
+    "venue": "River Gardens, Islamabad",
+    "instructor": "Dr. Syed Mozaffar",
+    "highlights": [
+      "Principles and theoretical basis of the Mulligan Technique",
+      "Hands-on practical training with clinical applications",
+      "Evidence-informed approach and case discussions"
+    ],
+    "sourceSchedule": {
+      "date": "Saturday–Sunday, 13–14 September 2026",
+      "time": "9:00 AM – 5:00 PM"
+    },
+    "status": "scheduled",
+    "date": "2026-10-25",
+    "time": "9:00 AM – 2:00 PM",
+    "photos": [],
+    "serviceIds": ["manual-therapy"],
+    "startDate": "2026-10-25T09:00:00+05:00",
+    "endDate": "2026-10-25T14:00:00+05:00",
+    "programmeId": "mulligan-techniques",
+    "completionConfirmed": false,
+    "historicalMonth": null
+  },
+  {
+    "id": "kinesiology-taping-november-2026",
+    "title": "Kinesiology Taping Techniques — Hands-on Workshop",
+    "shortDesc": "A practical session exploring taping assessment, joint support applications and sports rehabilitation.",
+    "fullDesc": "Join The Muscular Junction for a hands-on workshop on kinesiology taping techniques. The session covers assessment and taping fundamentals, pain relief and joint support applications, and examples from sports injury rehabilitation. The focus is on practical learning and thoughtful use within clinical care.",
+    "icon": "FaBandAid",
+    "duration": "5 hours",
+    "level": "Professional education",
+    "venue": "River Gardens, Islamabad",
+    "instructor": "The Muscular Junction team",
+    "highlights": [
+      "Taping fundamentals and assessment",
+      "Pain relief and joint support applications",
+      "Sports injury and rehabilitation techniques"
+    ],
+    "sourceSchedule": {
+      "date": "Sunday, 31 August 2026",
+      "time": "10:00 AM – 4:00 PM"
+    },
+    "status": "scheduled",
+    "date": "2026-11-08",
+    "time": "9:00 AM – 2:00 PM",
+    "photos": [],
+    "serviceIds": ["sports-rehab"],
+    "startDate": "2026-11-08T09:00:00+05:00",
+    "endDate": "2026-11-08T14:00:00+05:00",
+    "programmeId": "kinesio-taping",
+    "completionConfirmed": false,
+    "historicalMonth": null
   }
 ]

@@ -1,0 +1,22 @@
+[
+  {
+    "source": "/services/sports-rehabilitation",
+    "destination": "/services/sports-rehab",
+    "statusCode": 301
+  },
+  {
+    "source": "/services/orthopedic-physiotherapy",
+    "destination": "/services/orthopedic",
+    "statusCode": 301
+  },
+  {
+    "source": "/services/neurological-rehabilitation",
+    "destination": "/services/neuro-rehab",
+    "statusCode": 301
+  },
+  {
+    "source": "/services/pediatric-physiotherapy",
+    "destination": "/services/pediatric",
+    "statusCode": 301
+  }
+]

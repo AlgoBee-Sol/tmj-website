@@ -53,8 +53,7 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
-  const isExternal =
-    external ?? /^(https?:|tel:|mailto:)/.test(href);
+  const isExternal = external ?? /^(https?:|tel:|mailto:)/.test(href);
 
   if (isExternal) {
     return (

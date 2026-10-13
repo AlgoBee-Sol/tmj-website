@@ -1,0 +1,91 @@
+[
+  {
+    "id": "your-first-physiotherapy-appointment",
+    "title": "Your first physiotherapy appointment: what to bring and ask",
+    "description": "A practical guide to preparing for your first visit to The Muscular Junction, from useful reports to questions about your rehabilitation plan.",
+    "category": "Physiotherapy Education",
+    "published": "2026-10-13",
+    "updated": "2026-10-13",
+    "author": "The Muscular Junction",
+    "image": "/images/clinic-interior-1024.webp",
+    "imageAlt": "Reception at The Muscular Junction clinic",
+    "serviceIds": [
+      "musculoskeletal-physiotherapy",
+      "post-operative-rehabilitation"
+    ],
+    "conditionIds": ["back-pain", "knee-pain"],
+    "sections": [
+      {
+        "heading": "Start with what matters to you",
+        "paragraphs": [
+          "Before your visit, think about the activity you most want to regain. It might be walking to the shops, sitting through work, sleeping more comfortably or returning to a sport. A specific goal gives the conversation a useful starting point.",
+          "You do not need to arrive with your own diagnosis. Explain when the problem started, how it changes and what has become difficult. If you are unsure about whether physiotherapy is the right next step, tell the clinic when you contact us."
+        ]
+      },
+      {
+        "heading": "Bring the information you already have",
+        "paragraphs": [
+          "Bring relevant reports, an up-to-date medication list and any instructions from your doctor or surgeon. After surgery, discharge information and movement or weight-bearing restrictions are particularly useful. There is no need to obtain new scans just to prepare for a routine appointment unless your clinician has advised it.",
+          "Wear clothing that allows comfortable movement and access to the area being assessed. Let the clinic know about mobility, access or communication needs before travelling. A family member can help you remember questions if you would like someone to attend."
+        ]
+      },
+      {
+        "heading": "Questions worth asking",
+        "paragraphs": [
+          "Ask what the assessment suggests, what the proposed treatment is intended to achieve and what alternatives are available. You can ask about expected discomfort, risks, costs and how the plan will be reviewed before agreeing to treatment.",
+          "It is also useful to ask what to practise at home, which changes in symptoms should prompt contact and how progress will be measured. Write the answers down if that helps. There is no need to remember a long list of instructions at once."
+        ]
+      },
+      {
+        "heading": "Confirm the practical details",
+        "paragraphs": [
+          "A request through the website is not a confirmed appointment. Wait for the clinic to agree your time and clinician availability. If you prefer a female physiotherapist, mention that when booking.",
+          "Share only the contact and scheduling information needed for the booking. Keep detailed medical history and reports for your clinical consultation rather than adding them to a general WhatsApp request."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "making-rehabilitation-goals-useful",
+    "title": "Making your rehabilitation goals useful in everyday life",
+    "description": "How to prepare meaningful goals and questions for your rehabilitation review, without relying only on a pain score or a fixed number of sessions.",
+    "category": "Rehabilitation",
+    "published": "2026-10-13",
+    "updated": "2026-10-13",
+    "author": "The Muscular Junction",
+    "image": "/images/clinic-interior-1024.webp",
+    "imageAlt": "The Muscular Junction clinical rehabilitation center",
+    "serviceIds": ["sports-rehab", "neuro-rehab"],
+    "conditionIds": ["sports-injuries", "stroke-rehabilitation"],
+    "sections": [
+      {
+        "heading": "Describe a task, not just a number",
+        "paragraphs": [
+          "A goal such as ‘walk from the car to the office’ gives your clinician more context than ‘get stronger’. Think about where the task happens, how often you need to do it and what currently gets in the way. Someone returning to work may need a different plan from someone returning to football.",
+          "Pain remains important, but it is not the only thing to discuss. Confidence, fatigue, balance and the help you need for a task can also affect daily life. Tell the therapist which of those matters most to you."
+        ]
+      },
+      {
+        "heading": "Agree what you will review",
+        "paragraphs": [
+          "Ask how you and your clinician will recognise useful progress. That might involve a particular movement, a daily task or a test selected during assessment. The point is to make the next review specific rather than guessing whether a session felt worthwhile.",
+          "Your starting point and restrictions matter. A goal after surgery should fit the instructions of your treating team. Do not add exercises or advance an activity just because a general guide describes a milestone."
+        ]
+      },
+      {
+        "heading": "Keep a short record",
+        "paragraphs": [
+          "A few notes can make a follow-up conversation easier: what you tried, what felt manageable, what became harder and any new symptoms. You do not need a complicated tracking app. Avoid repeatedly testing the most painful task simply to produce a daily score.",
+          "Discuss a change that concerns you with your clinician. A record supports that conversation; it does not diagnose the reason for the change or replace medical advice."
+        ]
+      },
+      {
+        "heading": "Allow the plan to change",
+        "paragraphs": [
+          "Rehabilitation goals can change with your response, health and priorities. If a plan is difficult to fit into your day, say so. A manageable plan that you understand is a better discussion point than instructions you feel unable to follow.",
+          "Ask what comes next: continued rehabilitation, a change in approach, a home plan or further medical assessment. No fixed number of appointments can promise the same outcome for every person."
+        ]
+      }
+    ]
+  }
+]

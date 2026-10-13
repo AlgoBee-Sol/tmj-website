@@ -1,0 +1,463 @@
+{
+  "checkedAt": "2026-10-13T09:52:00.875Z",
+  "origin": "https://themuscularjunction.com",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Physiotherapy in River Gardens, Islamabad",
+      "schemas": [
+        "Graph",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "title": "About The Muscular Junction | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/appointment",
+      "status": 200,
+      "title": "Book a physiotherapy appointment | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "title": "Physiotherapy clinic in River Gardens — Contact | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/doctors",
+      "status": 200,
+      "title": "Our physiotherapists — Dr. Syed Mozaffar &amp; team | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Graph"
+      ]
+    },
+    {
+      "route": "/doctors/dr-syed-mozaffar",
+      "status": 200,
+      "title": "Dr. Syed Mozaffar — Physiotherapist in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Person"
+      ]
+    },
+    {
+      "route": "/services",
+      "status": 200,
+      "title": "Physiotherapy services in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/conditions",
+      "status": 200,
+      "title": "Conditions we help manage in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/workshops",
+      "status": 200,
+      "title": "Physiotherapy workshops in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/blog",
+      "status": 200,
+      "title": "Patient journal — Physiotherapy &amp; rehabilitation | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy &amp; website information | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/services/manual-therapy",
+      "status": 200,
+      "title": "Manual Therapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/sports-rehab",
+      "status": 200,
+      "title": "Sports Injury Rehabilitation in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/orthopedic",
+      "status": 200,
+      "title": "Orthopedic Physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/neuro-rehab",
+      "status": 200,
+      "title": "Neuro Rehabilitation in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/pediatric",
+      "status": 200,
+      "title": "Pediatric Physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/dry-needling-cupping",
+      "status": 200,
+      "title": "Dry Needling &amp; Cupping Therapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/cryotherapy",
+      "status": 200,
+      "title": "Cryotherapy &amp; Cold Therapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/dry-needling",
+      "status": 200,
+      "title": "Dry Needling in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/cupping-therapy",
+      "status": 200,
+      "title": "Cupping Therapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/post-operative-rehabilitation",
+      "status": 200,
+      "title": "Post-operative Rehabilitation in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/services/musculoskeletal-physiotherapy",
+      "status": 200,
+      "title": "Musculoskeletal Physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Service",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/back-pain",
+      "status": 200,
+      "title": "Back pain physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/neck-pain",
+      "status": 200,
+      "title": "Neck pain physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/sciatica",
+      "status": 200,
+      "title": "Sciatica physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/frozen-shoulder",
+      "status": 200,
+      "title": "Frozen shoulder physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/knee-pain",
+      "status": 200,
+      "title": "Knee pain physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/shoulder-pain",
+      "status": 200,
+      "title": "Shoulder pain physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/acl-injury-rehabilitation",
+      "status": 200,
+      "title": "ACL rehabilitation in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/sports-injuries",
+      "status": 200,
+      "title": "Sports injury physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/tennis-elbow",
+      "status": 200,
+      "title": "Tennis elbow physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/plantar-fasciitis",
+      "status": 200,
+      "title": "Heel pain physiotherapy in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/conditions/stroke-rehabilitation",
+      "status": 200,
+      "title": "Stroke rehabilitation in Islamabad | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "FAQPage"
+      ]
+    },
+    {
+      "route": "/workshops/dry-needling",
+      "status": 200,
+      "title": "Dry Needling Workshop | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/workshops/kinesio-taping",
+      "status": 200,
+      "title": "Kinesio Taping Workshop | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/workshops/mulligan-techniques",
+      "status": 200,
+      "title": "Mulligan Techniques Hands-on Workshop | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/workshops/hvla-chiropractic",
+      "status": 200,
+      "title": "HVLA Chiropractic Workshop | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/workshops/cupping-therapy",
+      "status": 200,
+      "title": "Cupping Therapy Workshop | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/workshops/therapeutic-exercise",
+      "status": 200,
+      "title": "Therapeutic Exercise &amp; Clinical Rehab | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "route": "/workshops/mulligan-technique-october-2026",
+      "status": 200,
+      "title": "Mulligan Technique — Hands-on Workshop | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "EducationEvent"
+      ]
+    },
+    {
+      "route": "/workshops/kinesiology-taping-november-2026",
+      "status": 200,
+      "title": "Kinesiology Taping Techniques — Hands-on Workshop | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "EducationEvent"
+      ]
+    },
+    {
+      "route": "/blog/your-first-physiotherapy-appointment",
+      "status": 200,
+      "title": "Your first physiotherapy appointment: what to bring and ask | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Article"
+      ]
+    },
+    {
+      "route": "/blog/making-rehabilitation-goals-useful",
+      "status": 200,
+      "title": "Making your rehabilitation goals useful in everyday life | The Muscular Junction",
+      "schemas": [
+        "Graph",
+        "BreadcrumbList",
+        "Article"
+      ]
+    }
+  ],
+  "images": [
+    "/images/logo-tmj.webp",
+    "/images/clinic-interior-1024.webp",
+    "/images/doctors/doctor-1-mozaffar.webp",
+    "/images/doctors/doctor-2-wahab.webp",
+    "/images/doctors/doctor-3-abdullah.webp"
+  ],
+  "checks": [
+    "200 routes",
+    "unique titles/descriptions",
+    "one h1",
+    "canonical and OG/Twitter metadata",
+    "valid JSON-LD",
+    "internal links and anchors",
+    "images",
+    "sitemap/robots",
+    "301 redirects",
+    "404s"
+  ]
+}

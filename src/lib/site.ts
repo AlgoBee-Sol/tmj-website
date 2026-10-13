@@ -7,10 +7,37 @@ import {
 } from "react-icons/fa";
 import siteData from "@/data/site.json";
 
-export const site = siteData;
+const displayTime = (time: string) => {
+  if (time === "12:00") return "12 noon";
+  if (time === "00:00") return "12 midnight";
+  const [hours, minutes] = time.split(":").map(Number);
+  return `${hours % 12 || 12}${minutes ? `:${String(minutes).padStart(2, "0")}` : ""} ${hours >= 12 ? "pm" : "am"}`;
+};
+export const site = {
+  ...siteData,
+  hours: {
+    ...siteData.hours,
+    summary: siteData.hours.schema
+      .map(
+        (row) =>
+          `${row.days.length === 7 ? "Daily" : row.days.join(", ")} · ${displayTime(row.opens)} – ${displayTime(row.closes)}`,
+      )
+      .join("; "),
+  },
+};
 
-/** Canonical origin — overridable per-environment without touching data. */
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteData.url;
+/** The clinic's weekday, regardless of the visitor's device timezone. */
+export function currentDayHours(now = new Date()) {
+  const day = new Intl.DateTimeFormat("en-GB", {
+    weekday: "long",
+    timeZone: site.hours.timezone,
+  }).format(now);
+  const sessions = site.hours.schema.filter((row) => row.days.includes(day));
+  return `${day} · ${sessions.length ? sessions.map((row) => `${displayTime(row.opens)} – ${displayTime(row.closes)}`).join(", ") : "Closed"}`;
+}
+
+/** Preferred production origin, also used by local previews to avoid duplicate canonicals. */
+export const siteUrl = siteData.url.replace(/\/$/, "");
 
 /** Absolute URL for metadata, JSON-LD and share images. */
 export const absoluteUrl = (path = "/") =>

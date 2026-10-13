@@ -1,282 +1,275 @@
 "use client";
-
-import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { FaWhatsapp } from "react-icons/fa";
-import { FiCheck, FiAlertCircle } from "react-icons/fi";
-import servicesData from "@/data/services.json";
-import { site } from "@/lib/site";
-
-const TIME_SLOTS = [
-  "Morning (9:00 AM – 12:00 PM)",
-  "Afternoon (12:00 PM – 4:00 PM)",
-  "Evening (4:00 PM – 9:00 PM)",
-];
-
-// Email delivery is optional: configure these to enable the email fallback.
-const EMAILJS = {
-  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+import { useRef, useState } from "react";
+import Link from "next/link";
+import { site, waHref } from "@/lib/site";
+import {
+  clinicToday,
+  validateAppointment,
+  appointmentMessage,
+} from "@/lib/appointment.mjs";
+const emailConfig = {
+  service: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+  template: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+  key: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
 };
-const emailEnabled = Boolean(
-  EMAILJS.serviceId && EMAILJS.templateId && EMAILJS.publicKey,
-);
-
-type Status = "idle" | "sending" | "success" | "error";
-
 export default function AppointmentForm() {
   const form = useRef<HTMLFormElement>(null);
-  const [status, setStatus] = useState<Status>("idle");
-  const [method, setMethod] = useState<"whatsapp" | "email">("whatsapp");
-
-  const today = new Date().toISOString().split("T")[0];
-
-  const field = (name: string) => {
-    const el = form.current?.elements.namedItem(
-      name,
-    ) as HTMLInputElement | null;
-    return (el?.value || "").trim();
-  };
-
-  const buildWhatsAppLink = () => {
-    const lines = [
-      "*New Appointment Request*",
-      `Name: ${field("user_name")}`,
-      `Phone: ${field("user_phone")}`,
-      field("user_email") && `Email: ${field("user_email")}`,
-      field("service") && `Service: ${field("service")}`,
-      `Preferred date: ${field("date")}`,
-      field("time") && `Preferred time: ${field("time")}`,
-      field("message") && `Details: ${field("message")}`,
-    ].filter(Boolean);
-
-    return `${site.social.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`;
-  };
-
-  const handleWhatsApp = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.current?.reportValidity()) return;
-    // Bot check — a real user never fills a hidden field.
-    if (field("company")) return;
-
-    window.open(buildWhatsAppLink(), "_blank", "noopener,noreferrer");
-    setMethod("whatsapp");
-    setStatus("success");
-  };
-
-  const sendEmail = () => {
-    if (!form.current?.reportValidity()) return;
-    if (field("company")) return;
-
-    setMethod("email");
-    setStatus("sending");
-
-    emailjs
-      .sendForm(
-        EMAILJS.serviceId!,
-        EMAILJS.templateId!,
-        form.current!,
-        EMAILJS.publicKey!,
-      )
-      .then(
-        () => {
-          setStatus("success");
-          form.current?.reset();
+  const summary = useRef<HTMLDivElement>(null);
+  const result = useRef<HTMLDivElement>(null);
+  const lastSent = useRef(0);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [prepared, setPrepared] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
+  const [sending, setSending] = useState(false);
+  function values() {
+    const data = new FormData(form.current!);
+    return {
+      name: String(data.get("name") || ""),
+      phone: String(data.get("phone") || ""),
+      date: String(data.get("date") || ""),
+      time: String(data.get("time") || ""),
+      consent: data.get("consent") === "on",
+      company: String(data.get("company") || ""),
+    };
+  }
+  function validate() {
+    const value = values();
+    if (value.company) return null;
+    const next = validateAppointment(value, clinicToday());
+    setErrors(next);
+    if (Object.keys(next).length) {
+      requestAnimationFrame(() => summary.current?.focus());
+      return null;
+    }
+    return value;
+  }
+  function prepare(event: React.FormEvent) {
+    event.preventDefault();
+    const value = validate();
+    if (value) {
+      const draft = appointmentMessage(value);
+      setMessage(draft);
+      setPrepared(waHref(draft));
+      setStatus("Your request is ready. Nothing has been sent.");
+      requestAnimationFrame(() => result.current?.focus());
+    }
+  }
+  async function email() {
+    const value = validate();
+    if (!value || sending || Date.now() - lastSent.current < 30000) return;
+    setSending(true);
+    lastSent.current = Date.now();
+    try {
+      const { default: emailjs } = await import("@emailjs/browser");
+      await emailjs.send(
+        emailConfig.service!,
+        emailConfig.template!,
+        {
+          user_name: value.name.trim(),
+          user_phone: value.phone.trim(),
+          date: value.date,
+          time: value.time,
+          message:
+            "Appointment request. Please contact the patient to confirm availability.",
         },
-        () => setStatus("error"),
+        emailConfig.key!,
       );
-  };
-
-  const inputClass =
-    "w-full rounded-xl border border-input bg-background px-4 py-2.5 text-foreground outline-none transition " +
-    "placeholder:text-subtle-foreground focus:border-primary focus:ring-2 focus:ring-ring/30";
-  const labelClass = "mb-1.5 block text-sm font-medium text-foreground";
-
-  if (status === "success") {
-    return (
+      setStatus(
+        "Your request was sent. The appointment is not booked until the clinic confirms.",
+      );
+    } catch {
+      setStatus(
+        "Email could not be sent. Please prepare a WhatsApp request or call the clinic.",
+      );
+    } finally {
+      setSending(false);
+    }
+  }
+  const fields = [
+    {
+      name: "name",
+      label: "Full name",
+      type: "text",
+      autoComplete: "name",
+      maxLength: 80,
+    },
+    {
+      name: "phone",
+      label: "Phone / WhatsApp",
+      type: "tel",
+      autoComplete: "tel",
+      maxLength: 25,
+    },
+    {
+      name: "date",
+      label: "Preferred date",
+      type: "date",
+      autoComplete: "off",
+      maxLength: 10,
+    },
+  ];
+  return (
+    <>
       <div
         role="status"
-        className="flex flex-col items-center justify-center py-12 text-center"
+        aria-live="polite"
+        className={status ? "form-help" : ""}
       >
-        <span className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-success-soft text-success">
-          <FiCheck className="h-8 w-8" aria-hidden="true" />
-        </span>
-
-        <h3 className="display-3 text-foreground">
-          {method === "whatsapp" ? "Almost there" : "Request received"}
-        </h3>
-
-        <p className="mt-3 max-w-sm text-muted-foreground">
-          {method === "whatsapp"
-            ? "We've opened WhatsApp with your details filled in — press send and our team will confirm your slot, usually the same day."
-            : "Thanks — we have your request. Our team will confirm your appointment by phone or WhatsApp shortly."}
-        </p>
-
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="mt-7 font-semibold text-primary hover:underline"
-        >
-          Book another appointment
-        </button>
+        {status}
       </div>
-    );
-  }
-
-  return (
-    <form ref={form} onSubmit={handleWhatsApp} className="space-y-4" noValidate>
-      {/* Honeypot */}
-      <div className="absolute left-[-9999px]" aria-hidden="true">
-        <label htmlFor="company">Company</label>
-        <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
-      </div>
-
-      <div>
-        <label htmlFor="user_name" className={labelClass}>
-          Full name <span className="text-primary">*</span>
-        </label>
-        <input
-          type="text"
-          name="user_name"
-          id="user_name"
-          required
-          autoComplete="name"
-          className={inputClass}
-          placeholder="Your name"
-        />
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label htmlFor="user_phone" className={labelClass}>
-            Phone / WhatsApp <span className="text-primary">*</span>
-          </label>
-          <input
-            type="tel"
-            name="user_phone"
-            id="user_phone"
-            required
-            autoComplete="tel"
-            className={inputClass}
-            placeholder="+92 3xx xxxxxxx"
-          />
-        </div>
-        <div>
-          <label htmlFor="user_email" className={labelClass}>
-            Email <span className="text-subtle-foreground">(optional)</span>
-          </label>
-          <input
-            type="email"
-            name="user_email"
-            id="user_email"
-            autoComplete="email"
-            className={inputClass}
-            placeholder="you@example.com"
-          />
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="service" className={labelClass}>
-          What do you need help with?
-        </label>
-        <select name="service" id="service" className={inputClass} defaultValue="">
-          <option value="">Not sure yet — please advise</option>
-          {servicesData.map((s) => (
-            <option key={s.id} value={s.title}>
-              {s.title}
-            </option>
-          ))}
-          <option value="General Consultation">General consultation</option>
-        </select>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label htmlFor="date" className={labelClass}>
-            Preferred date <span className="text-primary">*</span>
-          </label>
-          <input
-            type="date"
-            name="date"
-            id="date"
-            required
-            min={today}
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="time" className={labelClass}>
-            Preferred time
-          </label>
-          <select name="time" id="time" className={inputClass} defaultValue="">
-            <option value="">Any time</option>
-            {TIME_SLOTS.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="message" className={labelClass}>
-          Briefly, what is going on?{" "}
-          <span className="text-subtle-foreground">(optional)</span>
-        </label>
-        <textarea
-          name="message"
-          id="message"
-          rows={3}
-          className={inputClass}
-          placeholder="e.g. Lower back pain for 3 weeks, worse when sitting."
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-[var(--whatsapp)] px-6 py-4 text-base font-bold text-white shadow-[0_8px_24px_rgb(37_211_102/0.3)] transition hover:-translate-y-0.5 hover:bg-[var(--whatsapp-dark)]"
-      >
-        <FaWhatsapp className="h-5 w-5" aria-hidden="true" />
-        Send request on WhatsApp
-      </button>
-
-      <p className="text-center text-xs text-subtle-foreground">
-        Opens WhatsApp with your details filled in. Nothing is sent until you
-        press send.
-      </p>
-
-      {emailEnabled && (
-        <>
-          <div className="flex items-center gap-3 pt-1 text-xs text-subtle-foreground">
-            <span className="h-px flex-1 bg-border" />
-            or
-            <span className="h-px flex-1 bg-border" />
-          </div>
-
+      {prepared && (
+        <div className="booking-result" ref={result} tabIndex={-1}>
+          <h3>Review, then send on WhatsApp.</h3>
+          <p>
+            Open WhatsApp to review your name, phone and preferred time, then
+            press Send. The clinic will reply to confirm availability. Opening
+            WhatsApp shares these details with WhatsApp.
+          </p>
+          <p className="whitespace-pre-line rounded-lg bg-surface p-4 text-sm">
+            {message}
+          </p>
+          <a href={prepared} target="_blank" rel="noopener noreferrer">
+            Open WhatsApp with my request ↗
+          </a>
+          <p>
+            If WhatsApp does not open, call{" "}
+            <a href={`tel:${site.contact.phoneDial}`}>{site.contact.phone}</a>.
+          </p>
           <button
             type="button"
-            onClick={sendEmail}
-            disabled={status === "sending"}
-            className="flex w-full items-center justify-center gap-2 rounded-xl border border-border-strong px-6 py-3 font-semibold text-foreground transition hover:bg-surface disabled:cursor-not-allowed disabled:opacity-60"
+            onClick={() => {
+              setPrepared("");
+              setStatus("");
+              requestAnimationFrame(() =>
+                form.current
+                  ?.querySelector<HTMLInputElement>("#booking-name")
+                  ?.focus(),
+              );
+            }}
           >
-            {status === "sending" ? "Sending…" : "Send request by email instead"}
+            Edit booking details
           </button>
-        </>
+        </div>
       )}
-
-      {status === "error" && (
-        <p
-          role="alert"
-          className="flex items-start gap-2 rounded-xl border border-red-500/30 bg-red-500/5 p-3 text-sm text-red-600 dark:text-red-400"
-        >
-          <FiAlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-          We could not send that by email. Please use the WhatsApp button above
-          or call us on {site.contact.phone}.
+      <form ref={form} onSubmit={prepare} noValidate hidden={Boolean(prepared)}>
+        {Object.keys(errors).length > 0 && (
+          <div
+            ref={summary}
+            className="form-summary"
+            role="alert"
+            tabIndex={-1}
+          >
+            <p className="font-semibold mb-2">Please check these details:</p>
+            <ul>
+              {Object.entries(errors).map(([key, message]) => (
+                <li key={key}>
+                  <a href={`#booking-${key}`}>{message}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div hidden aria-hidden="true">
+          <label htmlFor="booking-company">Company</label>
+          <input
+            id="booking-company"
+            name="company"
+            autoComplete="off"
+            tabIndex={-1}
+          />
+        </div>
+        <div className="form-grid">
+          {fields.map((f) => (
+            <div
+              className={`form-field ${f.name === "name" ? "form-field-wide" : ""}`}
+              key={f.name}
+            >
+              <label htmlFor={`booking-${f.name}`}>
+                {f.label} <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id={`booking-${f.name}`}
+                name={f.name}
+                type={f.type}
+                autoComplete={f.autoComplete}
+                maxLength={f.maxLength}
+                min={f.type === "date" ? clinicToday() : undefined}
+                required
+                aria-invalid={Boolean(errors[f.name])}
+                aria-describedby={
+                  errors[f.name] ? `error-${f.name}` : undefined
+                }
+              />
+              {errors[f.name] && (
+                <p className="field-error" id={`error-${f.name}`}>
+                  {errors[f.name]}
+                </p>
+              )}
+            </div>
+          ))}
+          <div className="form-field">
+            <label htmlFor="booking-time">Time preference</label>
+            <select
+              id="booking-time"
+              name="time"
+              aria-invalid={Boolean(errors.time)}
+              aria-describedby={errors.time ? "error-time" : undefined}
+            >
+              <option>Any available time</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+            </select>
+            {errors.time && (
+              <p id="error-time" className="field-error">
+                {errors.time}
+              </p>
+            )}
+          </div>
+        </div>
+        <p className="form-help">
+          {site.hours.summary}, Pakistan time. A preferred date is a request,
+          not a confirmed appointment. Please keep medical details and reports
+          for your clinical consultation.
         </p>
-      )}
-    </form>
+        <label className="form-consent" htmlFor="booking-consent">
+          <input
+            type="checkbox"
+            id="booking-consent"
+            name="consent"
+            required
+            aria-invalid={Boolean(errors.consent)}
+            aria-describedby={errors.consent ? "error-consent" : undefined}
+          />
+          <span>
+            I agree to share these booking details with the clinic through my
+            chosen contact service.{" "}
+            <Link href="/privacy">Privacy information</Link>.
+          </span>
+        </label>
+        {errors.consent && (
+          <p className="field-error mb-3" id="error-consent">
+            {errors.consent}
+          </p>
+        )}
+        <button type="submit" className="form-submit">
+          Prepare WhatsApp request →
+        </button>
+        <p className="form-help">
+          You’ll review the request before opening WhatsApp. Nothing is sent
+          automatically.
+        </p>
+        {emailConfig.service && emailConfig.template && emailConfig.key && (
+          <button
+            className="mt-5 text-link"
+            type="button"
+            disabled={sending}
+            onClick={email}
+          >
+            {sending ? "Sending…" : "Send these details by email instead"}
+          </button>
+        )}
+      </form>
+    </>
   );
 }
